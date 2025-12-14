@@ -4,14 +4,20 @@ import pytest
 def test_workflow():
     # Verify we can load the data we just created
     ds_land = load_dataset("nick_land")
-    assert len(ds_land) == 2
-    assert "Fanged Noumena" in ds_land[0]["text"]
-    assert "Neo-China arrives from the future" in ds_land[1]["text"]
+    # We added new content, so now there should be 3 items
+    assert len(ds_land) == 3
+    # Note: dataset order might vary depending on file system or processing order.
+    # We'll check if content exists in any of the items.
+    all_text_land = " ".join([item["text"] for item in ds_land])
+    assert "Fanged Noumena" in all_text_land
+    assert "Neo-China arrives from the future" in all_text_land
 
     ds_zizek = load_dataset("slavoj_zizek")
-    assert len(ds_zizek) == 2
-    assert "Ideology" in ds_zizek[0]["text"]
-    assert "start eating that trashcan" in ds_zizek[1]["text"]
+    # We added new content, so now there should be 3 items
+    assert len(ds_zizek) == 3
+    all_text_zizek = " ".join([item["text"] for item in ds_zizek])
+    assert "Ideology" in all_text_zizek
+    assert "start eating that trashcan" in all_text_zizek
 
     print("Workflow test passed!")
 

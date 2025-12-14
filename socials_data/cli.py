@@ -32,7 +32,8 @@ def add(name):
 
 @main.command()
 @click.argument("personality_id")
-def process(personality_id):
+@click.option("--skip-qa", is_flag=True, help="Skip Q&A generation to save costs.")
+def process(personality_id, skip_qa):
     """Process raw data for a personality."""
     manager = PersonalityManager()
     # Check if exists
@@ -48,18 +49,35 @@ def process(personality_id):
     personality_dir = manager.base_dir / personality_id
 
     click.echo(f"Processing data for {personality_id}...")
-    processor.process(personality_dir)
+    processor.process(personality_dir, skip_qa=skip_qa)
     click.echo(f"Done. Data saved to {personality_dir}/processed/data.jsonl")
 
     # Check if QA file was created and notify user
     qa_file = personality_dir / "processed" / "qa.jsonl"
     if qa_file.exists() and qa_file.stat().st_size > 0:
         click.echo(f"Done. Q&A data saved to {qa_file}")
-    elif processor.llm_processor.client is None and os.environ.get("OPENAI_API_KEY"):
+    elif not skip_qa and processor.llm_processor.client is None and os.environ.get("OPENAI_API_KEY"):
          # If key is present but client is None, it means import failed.
          click.echo("Warning: OPENAI_API_KEY present but 'openai' package issues prevented Q&A generation.")
-    elif processor.llm_processor.client is None:
+    elif not skip_qa and processor.llm_processor.client is None:
          click.echo("Info: No Q&A generated (OPENAI_API_KEY not found).")
+
+@main.command(name="generate-qa")
+@click.argument("personality_id")
+def generate_qa(personality_id):
+    """Generate Q&A pairs for an existing processed dataset."""
+    manager = PersonalityManager()
+    try:
+        manager.get_metadata(personality_id)
+    except FileNotFoundError:
+        click.echo(f"Error: Personality '{personality_id}' not found.")
+        return
+
+    processor = TextDataProcessor()
+    personality_dir = manager.base_dir / personality_id
+
+    click.echo(f"Generating Q&A for {personality_id}...")
+    processor.generate_qa_only(personality_dir)
 
 if __name__ == "__main__":
     main()

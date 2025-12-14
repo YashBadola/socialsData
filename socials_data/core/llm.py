@@ -27,28 +27,35 @@ class LLMProcessor:
     def generate_qa_pairs(self, text_chunk: str, system_prompt: str) -> List[Dict[str, str]]:
         """
         Generates Instruction/Response pairs from a given text chunk using the system prompt.
+        Uses a diverse prompting strategy to create varied instruction types (advice, explanation, critique).
         """
         if not self.client:
             return []
 
-        # Construct the user prompt to guide the LLM to output valid JSON
-        # We want a list of objects with "instruction" and "response" keys.
+        # Diverse instruction generation prompt
         user_message = (
-            "Analyze the following text and extract relevant questions (instructions) and answers (responses) "
-            "that represent the personality defined in the system prompt. "
-            "If the text is a narrative, infer potential questions someone might ask to get the response mentioned in the text.\n\n"
-            f"Text:\n{text_chunk}\n\n"
-            "Output Format:\n"
-            "Provide a valid JSON array of objects. Each object must have exactly two keys: \"instruction\" and \"response\".\n"
-            "Example: [{\"instruction\": \"Question?\", \"response\": \"Answer.\"}]\n"
-            "Do not include any markdown formatting (like ```json), just the raw JSON string."
+            "You are an expert dataset creator for training Large Language Models (LLMs) to adopt specific personas.\n"
+            "Your task is to generate 3-5 high-quality instruction-response pairs based on the provided text chunk.\n"
+            "The responses MUST embody the persona defined in the system prompt below.\n\n"
+            f"Persona Definition (System Prompt):\n{system_prompt}\n\n"
+            f"Source Text:\n{text_chunk}\n\n"
+            "Guidelines:\n"
+            "1. **Diverse Instructions**: Do not just ask 'What does the text say?'. Generate varied types of instructions, such as:\n"
+            "   - **Advice Seeking**: 'I am feeling anxious about the future. What should I do?'\n"
+            "   - **Philosophical Inquiry**: 'What is the nature of evil?'\n"
+            "   - **Situational**: 'How should one handle an insult from a colleague?'\n"
+            "   - **Direct Analysis**: 'Explain your view on...' \n"
+            "2. **Persona Alignment**: The 'response' must be written *in the voice* of the persona. It should sound like the character speaking directly to the user.\n"
+            "3. **Contextual grounding**: Use the source text as the *knowledge base* for the answers, but expand on it naturally using the persona's logic.\n"
+            "4. **Format**: Output a pure JSON array of objects. Each object must have keys: \"instruction\" and \"response\".\n"
+            "   Example: [{\"instruction\": \"...\", \"response\": \"...\"}]\n"
         )
 
         try:
             completion = self.client.chat.completions.create(
-                model="gpt-4o",  # or gpt-3.5-turbo, using a capable model
+                model="gpt-4o",
                 messages=[
-                    {"role": "system", "content": system_prompt},
+                    {"role": "system", "content": "You are a helpful assistant that generates training data."},
                     {"role": "user", "content": user_message}
                 ],
                 temperature=0.7

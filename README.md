@@ -20,6 +20,7 @@ Each personality directory must contain:
     *   PDFs/EPUBs - *To be converted to text*
 *   **`processed/`**: A folder containing the cleaned, machine-readable dataset.
     *   **`data.jsonl`**: The canonical dataset file. Each line is a JSON object containing at least a `"text"` field.
+    *   **`qa.jsonl`**: (Optional) Synthetic Q&A pairs for instruction tuning.
 
 ### 2. Metadata Schema (`metadata.json`)
 
@@ -28,6 +29,7 @@ Each personality directory must contain:
   "name": "Full Name",
   "id": "snake_case_id",
   "description": "Short bio or description.",
+  "system_prompt": "Optional. A definition of the persona used for generating synthetic Q&A pairs.",
   "sources": [
     {
       "type": "book",
@@ -44,9 +46,8 @@ Each personality directory must contain:
 1.  **Ingestion**: Raw files are placed manually or via scripts into `raw/`.
 2.  **Processing**: The `socials-data process <name>` command runs.
     *   It iterates through `raw/`.
-    *   It converts different formats (currently Text) into a unified text stream.
-    *   It performs cleaning (whitespace normalization, removal of artifacts).
-    *   It appends the result to `processed/data.jsonl`.
+    *   It converts different formats (currently Text) into a unified text stream (`processed/data.jsonl`).
+    *   If `OPENAI_API_KEY` is set and a `system_prompt` is defined, it generates **synthetic Instruction/Response pairs** (`processed/qa.jsonl`) using an LLM.
 3.  **Access**: Users load the data using the Python API.
 
 ## Usage
@@ -70,11 +71,24 @@ socials-data add "Elon Musk"
 ```
 *This creates `socials_data/personalities/elon_musk/` with the required structure.*
 
-**Process data:**
+**Process data (with Q&A generation):**
 ```bash
+export OPENAI_API_KEY="sk-..."
 socials-data process elon_musk
 ```
-*This reads from `raw/` and compiles `processed/data.jsonl`.*
+*This reads from `raw/`, compiles `processed/data.jsonl`, and generates `processed/qa.jsonl`.*
+
+**Process data (skip Q&A generation):**
+```bash
+socials-data process elon_musk --skip-qa
+```
+*Useful for saving API costs or when only raw text is needed.*
+
+**Generate Q&A only:**
+```bash
+socials-data generate-qa elon_musk
+```
+*Generates Q&A pairs from existing `processed/data.jsonl`.*
 
 ### Python API
 
@@ -87,4 +101,19 @@ from socials_data import load_dataset
 dataset = load_dataset("nick_land")
 
 print(dataset[0]['text'])
+
+# Load Q&A data (if available)
+# (Note: load_dataset currently defaults to 'text', updates pending for 'qa' split support)
+```
+
+## Instruction Tuning
+
+`socialsData` supports **Instruction Tuning** by automatically converting raw texts into Q&A pairs. This accelerates the fine-tuning of Small Language Models (SLMs) by providing rich, persona-aligned interactions (Advice, Philosophy, Chat) rather than just raw text prediction.
+
+**Example Generated Q&A:**
+```json
+{
+  "instruction": "I am feeling anxious about the future. What should I do?",
+  "response": "Do not disturb yourself by picturing your life as a whole; do not assemble in your mind the many and varied troubles which have come to you in the past... but ask yourself with regard to every present difficulty: 'What is there in this that is unbearable and beyond endurance?'"
+}
 ```

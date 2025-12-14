@@ -10,7 +10,8 @@ setup(
         "click",
         "datasets",
         "pandas",
-        "tqdm"
+        "tqdm",
+        "openai"
     ],
     entry_points={
         "console_scripts": [

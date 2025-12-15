@@ -8,6 +8,11 @@
       "type": "book",
       "title": "Meditations",
       "url": "https://en.wikisource.org/wiki/The_Meditations_of_the_Emperor_Marcus_Antoninus"
+    },
+    {
+      "type": "letters",
+      "title": "Letters to Fronto",
+      "url": "https://en.wikisource.org/wiki/The_Correspondence_of_Marcus_Cornelius_Fronto"
     }
   ],
   "license": "Public Domain"

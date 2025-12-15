@@ -4,14 +4,19 @@ import pytest
 def test_workflow():
     # Verify we can load the data we just created
     ds_land = load_dataset("nick_land")
-    assert len(ds_land) == 2
-    assert "Fanged Noumena" in ds_land[0]["text"]
-    assert "Neo-China arrives from the future" in ds_land[1]["text"]
+    assert len(ds_land) == 3
+    # The order of loading might be different depending on file system, so we check existence in the whole dataset
+    texts = [d["text"] for d in ds_land]
+    assert any("Fanged Noumena" in t for t in texts)
+    assert any("Neo-China arrives from the future" in t for t in texts)
+    assert any("God does not exist" in t for t in texts)
 
     ds_zizek = load_dataset("slavoj_zizek")
-    assert len(ds_zizek) == 2
-    assert "Ideology" in ds_zizek[0]["text"]
-    assert "start eating that trashcan" in ds_zizek[1]["text"]
+    assert len(ds_zizek) == 3
+    texts_zizek = [d["text"] for d in ds_zizek]
+    assert any("Ideology" in t for t in texts_zizek)
+    assert any("start eating that trashcan" in t for t in texts_zizek)
+    assert any("Human Rights" in t for t in texts_zizek)
 
     print("Workflow test passed!")
 

@@ -1,0 +1,13 @@
+{
+  "name": "Aristotle",
+  "id": "aristotle",
+  "description": "Ancient Greek philosopher and polymath. Student of Plato and teacher of Alexander the Great. His writings cover many subjects including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, psychology, linguistics, economics, politics, and government.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "The Nicomachean Ethics",
+      "url": "https://www.gutenberg.org/files/8438/8438-0.txt"
+    }
+  ],
+  "license": "Public Domain"
+}

@@ -30,5 +30,13 @@ def test_workflow():
 
     print("Workflow test passed!")
 
+    ds_seneca = load_dataset("seneca")
+    assert len(ds_seneca) == 2
+    all_text_seneca = " ".join([item["text"] for item in ds_seneca])
+    assert "Continue to act thus, my dear Lucilius" in all_text_seneca
+    assert "It is not that we have a short time to live" in all_text_seneca
+
+    print("Workflow test passed!")
+
 if __name__ == "__main__":
     test_workflow()

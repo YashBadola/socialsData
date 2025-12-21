@@ -1,0 +1,13 @@
+{
+  "name": "Marcus Aurelius",
+  "id": "marcus_aurelius",
+  "description": "Roman emperor from 161 to 180 and a Stoic philosopher. He is best known for his Meditations, a series of personal writings.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Meditations",
+      "url": "https://classics.mit.edu/Antoninus/meditations.html"
+    }
+  ],
+  "license": "Public Domain"
+}

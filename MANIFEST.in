@@ -1,0 +1,1 @@
+recursive-include socials_data/personalities *.json *.txt *.jsonl

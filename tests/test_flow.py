@@ -28,6 +28,12 @@ def test_workflow():
     all_text_aurelius = " ".join([item["text"] for item in ds_aurelius])
     assert "Of my grandfather Verus" in all_text_aurelius
 
+    ds_epictetus = load_dataset("epictetus")
+    assert len(ds_epictetus) == 1
+    all_text_epictetus = " ".join([item["text"] for item in ds_epictetus])
+    assert "There are things which are within our power" in all_text_epictetus
+    assert "Conduct me, Zeus, and thou, O Destiny" in all_text_epictetus
+
     print("Workflow test passed!")
 
 if __name__ == "__main__":

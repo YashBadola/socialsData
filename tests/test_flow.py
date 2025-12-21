@@ -28,6 +28,11 @@ def test_workflow():
     all_text_aurelius = " ".join([item["text"] for item in ds_aurelius])
     assert "Of my grandfather Verus" in all_text_aurelius
 
+    ds_seneca = load_dataset("seneca")
+    assert len(ds_seneca) == 1
+    all_text_seneca = " ".join([item["text"] for item in ds_seneca])
+    assert "Greetings from Seneca to his friend Lucilius" in all_text_seneca
+
     print("Workflow test passed!")
 
 if __name__ == "__main__":

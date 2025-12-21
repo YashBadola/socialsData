@@ -129,7 +129,6 @@ class TextDataProcessor(DataProcessor):
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
-            # In a real system, we might log a warning or have other processors
             return None
 
         try:
@@ -137,13 +136,32 @@ class TextDataProcessor(DataProcessor):
                 text = f.read()
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
             lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            full_text = "\n".join(lines)
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Smart chunking respecting word boundaries
+            chunk_size = 2000
+            chunks = []
+            current_chunk = []
+            current_length = 0
+
+            # Split by whitespace to preserve words
+            words = full_text.split(' ')
+
+            for word in words:
+                # +1 for the space
+                if current_length + len(word) + 1 > chunk_size:
+                    chunks.append(" ".join(current_chunk))
+                    current_chunk = [word]
+                    current_length = len(word)
+                else:
+                    current_chunk.append(word)
+                    current_length += len(word) + 1
+
+            if current_chunk:
+                chunks.append(" ".join(current_chunk))
+
+            return chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

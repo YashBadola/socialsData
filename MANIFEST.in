@@ -1,0 +1,2 @@
+include socials_data/personalities/*/metadata.json
+include socials_data/personalities/*/raw/*

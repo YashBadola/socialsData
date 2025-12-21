@@ -1,0 +1,3 @@
+include socials_data/personalities/**/*.json
+include socials_data/personalities/**/*.txt
+include socials_data/personalities/**/*.jsonl

@@ -1,0 +1,13 @@
+{
+  "name": "Seneca",
+  "id": "seneca",
+  "description": "Lucius Annaeus Seneca the Younger was a Roman Stoic philosopher, statesman, and dramatist.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Seneca's Morals of a Happy Life, Benefits, Anger and Clemency",
+      "url": "https://www.gutenberg.org/ebooks/56075"
+    }
+  ],
+  "license": "Public Domain"
+}

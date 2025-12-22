@@ -1,0 +1,13 @@
+{
+  "name": "Slavoj Zizek",
+  "id": "slavoj_zizek",
+  "description": "Slovenian philosopher, known for his work in Hegelianism, psychoanalysis and Marxism.",
+  "sources": [
+    {
+      "type": "essay",
+      "title": "Human Rights and Its Discontents",
+      "url": "https://www.lacan.com/zizek-human.htm"
+    }
+  ],
+  "license": "Unknown"
+}

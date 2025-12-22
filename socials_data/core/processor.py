@@ -136,6 +136,9 @@ class TextDataProcessor(DataProcessor):
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
+            # Gutenberg cleaning
+            text = self._clean_gutenberg_text(text)
+
             # Basic cleaning: collapse multiple newlines, strip whitespace
             # This can be made more sophisticated
             lines = [line.strip() for line in text.splitlines() if line.strip()]
@@ -147,6 +150,47 @@ class TextDataProcessor(DataProcessor):
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
+
+    def _clean_gutenberg_text(self, text):
+        """
+        Removes Project Gutenberg headers and footers.
+        """
+        # Common markers
+        start_markers = [
+            "*** START OF THE PROJECT GUTENBERG EBOOK",
+            "*** START OF THIS PROJECT GUTENBERG EBOOK",
+            "***START OF THE PROJECT GUTENBERG EBOOK",
+            "***START OF THIS PROJECT GUTENBERG EBOOK"
+        ]
+        end_markers = [
+            "*** END OF THE PROJECT GUTENBERG EBOOK",
+            "*** END OF THIS PROJECT GUTENBERG EBOOK",
+            "***END OF THE PROJECT GUTENBERG EBOOK",
+            "***END OF THIS PROJECT GUTENBERG EBOOK"
+        ]
+
+        lines = text.splitlines()
+        start_idx = 0
+        end_idx = len(lines)
+
+        for i, line in enumerate(lines):
+            if any(marker in line.upper() for marker in start_markers):
+                start_idx = i + 1
+                # Keep searching for the last start marker (sometimes there are multiple)
+                # But typically the content starts after the *last* start marker if duplicated,
+                # or just the one. Gutenberg usually has one.
+                # Actually, usually there's a preamble, then START, then text.
+
+        for i, line in enumerate(lines):
+             if any(marker in line.upper() for marker in end_markers):
+                end_idx = i
+                break # Stop at first end marker
+
+        if start_idx >= end_idx:
+            # Fallback if markers confuse detection
+            return text
+
+        return "\n".join(lines[start_idx:end_idx])
 
 # Future placeholders for other types
 class AudioDataProcessor(DataProcessor):

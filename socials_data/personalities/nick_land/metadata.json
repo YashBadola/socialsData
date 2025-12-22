@@ -1,0 +1,13 @@
+{
+  "name": "Nick Land",
+  "id": "nick_land",
+  "description": "British philosopher, known for his writings on accelerationism and horror.",
+  "sources": [
+    {
+      "type": "essay",
+      "title": "Cybergothic",
+      "url": "https://archive.org/stream/1993landspiritandteeth/Nick%20Land%20-%20Papers/%281998%29%20LAND%20--%20Cybergothic_djvu.txt"
+    }
+  ],
+  "license": "Unknown"
+}

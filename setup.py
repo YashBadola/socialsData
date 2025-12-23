@@ -11,7 +11,10 @@ setup(
         "datasets",
         "pandas",
         "tqdm",
-        "openai"
+        "openai",
+        "langchain",
+        "langchain-community",
+        "langchain-text-splitters"
     ],
     entry_points={
         "console_scripts": [

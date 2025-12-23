@@ -137,16 +137,56 @@ class TextDataProcessor(DataProcessor):
                 text = f.read()
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # Preserving paragraph breaks by checking for empty lines
+            paragraphs = []
+            current_para = []
+            for line in text.splitlines():
+                if not line.strip():
+                    if current_para:
+                        paragraphs.append(" ".join(current_para))
+                        current_para = []
+                else:
+                    current_para.append(line.strip())
+
+            if current_para:
+                paragraphs.append(" ".join(current_para))
+
+            cleaned_text = "\n".join(paragraphs)
 
             # Simple chunking if text is too large could be added here
             # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            return self._chunk_text(cleaned_text)
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
+
+    def _chunk_text(self, text, target_chunk_size=2000):
+        """
+        Splits text into chunks of roughly target_chunk_size, respecting paragraph boundaries.
+        """
+        chunks = []
+        current_chunk = []
+        current_size = 0
+
+        paragraphs = text.split('\n')
+
+        for para in paragraphs:
+            para_len = len(para)
+            # Estimate size including the newline character for joining
+            added_size = para_len + 1
+
+            if current_size + added_size > target_chunk_size and current_chunk:
+                chunks.append("\n".join(current_chunk))
+                current_chunk = []
+                current_size = 0
+
+            current_chunk.append(para)
+            current_size += added_size
+
+        if current_chunk:
+            chunks.append("\n".join(current_chunk))
+
+        return chunks
 
 # Future placeholders for other types
 class AudioDataProcessor(DataProcessor):

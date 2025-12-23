@@ -11,7 +11,10 @@ setup(
         "datasets",
         "pandas",
         "tqdm",
-        "openai"
+        "openai",
+        "langchain",
+        "langchain-community",
+        "tiktoken"
     ],
     entry_points={
         "console_scripts": [

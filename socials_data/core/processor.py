@@ -141,9 +141,24 @@ class TextDataProcessor(DataProcessor):
             lines = [line.strip() for line in text.splitlines() if line.strip()]
             cleaned_text = "\n".join(lines)
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Chunking logic
+            chunks = []
+            chunk_size = 2000
+            current_chunk = []
+            current_length = 0
+
+            for line in lines:
+                if current_length + len(line) > chunk_size and current_chunk:
+                    chunks.append("\n".join(current_chunk))
+                    current_chunk = []
+                    current_length = 0
+                current_chunk.append(line)
+                current_length += len(line) + 1  # +1 for newline
+
+            if current_chunk:
+                chunks.append("\n".join(current_chunk))
+
+            return chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

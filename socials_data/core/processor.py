@@ -3,10 +3,19 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+# We need langchain for chunking
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        # Initialize text splitter
+        self.text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=2000,
+            chunk_overlap=200,
+            length_function=len,
+            is_separator_regex=False,
+        )
 
     def process(self, personality_dir, skip_qa=False):
         """
@@ -47,13 +56,20 @@ class DataProcessor:
                             # 1. Write standard text data
                             chunks = content if isinstance(content, list) else [content]
 
+                            # If content came back as a single large string, let's chunk it now if it wasn't chunked by subclass
+                            if isinstance(content, str):
+                                chunks = self.text_splitter.split_text(content)
+                            elif isinstance(content, list) and len(content) == 1 and len(content[0]) > 2500:
+                                # Double check if it's just one massive chunk
+                                chunks = self.text_splitter.split_text(content[0])
+
                             for chunk in chunks:
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
                                 # 2. If we have a system prompt and valid text, generate Q&A
                                 if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                    # print(f"Generating Q&A for {file_path.name}...") # User feedback - too noisy for per chunk
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
@@ -141,8 +157,6 @@ class TextDataProcessor(DataProcessor):
             lines = [line.strip() for line in text.splitlines() if line.strip()]
             cleaned_text = "\n".join(lines)
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
             return cleaned_text
         except Exception as e:
             print(f"Error processing {file_path}: {e}")

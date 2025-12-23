@@ -1,3 +1,4 @@
+
 import json
 from pathlib import Path
 import os
@@ -125,7 +126,7 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a string or list of strings.
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
@@ -136,19 +137,36 @@ class TextDataProcessor(DataProcessor):
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # Simple chunking logic to avoid huge entries
+            CHUNK_SIZE = 2000
+            chunks = []
+            current_chunk = []
+            current_length = 0
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            for line in text.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+
+                # If adding this line exceeds chunk size, save current chunk and start new one
+                if current_length + len(line) > CHUNK_SIZE and current_chunk:
+                    chunks.append("\n".join(current_chunk))
+                    current_chunk = []
+                    current_length = 0
+
+                current_chunk.append(line)
+                current_length += len(line)
+
+            # Add the last chunk
+            if current_chunk:
+                chunks.append("\n".join(current_chunk))
+
+            return chunks
+
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
 
-# Future placeholders for other types
 class AudioDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         # TODO: Implement Whisper or other transcription logic here

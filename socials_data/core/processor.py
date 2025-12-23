@@ -137,13 +137,38 @@ class TextDataProcessor(DataProcessor):
                 text = f.read()
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # But preserve paragraph structure (double newlines)
+            cleaned_text = text.replace('\r\n', '\n')
+            # Replace 3 or more newlines with 2
+            while '\n\n\n' in cleaned_text:
+                cleaned_text = cleaned_text.replace('\n\n\n', '\n\n')
 
             # Simple chunking if text is too large could be added here
             # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Breaking into chunks of roughly 2000 chars to enable better dataset handling
+            chunks = []
+            current_chunk = []
+            current_len = 0
+
+            for paragraph in cleaned_text.split('\n\n'):
+                # restore paragraphs with double newlines
+                if not paragraph.strip():
+                    continue
+
+                p_len = len(paragraph)
+                if current_len + p_len > 2000:
+                    if current_chunk:
+                        chunks.append("\n\n".join(current_chunk))
+                    current_chunk = [paragraph]
+                    current_len = p_len
+                else:
+                    current_chunk.append(paragraph)
+                    current_len += p_len + 2 # +2 for the newlines
+
+            if current_chunk:
+                chunks.append("\n\n".join(current_chunk))
+
+            return chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

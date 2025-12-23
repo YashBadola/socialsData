@@ -143,10 +143,43 @@ class TextDataProcessor(DataProcessor):
 
             # Simple chunking if text is too large could be added here
             # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            return self._chunk_text(cleaned_text)
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
+
+    def _chunk_text(self, text, chunk_size=2000):
+        """
+        Splits text into chunks of roughly `chunk_size` characters,
+        attempting to split at paragraph boundaries (double newlines).
+        """
+        if not text:
+            return []
+
+        chunks = []
+        current_chunk = []
+        current_length = 0
+
+        # Split by paragraphs first (assuming cleaned text has newlines)
+        # The cleaning above joined with \n, but original paragraphs might have been lost if not handled carefully.
+        # However, let's assume lines are meaningful.
+
+        # A better approach for the cleaned text (which is joined by \n) is to split by \n
+        paragraphs = text.split('\n')
+
+        for para in paragraphs:
+            if current_length + len(para) > chunk_size and current_chunk:
+                chunks.append("\n".join(current_chunk))
+                current_chunk = []
+                current_length = 0
+
+            current_chunk.append(para)
+            current_length += len(para) + 1 # +1 for newline
+
+        if current_chunk:
+            chunks.append("\n".join(current_chunk))
+
+        return chunks
 
 # Future placeholders for other types
 class AudioDataProcessor(DataProcessor):

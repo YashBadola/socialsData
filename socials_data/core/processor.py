@@ -3,6 +3,10 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:
+    RecursiveCharacterTextSplitter = None
 
 class DataProcessor:
     def __init__(self):
@@ -125,25 +129,31 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a list of chunks.
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
-            # In a real system, we might log a warning or have other processors
             return None
 
         try:
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            if RecursiveCharacterTextSplitter:
+                text_splitter = RecursiveCharacterTextSplitter(
+                    chunk_size=1000,
+                    chunk_overlap=200,
+                    length_function=len,
+                    is_separator_regex=False,
+                )
+                chunks = text_splitter.split_text(text)
+                return chunks
+            else:
+                # Fallback if library not available (though it should be)
+                lines = [line.strip() for line in text.splitlines() if line.strip()]
+                cleaned_text = "\n".join(lines)
+                return [cleaned_text]
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

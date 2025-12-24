@@ -3,10 +3,24 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:
+    # Fallback or optional dependency handling
+    RecursiveCharacterTextSplitter = None
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        # Initialize text splitter for chunking if available
+        if RecursiveCharacterTextSplitter:
+            self.text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=1000,
+                chunk_overlap=200,
+                length_function=len,
+            )
+        else:
+            self.text_splitter = None
 
     def process(self, personality_dir, skip_qa=False):
         """
@@ -32,10 +46,7 @@ class DataProcessor:
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         # Prepare files
-        # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
@@ -44,16 +55,15 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
-                            # 1. Write standard text data
+                            # Handle both list (chunks) and string (single chunk) returns
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
-                                # 2. If we have a system prompt and valid text, generate Q&A
                                 if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                    print(f"Generating Q&A for {file_path.name}...")
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
@@ -65,7 +75,6 @@ class DataProcessor:
     def generate_qa_only(self, personality_dir):
         """
         Generates Q&A pairs from existing processed/data.jsonl.
-        Useful if one wants to run QA generation separately or re-run it.
         """
         personality_dir = Path(personality_dir)
         processed_dir = personality_dir / "processed"
@@ -111,7 +120,6 @@ class DataProcessor:
                         for pair in qa_pairs:
                             pair["source"] = source
                             qa_f.write(json.dumps(pair) + "\n")
-                            # flush to see progress?
                             qa_f.flush()
                 except json.JSONDecodeError:
                     continue
@@ -125,31 +133,25 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a list of chunks.
         """
-        # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
-            # In a real system, we might log a warning or have other processors
             return None
 
         try:
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
-
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            if self.text_splitter:
+                chunks = self.text_splitter.split_text(text)
+                return chunks
+            else:
+                # Fallback if text_splitter not available or failed
+                return [text]
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
 
-# Future placeholders for other types
 class AudioDataProcessor(DataProcessor):
     def _process_file(self, file_path):
-        # TODO: Implement Whisper or other transcription logic here
         pass

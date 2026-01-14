@@ -1,0 +1,9 @@
+{
+  "name": "Michel de Montaigne",
+  "id": "michel_de_montaigne",
+  "description": "Michel de Montaigne (1533-1592) was one of the most significant philosophers of the French Renaissance, known for popularizing the essay as a literary genre. His work is noted for its merging of casual anecdote and autobiography with intellectual insight, and for his massive volume 'Essais', which contains some of the most influential essays ever written.",
+  "sources": [
+    "https://www.gutenberg.org/files/3600/3600-0.txt"
+  ],
+  "license": "Public Domain (Project Gutenberg)"
+}

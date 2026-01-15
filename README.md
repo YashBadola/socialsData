@@ -90,6 +90,16 @@ socials-data generate-qa elon_musk
 ```
 *Generates Q&A pairs from existing `processed/data.jsonl`.*
 
+### Database Generation
+
+You can aggregate all processed personalities into a single SQLite database:
+
+```bash
+python scripts/build_database.py
+```
+
+This creates `philosophers.db` with tables `personalities` and `content`.
+
 ### Python API
 
 Loading a dataset for training (compatible with Hugging Face):

@@ -3,61 +3,97 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
+        Reads files from raw/, processes them, saves to DB and JSONL.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
         qa_output_file = processed_dir / "qa.jsonl"
 
-        metadata_file = personality_dir / "metadata.json"
-        system_prompt = None
-        if metadata_file.exists():
-            try:
-                with open(metadata_file, "r") as f:
-                    meta = json.load(f)
-                    system_prompt = meta.get("system_prompt")
-            except Exception as e:
-                logging.error(f"Failed to read metadata: {e}")
+        # Check DB for metadata
+        metadata = self.db.get_personality(personality_id)
+        if not metadata:
+             # Fallback to file if not in DB
+             metadata_file = personality_dir / "metadata.json"
+             if metadata_file.exists():
+                try:
+                    with open(metadata_file, "r") as f:
+                        meta = json.load(f)
+                        # Sync to DB
+                        self.db.add_personality(
+                            meta["id"], meta["name"], meta["description"],
+                            meta.get("system_prompt", ""), meta.get("license", "")
+                        )
+                        metadata = self.db.get_personality(personality_id)
+                except Exception as e:
+                    logging.error(f"Failed to read metadata: {e}")
+
+        if not metadata:
+             logging.error(f"Personality {personality_id} not found in DB or file.")
+             return
+
+        system_prompt = metadata.get("system_prompt")
 
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         # Prepare files
         # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
+             # If not skipping QA, we open QA file too
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
              try:
-                for file_path in raw_dir.iterdir():
-                    if file_path.is_file():
-                        content = self._process_file(file_path)
-                        if content:
-                            # 1. Write standard text data
-                            chunks = content if isinstance(content, list) else [content]
+                # Iterate raw files
+                if raw_dir.exists():
+                    for file_path in raw_dir.iterdir():
+                        if file_path.is_file():
+                            content = self._process_file(file_path)
+                            if content:
+                                # Save Document to DB
+                                db_content = content
+                                if isinstance(content, list):
+                                    db_content = "\n".join(content)
 
-                            for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
-                                out_f.write(json.dumps(record) + "\n")
+                                doc_id = self.db.add_document(
+                                    personality_id, file_path.name, db_content, doc_type="text"
+                                )
 
-                                # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
-                                    qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
-                                    for pair in qa_pairs:
-                                        pair["source"] = file_path.name
-                                        qa_f.write(json.dumps(pair) + "\n")
+                                # 1. Write standard text data
+                                chunks = content if isinstance(content, list) else [content]
+
+                                for i, chunk in enumerate(chunks):
+                                    # Save Chunk to DB
+                                    chunk_id = self.db.add_chunk(doc_id, chunk, i)
+
+                                    # Save to JSONL
+                                    record = {"text": chunk, "source": file_path.name}
+                                    out_f.write(json.dumps(record) + "\n")
+
+                                    # 2. If we have a system prompt and valid text, generate Q&A
+                                    if not skip_qa and system_prompt and self.llm_processor.client:
+                                        print(f"Generating Q&A for {file_path.name} chunk {i}...") # User feedback
+                                        qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
+                                        for pair in qa_pairs:
+                                            # Save to DB
+                                            self.db.add_qa_pair(
+                                                chunk_id, pair["instruction"], pair["response"]
+                                            )
+                                            # Save to JSONL
+                                            pair["source"] = file_path.name
+                                            qa_f.write(json.dumps(pair) + "\n")
              finally:
                  if not skip_qa and 'qa_f' in locals():
                      qa_f.close()

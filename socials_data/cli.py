@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import DatabaseManager
 import os
 
 @click.group()
@@ -78,6 +79,42 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="build-db")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database.")
+def build_db(db_path):
+    """Build or update the SQLite database from processed data."""
+    manager = PersonalityManager()
+    personalities = manager.list_personalities()
+
+    if not personalities:
+        click.echo("No personalities found.")
+        return
+
+    db = DatabaseManager(db_path)
+    db.connect()
+    click.echo(f"Connected to database at {db_path}")
+
+    for pid in personalities:
+        try:
+            click.echo(f"Importing {pid}...")
+            metadata = manager.get_metadata(pid)
+
+            # Add philosopher and works
+            db.add_philosopher(metadata)
+
+            # Add processed segments
+            processed_dir = manager.base_dir / pid / "processed"
+            db.add_segments(pid, processed_dir / "data.jsonl")
+
+            # Add QA pairs
+            db.add_qa_pairs(pid, processed_dir / "qa.jsonl")
+
+        except Exception as e:
+            click.echo(f"Error importing {pid}: {e}")
+
+    db.close()
+    click.echo("Database build complete.")
 
 if __name__ == "__main__":
     main()

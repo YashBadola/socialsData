@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.database import SocialsDatabase
 import os
 
 @click.group()
@@ -78,6 +79,55 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.group()
+def db():
+    """Database management commands."""
+    pass
+
+@db.command()
+def init():
+    """Initialize the database."""
+    db = SocialsDatabase()
+    db.init_db()
+    click.echo("Database initialized.")
+
+@db.command()
+@click.argument("personality_id", required=False)
+def sync(personality_id):
+    """Sync personality data to database. If no ID provided, syncs all."""
+    manager = PersonalityManager()
+    db = SocialsDatabase()
+    db.init_db() # Ensure DB exists
+
+    if personality_id:
+        try:
+            manager.get_metadata(personality_id) # Verify existence
+            personality_dir = manager.base_dir / personality_id
+            click.echo(f"Syncing {personality_id}...")
+            db.sync_personality(personality_id, personality_dir)
+        except FileNotFoundError:
+            click.echo(f"Error: Personality '{personality_id}' not found.")
+    else:
+        personalities = manager.list_personalities()
+        for pid in personalities:
+            personality_dir = manager.base_dir / pid
+            click.echo(f"Syncing {pid}...")
+            db.sync_personality(pid, personality_dir)
+    click.echo("Sync complete.")
+
+@db.command()
+@click.argument("query_text")
+def query(query_text):
+    """Search the database."""
+    db = SocialsDatabase()
+    results = db.query(query_text)
+    if not results:
+        click.echo("No results found.")
+    else:
+        for row in results:
+            # sqlite3.Row allows access by column name
+            click.echo(f"[{row['name']}] ({row['source']}): {row['text'][:100]}...")
 
 if __name__ == "__main__":
     main()

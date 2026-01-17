@@ -1,0 +1,13 @@
+{
+  "name": "Niccolo Machiavelli",
+  "id": "niccolo_machiavelli",
+  "description": "Italian diplomat, author, philosopher, and historian who lived during the Renaissance. He is best known for his political treatise The Prince (Il Principe), written about 1513.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "The Prince",
+      "url": "https://www.gutenberg.org/ebooks/1232"
+    }
+  ],
+  "license": "Public Domain"
+}

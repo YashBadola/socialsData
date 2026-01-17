@@ -1,0 +1,18 @@
+{
+  "name": "Aristotle",
+  "id": "aristotle",
+  "description": "Aristotle (384–322 BC) was a Greek philosopher and polymath during the Classical period in Ancient Greece. Taught by Plato, he was the founder of the Peripatetic school of philosophy within the Lyceum and the wider Aristotelian tradition.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Nicomachean Ethics",
+      "url": "http://www.gutenberg.org/ebooks/8438"
+    },
+    {
+      "type": "book",
+      "title": "Politics",
+      "url": "https://www.gutenberg.org/ebooks/6762"
+    }
+  ],
+  "license": "Public Domain"
+}

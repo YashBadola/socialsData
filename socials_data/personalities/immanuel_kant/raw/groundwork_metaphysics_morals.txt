@@ -1,0 +1,35 @@
+Preface
+
+Ancient Greek philosophy was divided into three sciences: physics, ethics, and logic. This division is perfectly suitable to the nature of the thing; and the only improvement that can be made in it is to add the principle on which it is based, so that we may both satisfy ourselves of its completeness, and also be able to determine correctly the necessary subdivisions.
+
+All rational knowledge is either material or formal: the former considers some object, the latter is concerned only with the form of the understanding and of the reason itself, and with the universal laws of thought in general without distinction of its objects. Formal philosophy is called logic. Material philosophy, however, which has to do with determinate objects and the laws to which they are subject, is again twofold; for these laws are either laws of nature or laws of freedom. The science of the former is physics, that of the latter, ethics; they are also called natural philosophy and moral philosophy respectively.
+
+...
+
+Section I
+
+TRANSITION FROM THE COMMON RATIONAL KNOWLEDGE OF MORALITY TO THE PHILOSOPHICAL
+
+Nothing can possibly be conceived in the world, or even out of it, which can be called good, without qualification, except a good will. Intelligence, wit, judgment, and the other talents of the mind, however they may be named, or courage, resolution, perseverance, as qualities of temperament, are undoubtedly good and desirable in many respects; but these gifts of nature may also become extremely bad and mischievous if the will which is to make use of them, and which, therefore, constitutes what is called character, is not good. It is the same with the gifts of fortune. Power, riches, honor, even health, and the general well-being and contentment with one's condition which is called happiness, inspire pride, and often presumption, if there is not a good will to correct the influence of these on the mind, and with this also to rectify the whole principle of acting and adapt it to its end. The sight of a being who is not graced by any touch of a pure and good will, enjoying an uninterrupted prosperity, can never give pleasure to an impartial rational spectator. Thus a good will appears to constitute the indispensable condition even of being worthy of happiness.
+
+...
+
+But what sort of law can that be, the conception of which must determine the will, even without paying any regard to the effect expected from it, in order that this will may be called good absolutely and without qualification? As I have deprived the will of every impulse which could arise to it from obedience to any law, there remains nothing but the universal conformity of its actions to law in general, which alone is to serve the will as a principle, i.e., I am never to act otherwise than so that I could also will that my maxim should become a universal law. Here now, it is the simple conformity to law in general, without assuming any particular law applicable to certain actions, that serves the will as its principle and must so serve it, if duty is not to be a vain delusion and a chimerical notion. The common reason of men in its practical judgments perfectly coincides with this and always has in view the principle here suggested.
+
+...
+
+Section II
+
+TRANSITION FROM POPULAR MORAL PHILOSOPHY TO THE METAPHYSIC OF MORALS
+
+...
+
+The conception of an objective principle, in so far as it is obligatory for a will, is called a command (of reason), and the formula of the command is called an Imperative.
+
+All imperatives are expressed by the word ought [or shall], and thereby indicate the relation of an objective law of reason to a will, which from its subjective constitution is not necessarily determined by it (an obligation). They say that something would be good to do or to forbear, but they say it to a will which does not always do a thing because it is conceived to be good to do it. That is practically good, however, which determines the will by means of the conceptions of reason, and consequently not from subjective causes, but objectively, that is on principles which are valid for every rational being as such. It is distinguished from the pleasant, as that which influences the will only by means of sensation from merely subjective causes, valid only for the sense of this or that one, and not as a principle of reason, which holds for every one.
+
+Now all imperatives command either hypothetically or categorically. The former represent the practical necessity of a possible action as means to something else that is willed (or at least which one might possibly will). The categorical imperative would be that which represented an action as necessary of itself without reference to another end, i.e., as objectively necessary.
+
+...
+
+There is therefore but one categorical imperative, namely, this: Act only on that maxim whereby thou canst at the same time will that it should become a universal law.

@@ -28,6 +28,12 @@ def test_workflow():
     all_text_aurelius = " ".join([item["text"] for item in ds_aurelius])
     assert "Of my grandfather Verus" in all_text_aurelius
 
+    ds_kant = load_dataset("immanuel_kant")
+    assert len(ds_kant) == 2
+    all_text_kant = " ".join([item["text"] for item in ds_kant])
+    assert "Critique of Pure Reason" in all_text_kant or "Pure and Empirical Knowledge" in all_text_kant
+    assert "Groundwork of the Metaphysics of Morals" in all_text_kant or "categorical imperative" in all_text_kant
+
     print("Workflow test passed!")
 
 if __name__ == "__main__":

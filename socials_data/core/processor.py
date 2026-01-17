@@ -3,17 +3,30 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
+from socials_data.core.manager import PersonalityManager
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
+        self.manager = PersonalityManager()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
+        Reads files from raw/, processes them, and writes to processed/data.jsonl
+        and to the SQLite database.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
+
+        # Ensure the personality is in the DB
+        try:
+            self.manager.register_personality(personality_id)
+        except Exception as e:
+            logging.warning(f"Could not register personality for {personality_id}: {e}")
+
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
@@ -31,36 +44,58 @@ class DataProcessor:
 
         processed_dir.mkdir(parents=True, exist_ok=True)
 
-        # Prepare files
-        # We overwrite to ensure clean state.
-        with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
-             if not skip_qa:
-                 qa_f = open(qa_output_file, "w", encoding="utf-8")
+        # Use context manager for DB operations to wrap everything in one transaction (or fewer)
+        with self.db as db:
+            # Clear existing data for this personality in DB to ensure clean state
+            db.clear_personality_data(personality_id)
 
-             try:
-                for file_path in raw_dir.iterdir():
-                    if file_path.is_file():
-                        content = self._process_file(file_path)
-                        if content:
-                            # 1. Write standard text data
-                            chunks = content if isinstance(content, list) else [content]
+            # Prepare files
+            # We overwrite to ensure clean state.
+            with open(output_file, "w", encoding="utf-8") as out_f:
+                 # If not skipping QA, we open QA file too
+                 if not skip_qa:
+                     qa_f = open(qa_output_file, "w", encoding="utf-8")
 
-                            for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
-                                out_f.write(json.dumps(record) + "\n")
+                 try:
+                    for file_path in raw_dir.iterdir():
+                        if file_path.is_file():
+                            # Add source to DB
+                            try:
+                                with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+                                    raw_content = f.read()
+                                source_id = db.add_source(personality_id, file_path.name, raw_content)
+                            except Exception as e:
+                                logging.error(f"Failed to add source to DB {file_path}: {e}")
+                                source_id = None
 
-                                # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
-                                    qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
-                                    for pair in qa_pairs:
-                                        pair["source"] = file_path.name
-                                        qa_f.write(json.dumps(pair) + "\n")
-             finally:
-                 if not skip_qa and 'qa_f' in locals():
-                     qa_f.close()
+                            content = self._process_file(file_path)
+                            if content:
+                                # 1. Write standard text data
+                                chunks = content if isinstance(content, list) else [content]
+
+                                for chunk in chunks:
+                                    record = {"text": chunk, "source": file_path.name}
+                                    out_f.write(json.dumps(record) + "\n")
+
+                                    # Add chunk to DB
+                                    chunk_id = None
+                                    if source_id is not None:
+                                        chunk_id = db.add_chunk(source_id, chunk)
+
+                                    # 2. If we have a system prompt and valid text, generate Q&A
+                                    if not skip_qa and system_prompt and self.llm_processor.client:
+                                        print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                        qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
+                                        for pair in qa_pairs:
+                                            pair["source"] = file_path.name
+                                            qa_f.write(json.dumps(pair) + "\n")
+
+                                            # Add QA to DB
+                                            if chunk_id is not None and "instruction" in pair and "response" in pair:
+                                                db.add_qa_pair(chunk_id, pair["instruction"], pair["response"])
+                 finally:
+                     if not skip_qa and 'qa_f' in locals():
+                         qa_f.close()
 
     def generate_qa_only(self, personality_dir):
         """

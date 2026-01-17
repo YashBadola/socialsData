@@ -6,13 +6,14 @@ def clean_gutenberg(filepath):
         text = f.read()
 
     # Find the start of the book (flexible patterns)
-    start_pattern = r"\*\*\* START OF (THE|THIS) PROJECT GUTENBERG EBOOK .* \*\*\*"
+    # Note: Regex allows for punctuation after EBOOK (like a comma)
+    start_pattern = r"\*\*\* START OF (THE|THIS) PROJECT GUTENBERG EBOOK.* \*\*\*"
     match_start = re.search(start_pattern, text)
     if match_start:
         text = text[match_start.end():]
 
     # Find the end of the book
-    end_pattern = r"\*\*\* END OF (THE|THIS) PROJECT GUTENBERG EBOOK .* \*\*\*"
+    end_pattern = r"\*\*\* END OF (THE|THIS) PROJECT GUTENBERG EBOOK.* \*\*\*"
     match_end = re.search(end_pattern, text)
     if match_end:
         text = text[:match_end.start()]

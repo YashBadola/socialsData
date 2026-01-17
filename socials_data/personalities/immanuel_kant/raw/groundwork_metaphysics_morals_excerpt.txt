@@ -1,0 +1,20 @@
+PREFACE
+
+Ancient Greek philosophy was divided into three sciences: Physics, Ethics, and Logic. This division is perfectly suitable to the nature of the thing; and the only improvement that can be made in it is to add the principle on which it is based, so that we may both satisfy ourselves of its completeness, and also be able to determine correctly the necessary subdivisions.
+
+All rational knowledge is either material or formal: the former considers some object, the latter is concerned only with the form of the understanding and of the reason itself, and with the universal laws of thought in general without distinction of its objects. Formal philosophy is called Logic. Material philosophy, however, which has to do with determinate objects and the laws to which they are subject, is again twofold; for these laws are either laws of nature or laws of freedom. The science of the former is Physics, that of the latter, Ethics; they are also called Natural Philosophy and Moral Philosophy respectively.
+
+Logic cannot have any empirical part; that is, a part in which the universal and necessary laws of thought should rest on grounds taken from experience; otherwise it would not be logic, i.e., a canon for the understanding or the reason, valid for all thought and capable of demonstration. Natural and moral philosophy, on the contrary, can each have their empirical part, since the former has to determine the laws of nature as an object of experience; the latter the laws of the human will, so far as it is affected by nature: the former, however, as laws according to which everything does happen; the latter, as laws according to which everything ought to happen, although these also consider the conditions under which it so often does not happen.
+
+We may call all philosophy empirical, so far as it is based on grounds of experience: on the other hand, that which delivers its doctrines from a priori principles alone we may call pure philosophy. When the latter is merely formal, it is logic; if it is restricted to definite objects of the understanding, it is metaphysics.
+
+In this way there arises the idea of a twofold metaphysics - a Metaphysics of Nature and a Metaphysics of Morals. Physics will thus have an empirical and also a rational part. Ethics will be similar here, although the empirical part might be called specifically practical anthropology, while the rational part would properly be called morals.
+
+SECTION I
+TRANSITION FROM THE COMMON RATIONAL KNOWLEDGE OF MORALITY TO THE PHILOSOPHICAL
+
+Nothing can possibly be conceived in the world, or even out of it, which can be called good, without qualification, except a good will. Intelligence, wit, judgment, and the other talents of the mind, however they may be named, or courage, resolution, perseverance, as qualities of temperament, are undoubtedly good and desirable in many respects; but these gifts of nature may also become extremely bad and mischievous if the will which is to make use of them, and which, therefore, constitutes what is called character, is not good. It is the same with the gifts of fortune. Power, riches, honor, even health, and the general well-being and contentment with one's condition which is called happiness, inspire pride, and often presumption, if there is not a good will to correct the influence of these on the mind, and with this also to rectify the whole principle of acting and adapt it to its end. The sight of a being who is not adorned with a single feature of a pure and good will, enjoying unbroken prosperity, can never give pleasure to an impartial rational spectator. Thus a good will appears to constitute the indispensable condition even of being worthy of happiness.
+
+There is no possibility of thinking of anything at all in the world, or even out of it, which can be regarded as good without qualification, except a good will.
+
+Act only according to that maxim whereby you can, at the same time, will that it should become a universal law.

@@ -1,0 +1,13 @@
+{
+  "name": "Bertrand Russell",
+  "id": "bertrand_russell",
+  "description": "British mathematician, philosopher, logician, and public intellectual.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "The Problems of Philosophy",
+      "url": "https://www.gutenberg.org/cache/epub/5827/pg5827.txt"
+    }
+  ],
+  "license": "Unknown"
+}

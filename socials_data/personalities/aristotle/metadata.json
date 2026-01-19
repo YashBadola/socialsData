@@ -1,0 +1,13 @@
+{
+  "name": "Aristotle",
+  "id": "aristotle",
+  "description": "Aristotle (384–322 BC) was a Greek philosopher and polymath during the Classical period in Ancient Greece. He was the founder of the Lyceum and the Peripatetic school of philosophy and Aristotelian tradition.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "The Nicomachean Ethics",
+      "url": "https://www.gutenberg.org/ebooks/8438"
+    }
+  ],
+  "license": "Public Domain"
+}

@@ -3,14 +3,16 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
+        Reads files from raw/, processes them, and writes to processed/data.jsonl AND the database.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
         personality_dir = Path(personality_dir)
@@ -18,6 +20,8 @@ class DataProcessor:
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
         qa_output_file = processed_dir / "qa.jsonl"
+
+        personality_id = personality_dir.name
 
         metadata_file = personality_dir / "metadata.json"
         system_prompt = None
@@ -34,8 +38,6 @@ class DataProcessor:
         # Prepare files
         # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
@@ -44,10 +46,16 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
+                            # Add to Documents table
+                            doc_id = self.db.add_document(personality_id, file_path.name, content)
+
                             # 1. Write standard text data
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
+                                # Add to Chunks table
+                                chunk_id = self.db.add_chunk(doc_id, chunk)
+
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
@@ -58,6 +66,9 @@ class DataProcessor:
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
+
+                                        # Add to QA table
+                                        self.db.add_qa_pair(chunk_id, pair["instruction"], pair["response"])
              finally:
                  if not skip_qa and 'qa_f' in locals():
                      qa_f.close()
@@ -113,6 +124,8 @@ class DataProcessor:
                             qa_f.write(json.dumps(pair) + "\n")
                             # flush to see progress?
                             qa_f.flush()
+                            # Note: To link back to chunks in DB is hard here without IDs.
+                            # If we wanted to backfill QA to DB, we'd need to query chunks by text.
                 except json.JSONDecodeError:
                     continue
 

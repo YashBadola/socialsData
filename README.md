@@ -117,3 +117,30 @@ print(dataset[0]['text'])
   "response": "Do not disturb yourself by picturing your life as a whole; do not assemble in your mind the many and varied troubles which have come to you in the past... but ask yourself with regard to every present difficulty: 'What is there in this that is unbearable and beyond endurance?'"
 }
 ```
+
+## SQLite Database
+
+`socialsData` now includes an SQLite database for structured access to all personalities and their content.
+
+### Build the Database
+
+To populate the database from the file system:
+
+```bash
+python scripts/build_database.py
+```
+
+This will create `philosophers.db`.
+
+### Access the Database
+
+```python
+from socials_data.core.db import DatabaseManager
+
+db = DatabaseManager()
+kierkegaard = db.get_personality("soren_kierkegaard")
+chunks = db.get_chunks("soren_kierkegaard")
+
+for chunk in chunks:
+    print(chunk["text"])
+```

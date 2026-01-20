@@ -103,7 +103,8 @@ dataset = load_dataset("nick_land")
 print(dataset[0]['text'])
 
 # Load Q&A data (if available)
-# (Note: load_dataset currently defaults to 'text', updates pending for 'qa' split support)
+dataset_qa = load_dataset("nick_land", type="qa")
+print(dataset_qa[0]['instruction'])
 ```
 
 ## Instruction Tuning

@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import SocialsDatabase
 import os
 
 @click.group()
@@ -78,6 +79,18 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="sync-db")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database.")
+def sync_db(db_path):
+    """Sync file-based datasets to SQLite database."""
+    manager = PersonalityManager()
+    db = SocialsDatabase(db_path=db_path)
+
+    click.echo(f"Syncing to database at {db_path}...")
+    db.sync_from_files(manager.base_dir)
+    db.close()
+    click.echo("Sync complete.")
 
 if __name__ == "__main__":
     main()

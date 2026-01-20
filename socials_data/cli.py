@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import SocialsDatabase
 import os
 
 @click.group()
@@ -78,6 +79,61 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="init-db")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database.")
+def init_db(db_path):
+    """Initialize the socials database."""
+    db = SocialsDatabase(db_path)
+    db.init_db()
+    click.echo(f"Database initialized at {db_path}")
+
+@main.command(name="ingest-db")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database.")
+@click.option("--all", "ingest_all", is_flag=True, help="Ingest all personalities.")
+@click.argument("personality_id", required=False)
+def ingest_db(db_path, ingest_all, personality_id):
+    """Ingest personality data into the database."""
+    if not ingest_all and not personality_id:
+        click.echo("Error: Please specify a personality ID or use --all.")
+        return
+
+    db = SocialsDatabase(db_path)
+    manager = PersonalityManager()
+
+    # Ensure DB is initialized
+    db.init_db()
+
+    if ingest_all:
+        personalities = manager.list_personalities()
+    else:
+        personalities = [personality_id]
+
+    for pid in personalities:
+        try:
+            click.echo(f"Ingesting {pid}...")
+            db.ingest_personality(pid, manager.base_dir)
+        except Exception as e:
+            click.echo(f"Failed to ingest {pid}: {e}")
+
+    click.echo("Ingestion complete.")
+
+@main.command(name="search")
+@click.argument("query")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database.")
+def search(query, db_path):
+    """Search the database."""
+    db = SocialsDatabase(db_path)
+    results = db.search(query)
+
+    if not results:
+        click.echo("No results found.")
+        return
+
+    for res in results:
+        click.echo(f"--- {res['personality_id']} ({res['source']}) ---")
+        click.echo(res['text'][:200] + "...")
+        click.echo()
 
 if __name__ == "__main__":
     main()

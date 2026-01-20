@@ -18,6 +18,11 @@
       "type": "book",
       "title": "The Essays of Arthur Schopenhauer; The Art of Literature",
       "url": "https://www.gutenberg.org/ebooks/10714"
+    },
+    {
+      "type": "book",
+      "title": "The Essays of Arthur Schopenhauer; the Wisdom of Life",
+      "url": "https://www.gutenberg.org/ebooks/10741"
     }
   ],
   "license": "Public Domain"

@@ -1,0 +1,13 @@
+{
+  "name": "David Hume",
+  "id": "david_hume",
+  "description": "Scottish Enlightenment philosopher, historian, economist, librarian, and essayist, who is best known today for his highly influential system of philosophical empiricism, skepticism, and naturalism.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "An Enquiry Concerning Human Understanding",
+      "url": "https://www.gutenberg.org/ebooks/9662"
+    }
+  ],
+  "license": "Public Domain"
+}

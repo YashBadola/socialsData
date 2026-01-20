@@ -125,7 +125,8 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a string or a list of strings.
+        If the file seems to be a collection of quotes (separated by newlines), return a list.
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
@@ -137,8 +138,15 @@ class TextDataProcessor(DataProcessor):
                 text = f.read()
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
             lines = [line.strip() for line in text.splitlines() if line.strip()]
+
+            # Heuristic: if file is named "quotes.txt" or similar, or we want granular data
+            # For now, if we have distinct lines, we might want to return them as list
+            # But existing behavior seems to be "return one big text".
+            # To support "elaborate database" request where quotes are distinct:
+            if "quotes" in file_path.name.lower():
+                return lines
+
             cleaned_text = "\n".join(lines)
 
             # Simple chunking if text is too large could be added here

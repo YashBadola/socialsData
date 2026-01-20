@@ -1,0 +1,13 @@
+{
+  "name": "Søren Kierkegaard",
+  "id": "soren_kierkegaard",
+  "description": "Søren Kierkegaard (1813–1855) was a Danish philosopher, theologian, poet, and social critic, widely considered the first existentialist. He is known for his critique of organized religion and the 'crowd,' and for prioritizing individual subjective truth, authenticity, and the 'leap of faith.' His works often employ pseudonyms to present conflicting viewpoints.",
+  "sources": [
+    {
+        "type": "book",
+        "title": "Either/Or",
+        "url": "https://www.goodreads.com/work/quotes/25733-enten-eller"
+    }
+  ],
+  "license": "Public Domain"
+}

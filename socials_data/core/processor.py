@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import os
 import logging
+import re
 from socials_data.core.llm import LLMProcessor
 
 class DataProcessor:
@@ -138,12 +139,34 @@ class TextDataProcessor(DataProcessor):
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
             # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # Normalize newlines
+            text = text.replace('\r\n', '\n')
+            # Split by double newlines (or more) to find paragraphs and strip them
+            paragraphs = [p.strip() for p in re.split(r'\n\s*\n', text) if p.strip()]
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Chunking logic
+            # We want chunks of roughly 500 words, but we prefer not to split paragraphs if possible.
+            chunks = []
+            current_chunk = []
+            current_word_count = 0
+            target_chunk_size = 500
+
+            for paragraph in paragraphs:
+                words = paragraph.split()
+                # If adding this paragraph exceeds the target size, save current chunk
+                # (unless current chunk is empty, in which case we must add it)
+                if current_word_count + len(words) > target_chunk_size and current_word_count > 0:
+                    chunks.append("\n\n".join(current_chunk))
+                    current_chunk = []
+                    current_word_count = 0
+
+                current_chunk.append(paragraph)
+                current_word_count += len(words)
+
+            if current_chunk:
+                chunks.append("\n\n".join(current_chunk))
+
+            return chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

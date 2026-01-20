@@ -1,0 +1,15 @@
+The Transcendental Aesthetic
+
+I. Space
+
+1. Space is not an empirical concept which has been derived from outer experiences. For in order that certain sensations be referred to something outside me (that is, to something in another region of space from that in which I find myself), and similarly in order that I may be able to represent them as outside and alongside one another, and accordingly as not only different but as in different places, the representation of space must be presupposed. The representation of space cannot, therefore, be empirically obtained from the relations of outer appearance. On the contrary, this outer experience is itself possible at all only through that representation.
+
+2. Space is a necessary a priori representation, which underlies all outer intuitions. We can never represent to ourselves the absence of space, though we can very well think it as empty of objects. It must therefore be regarded as the condition of the possibility of appearances, not as a determination dependent upon them. It is an a priori representation, which necessarily underlies outer appearances.
+
+3. On this necessity of an a priori representation of space rests the apodictic certainty of all geometrical principles and the possibility of their construction a priori. For if this representation of space were a concept acquired a posteriori, and derived from outer experience in general, the first principles of mathematical determination would be nothing but perceptions. They would therefore all share in the contingent character of perception; and there would be no necessity that between two points there should be only one straight line, but only that experience has always taught us that such is the case.
+
+4. Space is not a discursive or, as we say, general concept of relations of things in general, but a pure intuition. For, in the first place, we can represent to ourselves only one space; and if we speak of diverse spaces, we mean thereby only parts of one and the same unique space. Secondly, these parts cannot precede the one all-embracing space, as being, as it were, constituents out of which it can be composed; on the contrary, they can be thought only as existing in it. Space is essentially one; the manifold in it, and accordingly the general concept of spaces, depends solely on [the introduction of] limitations. Hence it follows that an a priori intuition (which is not empirical) underlies all concepts of space.
+
+The Transcendental Logic
+
+General logic constructs its precepts on the basis of an analysis of the mere form of thought; transcendental logic, on the other hand, has for its object the rules of the synthetic a priori knowledge of the pure understanding. The former treats of the laws of understanding and of reason, but only in respect of the form of thought in general, without regard to the content of the knowledge. The latter concerns itself with these laws solely in so far as they relate a priori to objects.

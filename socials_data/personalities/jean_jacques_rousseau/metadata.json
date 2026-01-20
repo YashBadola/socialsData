@@ -1,0 +1,18 @@
+{
+  "name": "Jean-Jacques Rousseau",
+  "id": "jean_jacques_rousseau",
+  "description": "Genevan philosopher, writer, and composer. His political philosophy influenced the progress of the Enlightenment throughout Europe, as well as aspects of the French Revolution and the development of modern political, economic, and educational thought.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "The Social Contract",
+      "url": "https://www.gutenberg.org/ebooks/46333"
+    },
+    {
+      "type": "book",
+      "title": "The Confessions",
+      "url": "https://www.gutenberg.org/ebooks/3913"
+    }
+  ],
+  "license": "Public Domain"
+}

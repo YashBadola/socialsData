@@ -3,17 +3,20 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import DBManager
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = DBManager()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
+        Reads files from raw/, processes them, and writes to DB and processed/data.jsonl.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
@@ -29,13 +32,16 @@ class DataProcessor:
             except Exception as e:
                 logging.error(f"Failed to read metadata: {e}")
 
+        # Try to get system prompt from DB if not found
+        if not system_prompt:
+            p_data = self.db.get_personality(personality_id)
+            if p_data:
+                system_prompt = p_data.get("system_prompt")
+
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         # Prepare files
-        # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
@@ -44,10 +50,21 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
+                            # DB: Add document
+                            doc_id = self.db.add_document(
+                                personality_id=personality_id,
+                                filename=file_path.name,
+                                content=content if isinstance(content, str) else str(content),
+                                source_type="file"
+                            )
+
                             # 1. Write standard text data
                             chunks = content if isinstance(content, list) else [content]
 
-                            for chunk in chunks:
+                            for i, chunk in enumerate(chunks):
+                                # DB: Add chunk
+                                chunk_id = self.db.add_chunk(doc_id, chunk, i)
+
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
@@ -58,6 +75,15 @@ class DataProcessor:
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
+
+                                        # DB: Add QA pair
+                                        self.db.add_qa_pair(
+                                            chunk_id=chunk_id,
+                                            question=pair.get("question", ""),
+                                            answer=pair.get("answer", ""),
+                                            model_used="gpt-3.5-turbo", # Assuming default
+                                            source_text=chunk
+                                        )
              finally:
                  if not skip_qa and 'qa_f' in locals():
                      qa_f.close()
@@ -65,7 +91,6 @@ class DataProcessor:
     def generate_qa_only(self, personality_dir):
         """
         Generates Q&A pairs from existing processed/data.jsonl.
-        Useful if one wants to run QA generation separately or re-run it.
         """
         personality_dir = Path(personality_dir)
         processed_dir = personality_dir / "processed"
@@ -111,7 +136,6 @@ class DataProcessor:
                         for pair in qa_pairs:
                             pair["source"] = source
                             qa_f.write(json.dumps(pair) + "\n")
-                            # flush to see progress?
                             qa_f.flush()
                 except json.JSONDecodeError:
                     continue

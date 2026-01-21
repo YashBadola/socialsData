@@ -1,0 +1,314 @@
+2 What is the case--a fact--is the existence of states of affairs.
+
+
+2.01 A state of affairs (a state of things) is a combination of objects
+(things).
+
+
+2.011 It is essential to things that they should be possible constituents
+of states of affairs.
+
+
+2.012 In logic nothing is accidental: if a thing can occur in a state of
+affairs, the possibility of the state of affairs must be written into the
+thing itself.
+
+
+2.0121 It would seem to be a sort of accident, if it turned out that a
+situation would fit a thing that could already exist entirely on its own.
+If things can occur in states of affairs, this possibility must be in them
+from the beginning. (Nothing in the province of logic can be merely
+possible. Logic deals with every possibility and all possibilities are its
+facts.) Just as we are quite unable to imagine spatial objects outside
+space or temporal objects outside time, so too there is no object that we
+can imagine excluded from the possibility of combining with others. If I
+can imagine objects combined in states of affairs, I cannot imagine them
+excluded from the possibility of such combinations.
+
+
+2.0122 Things are independent in so far as they can occur in all possible
+situations, but this form of independence is a form of connexion with
+states of affairs, a form of dependence. (It is impossible for words to
+appear in two different roles: by themselves, and in propositions.)
+
+
+2.0123 If I know an object I also know all its possible occurrences in
+states of affairs. (Every one of these possibilities must be part of the
+nature of the object.) A new possibility cannot be discovered later.
+
+
+2.01231 If I am to know an object, thought I need not know its external
+properties, I must know all its internal properties.
+
+
+2.0124 If all objects are given, then at the same time all possible states
+of affairs are also given.
+
+
+2.013 Each thing is, as it were, in a space of possible states of affairs.
+This space I can imagine empty, but I cannot imagine the thing without the
+space.
+
+
+2.0131 A spatial object must be situated in infinite space. (A spatial
+point is an argument-place.) A speck in the visual field, thought it need
+not be red, must have some colour: it is, so to speak, surrounded by colour-
+space. Notes must have some pitch, objects of the sense of touch some
+degree of hardness, and so on.
+
+
+2.014 Objects contain the possibility of all situations.
+
+
+2.0141 The possibility of its occurring in states of affairs is the form of
+an object.
+
+
+2.02 Objects are simple.
+
+
+2.0201 Every statement about complexes can be resolved into a statement
+about their constituents and into the propositions that describe the
+complexes completely.
+
+
+2.021 Objects make up the substance of the world. That is why they cannot
+be composite.
+
+
+2.0211 If they world had no substance, then whether a proposition had sense
+would depend on whether another proposition was true.
+
+
+2.0212 In that case we could not sketch any picture of the world (true or
+false).
+
+
+2.022 It is obvious that an imagined world, however difference it may be
+from the real one, must have something-- a form--in common with it.
+
+
+2.023 Objects are just what constitute this unalterable form.
+
+
+2.0231 The substance of the world can only determine a form, and not any
+material properties. For it is only by means of propositions that material
+properties are represented--only by the configuration of objects that they
+are produced.
+
+
+2.0232 In a manner of speaking, objects are colourless.
+
+
+2.0233 If two objects have the same logical form, the only distinction
+between them, apart from their external properties, is that they are
+different.
+
+
+2.02331 Either a thing has properties that nothing else has, in which case
+we can immediately use a description to distinguish it from the others and
+refer to it; or, on the other hand, there are several things that have the
+whole set of their properties in common, in which case it is quite
+impossible to indicate one of them. For it there is nothing to distinguish
+a thing, I cannot distinguish it, since otherwise it would be distinguished
+after all.
+
+
+2.024 The substance is what subsists independently of what is the case.
+
+
+2.025 It is form and content.
+
+
+2.0251 Space, time, colour (being coloured) are forms of objects.
+
+
+2.026 There must be objects, if the world is to have unalterable form.
+
+
+2.027 Objects, the unalterable, and the subsistent are one and the same.
+
+
+2.0271 Objects are what is unalterable and subsistent; their configuration
+is what is changing and unstable.
+
+
+2.0272 The configuration of objects produces states of affairs.
+
+
+2.03 In a state of affairs objects fit into one another like the links of a
+chain.
+
+
+2.031 In a state of affairs objects stand in a determinate relation to one
+another.
+
+
+2.032 The determinate way in which objects are connected in a state of
+affairs is the structure of the state of affairs.
+
+
+2.033 Form is the possibility of structure.
+
+
+2.034 The structure of a fact consists of the structures of states of
+affairs.
+
+
+2.04 The totality of existing states of affairs is the world.
+
+
+2.05 The totality of existing states of affairs also determines which
+states of affairs do not exist.
+
+
+2.06 The existence and non-existence of states of affairs is reality. (We
+call the existence of states of affairs a positive fact, and their non-
+existence a negative fact.)
+
+
+2.061 States of affairs are independent of one another.
+
+
+2.062 From the existence or non-existence of one state of affairs it is
+impossible to infer the existence or non-existence of another.
+
+
+2.063 The sum-total of reality is the world.
+
+
+2.1 We picture facts to ourselves.
+
+
+2.11 A picture presents a situation in logical space, the existence and non-
+existence of states of affairs.
+
+
+2.12 A picture is a model of reality.
+
+
+2.13 In a picture objects have the elements of the picture corresponding to
+them.
+
+
+2.131 In a picture the elements of the picture are the representatives of
+objects.
+
+
+2.14 What constitutes a picture is that its elements are related to one
+another in a determinate way.
+
+
+2.141 A picture is a fact.
+
+
+2.15 The fact that the elements of a picture are related to one another in
+a determinate way represents that things are related to one another in the
+same way. Let us call this connexion of its elements the structure of the
+picture, and let us call the possibility of this structure the pictorial
+form of the picture.
+
+
+2.151 Pictorial form is the possibility that things are related to one
+another in the same way as the elements of the picture.
+
+
+2.1511 That is how a picture is attached to reality; it reaches right out
+to it.
+
+
+2.1512 It is laid against reality like a measure.
+
+
+2.15121 Only the end-points of the graduating lines actually touch the
+object that is to be measured.
+
+
+2.1514 So a picture, conceived in this way, also includes the pictorial
+relationship, which makes it into a picture.
+
+
+2.1515 These correlations are, as it were, the feelers of the picture's
+elements, with which the picture touches reality.
+
+
+2.16 If a fact is to be a picture, it must have something in common with
+what it depicts.
+
+
+2.161 There must be something identical in a picture and what it depicts,
+to enable the one to be a picture of the other at all.
+
+
+2.17 What a picture must have in common with reality, in order to be able
+to depict it--correctly or incorrectly--in the way that it does, is its
+pictorial form.
+
+
+2.171 A picture can depict any reality whose form it has. A spatial picture
+can depict anything spatial, a coloured one anything coloured, etc.
+
+
+2.172 A picture cannot, however, depict its pictorial form: it displays it.
+
+
+2.173 A picture represents its subject from a position outside it. (Its
+standpoint is its representational form.) That is why a picture represents
+its subject correctly or incorrectly.
+
+
+2.174 A picture cannot, however, place itself outside its representational
+form.
+
+
+2.18 What any picture, of whatever form, must have in common with reality,
+in order to be able to depict it--correctly or incorrectly--in any way at
+all, is logical form, i.e. the form of reality.
+
+
+2.181 A picture whose pictorial form is logical form is called a logical
+picture.
+
+
+2.182 Every picture is at the same time a logical one. (On the other hand,
+not every picture is, for example, a spatial one.)
+
+
+2.19 Logical pictures can depict the world.
+
+
+2.2 A picture has logico-pictorial form in common with what it depicts.
+
+
+2.201 A picture depicts reality by representing a possibility of existence
+and non-existence of states of affairs.
+
+
+2.202 A picture contains the possibility of the situation that it
+represents.
+
+
+2.203 A picture agrees with reality or fails to agree; it is correct or
+incorrect, true or false.
+
+
+2.22 What a picture represents it represents independently of its truth or
+falsity, by means of its pictorial form.
+
+
+2.221 What a picture represents is its sense.
+
+
+2.222 The agreement or disagreement or its sense with reality constitutes
+its truth or falsity.
+
+
+2.223 In order to tell whether a picture is true or false we must compare
+it with reality.
+
+
+2.224 It is impossible to tell from the picture alone whether it is true or
+false.
+
+
+2.225 There are no pictures that are true a priori.

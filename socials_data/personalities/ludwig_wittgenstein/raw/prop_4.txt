@@ -1,0 +1,700 @@
+4 A thought is a proposition with a sense.
+
+
+4.001 The totality of propositions is language.
+
+
+4.022 Man possesses the ability to construct languages capable of
+expressing every sense, without having any idea how each word has meaning
+or what its meaning is--just as people speak without knowing how the
+individual sounds are produced. Everyday language is a part of the human
+organism and is no less complicated than it. It is not humanly possible to
+gather immediately from it what the logic of language is. Language
+disguises thought. So much so, that from the outward form of the clothing
+it is impossible to infer the form of the thought beneath it, because the
+outward form of the clothing is not designed to reveal the form of the
+body, but for entirely different purposes. The tacit conventions on which
+the understanding of everyday language depends are enormously complicated.
+
+
+4.003 Most of the propositions and questions to be found in philosophical
+works are not false but nonsensical. Consequently we cannot give any answer
+to questions of this kind, but can only point out that they are
+nonsensical. Most of the propositions and questions of philosophers arise
+from our failure to understand the logic of our language. (They belong to
+the same class as the question whether the good is more or less identical
+than the beautiful.) And it is not surprising that the deepest problems are
+in fact not problems at all.
+
+
+4.0031 All philosophy is a 'critique of language' (though not in Mauthner's
+sense). It was Russell who performed the service of showing that the
+apparent logical form of a proposition need not be its real one.
+
+
+4.01 A proposition is a picture of reality. A proposition is a model of
+reality as we imagine it.
+
+
+4.011 At first sight a proposition--one set out on the printed page, for
+example--does not seem to be a picture of the reality with which it is
+concerned. But neither do written notes seem at first sight to be a picture
+of a piece of music, nor our phonetic notation (the alphabet) to be a
+picture of our speech. And yet these sign-languages prove to be pictures,
+even in the ordinary sense, of what they represent.
+
+
+4.012 It is obvious that a proposition of the form 'aRb' strikes us as a
+picture. In this case the sign is obviously a likeness of what is
+signified.
+
+
+4.013 And if we penetrate to the essence of this pictorial character, we
+see that it is not impaired by apparent irregularities (such as the use
+[sharp] of and [flat] in musical notation). For even these irregularities
+depict what they are intended to express; only they do it in a different
+way.
+
+
+4.014 A gramophone record, the musical idea, the written notes, and the
+sound-waves, all stand to one another in the same internal relation of
+depicting that holds between language and the world. They are all
+constructed according to a common logical pattern. (Like the two youths in
+the fairy-tale, their two horses, and their lilies. They are all in a
+certain sense one.)
+
+
+4.0141 There is a general rule by means of which the musician can obtain
+the symphony from the score, and which makes it possible to derive the
+symphony from the groove on the gramophone record, and, using the first
+rule, to derive the score again. That is what constitutes the inner
+similarity between these things which seem to be constructed in such
+entirely different ways. And that rule is the law of projection which
+projects the symphony into the language of musical notation. It is the rule
+for translating this language into the language of gramophone records.
+
+
+4.015 The possibility of all imagery, of all our pictorial modes of
+expression, is contained in the logic of depiction.
+
+
+4.016 In order to understand the essential nature of a proposition, we
+should consider hieroglyphic script, which depicts the facts that it
+describes. And alphabetic script developed out of it without losing what
+was essential to depiction.
+
+
+4.02 We can see this from the fact that we understand the sense of a
+propositional sign without its having been explained to us.
+
+
+4.021 A proposition is a picture of reality: for if I understand a
+proposition, I know the situation that it represents. And I understand the
+proposition without having had its sense explained to me.
+
+
+4.022 A proposition shows its sense. A proposition shows how things stand
+if it is true. And it says that they do so stand.
+
+
+4.023 A proposition must restrict reality to two alternatives: yes or no.
+In order to do that, it must describe reality completely. A proposition is
+a description of a state of affairs. Just as a description of an object
+describes it by giving its external properties, so a proposition describes
+reality by its internal properties. A proposition constructs a world with
+the help of a logical scaffolding, so that one can actually see from the
+proposition how everything stands logically if it is true. One can draw
+inferences from a false proposition.
+
+
+4.024 To understand a proposition means to know what is the case if it is
+true. (One can understand it, therefore, without knowing whether it is
+true.) It is understood by anyone who understands its constituents.
+
+
+4.025 When translating one language into another, we do not proceed by
+translating each proposition of the one into a proposition of the other,
+but merely by translating the constituents of propositions. (And the
+dictionary translates not only substantives, but also verbs, adjectives,
+and conjunctions, etc.; and it treats them all in the same way.)
+
+
+4.026 The meanings of simple signs (words) must be explained to us if we
+are to understand them. With propositions, however, we make ourselves
+understood.
+
+
+4.027 It belongs to the essence of a proposition that it should be able to
+communicate a new sense to us.
+
+
+4.03 A proposition must use old expressions to communicate a new sense. A
+proposition communicates a situation to us, and so it must be essentially
+connected with the situation. And the connexion is precisely that it is its
+logical picture. A proposition states something only in so far as it is a
+picture.
+
+
+4.031 In a proposition a situation is, as it were, constructed by way of
+experiment. Instead of, 'This proposition has such and such a sense, we can
+simply say, 'This proposition represents such and such a situation'.
+
+
+4.0311 One name stands for one thing, another for another thing, and they
+are combined with one another. In this way the whole group--like a tableau
+vivant--presents a state of affairs.
+
+
+4.0312 The possibility of propositions is based on the principle that
+objects have signs as their representatives. My fundamental idea is that
+the 'logical constants' are not representatives; that there can be no
+representatives of the logic of facts.
+
+
+4.032 It is only in so far as a proposition is logically articulated that
+it is a picture of a situation. (Even the proposition, 'Ambulo', is
+composite: for its stem with a different ending yields a different sense,
+and so does its ending with a different stem.)
+
+
+4.04 In a proposition there must be exactly as many distinguishable parts
+as in the situation that it represents. The two must possess the same
+logical (mathematical) multiplicity. (Compare Hertz's Mechanics on
+dynamical models.)
+
+
+4.041 This mathematical multiplicity, of course, cannot itself be the
+subject of depiction. One cannot get away from it when depicting.
+
+
+4.0411 If, for example, we wanted to express what we now write as '(x) .
+fx' by putting an affix in front of 'fx'--for instance by writing 'Gen. fx'-
+-it would not be adequate: we should not know what was being generalized.
+If we wanted to signalize it with an affix 'g'--for instance by writing
+'f(xg)'--that would not be adequate either: we should not know the scope of
+the generality-sign. If we were to try to do it by introducing a mark into
+the argument-places--for instance by writing '(G,G) . F(G,G)' --it would
+not be adequate: we should not be able to establish the identity of the
+variables. And so on. All these modes of signifying are inadequate because
+they lack the necessary mathematical multiplicity.
+
+
+4.0412 For the same reason the idealist's appeal to 'spatial spectacles' is
+inadequate to explain the seeing of spatial relations, because it cannot
+explain the multiplicity of these relations.
+
+
+4.05 Reality is compared with propositions.
+
+
+4.06 A proposition can be true or false only in virtue of being a picture
+of reality.
+
+
+4.061 It must not be overlooked that a proposition has a sense that is
+independent of the facts: otherwise one can easily suppose that true and
+false are relations of equal status between signs and what they signify. In
+that case one could say, for example, that 'p' signified in the true way
+what 'Pp' signified in the false way, etc.
+
+
+4.062 Can we not make ourselves understood with false propositions just as
+we have done up till now with true ones?--So long as it is known that they
+are meant to be false.--No! For a proposition is true if we use it to say
+that things stand in a certain way, and they do; and if by 'p' we mean Pp
+and things stand as we mean that they do, then, construed in the new way,
+'p' is true and not false.
+
+
+4.0621 But it is important that the signs 'p' and 'Pp' can say the same
+thing. For it shows that nothing in reality corresponds to the sign 'P'.
+The occurrence of negation in a proposition is not enough to characterize
+its sense (PPp = p). The propositions 'p' and 'Pp' have opposite sense, but
+there corresponds to them one and the same reality.
+
+
+4.063 An analogy to illustrate the concept of truth: imagine a black spot
+on white paper: you can describe the shape of the spot by saying, for each
+point on the sheet, whether it is black or white. To the fact that a point
+is black there corresponds a positive fact, and to the fact that a point is
+white (not black), a negative fact. If I designate a point on the sheet (a
+truth-value according to Frege), then this corresponds to the supposition
+that is put forward for judgement, etc. etc. But in order to be able to say
+that a point is black or white, I must first know when a point is called
+black, and when white: in order to be able to say,'"p" is true (or false)',
+I must have determined in what circumstances I call 'p' true, and in so
+doing I determine the sense of the proposition. Now the point where the
+simile breaks down is this: we can indicate a point on the paper even if we
+do not know what black and white are, but if a proposition has no sense,
+nothing corresponds to it, since it does not designatea thing (a truth-
+value) which might have properties called 'false' or 'true'. The verb of a
+proposition is not 'is true' or 'is false', as Frege thought: rather, that
+which 'is true' must already contain the verb.
+
+
+4.064 Every proposition must already have a sense: it cannot be given a
+sense by affirmation. Indeed its sense is just what is affirmed. And the
+same applies to negation, etc.
+
+
+4.0641 One could say that negation must be related to the logical place
+determined by the negated proposition. The negating proposition determines
+a logical place different from that of the negated proposition. The
+negating proposition determines a logical place with the help of the
+logical place of the negated proposition. For it describes it as lying
+outside the latter's logical place. The negated proposition can be negated
+again, and this in itself shows that what is negated is already a
+proposition, and not merely something that is prelimary to a proposition.
+
+
+4.1 Propositions represent the existence and non-existence of states of
+affairs.
+
+
+4.11 The totality of true propositions is the whole of natural science (or
+the whole corpus of the natural sciences).
+
+
+4.111 Philosophy is not one of the natural sciences. (The word 'philosophy'
+must mean something whose place is above or below the natural sciences, not
+beside them.)
+
+
+4.112 Philosophy aims at the logical clarification of thoughts. Philosophy
+is not a body of doctrine but an activity. A philosophical work consists
+essentially of elucidations. Philosophy does not result in 'philosophical
+propositions', but rather in the clarification of propositions. Without
+philosophy thoughts are, as it were, cloudy and indistinct: its task is to
+make them clear and to give them sharp boundaries.
+
+
+4.1121 Psychology is no more closely related to philosophy than any other
+natural science. Theory of knowledge is the philosophy of psychology. Does
+not my study of sign-language correspond to the study of thought-processes,
+which philosophers used to consider so essential to the philosophy of
+logic? Only in most cases they got entangled in unessential psychological
+investigations, and with my method too there is an analogous risk.
+
+
+4.1122 Darwin's theory has no more to do with philosophy than any other
+hypothesis in natural science.
+
+
+4.113 Philosophy sets limits to the much disputed sphere of natural
+science.
+
+
+4.114 It must set limits to what can be thought; and, in doing so, to what
+cannot be thought. It must set limits to what cannot be thought by working
+outwards through what can be thought.
+
+
+4.115 It will signify what cannot be said, by presenting clearly what can
+be said.
+
+
+4.116 Everything that can be thought at all can be thought clearly.
+Everything that can be put into words can be put clearly. 4.12 Propositions
+can represent the whole of reality, but they cannot represent what they
+must have in common with reality in order to be able to represent it--
+logical form. In order to be able to represent logical form, we should have
+to be able to station ourselves with propositions somewhere outside logic,
+that is to say outside the world.
+
+
+4.121 Propositions cannot represent logical form: it is mirrored in them.
+What finds its reflection in language, language cannot represent. What
+expresses itself in language, we cannot express by means of language.
+Propositions show the logical form of reality. They display it.
+
+
+4.1211 Thus one proposition 'fa' shows that the object a occurs in its
+sense, two propositions 'fa' and 'ga' show that the same object is
+mentioned in both of them. If two propositions contradict one another, then
+their structure shows it; the same is true if one of them follows from the
+other. And so on.
+
+
+4.1212 What can be shown, cannot be said.
+
+
+4.1213 Now, too, we understand our feeling that once we have a sign-
+language in which everything is all right, we already have a correct
+logical point of view.
+
+
+4.122 In a certain sense we can talk about formal properties of objects and
+states of affairs, or, in the case of facts, about structural properties:
+and in the same sense about formal relations and structural relations.
+(Instead of 'structural property' I also say 'internal property'; instead
+of 'structural relation', 'internal relation'. I introduce these
+expressions in order to indicate the source of the confusion between
+internal relations and relations proper (external relations), which is very
+widespread among philosophers.) It is impossible, however, to assert by
+means of propositions that such internal properties and relations obtain:
+rather, this makes itself manifest in the propositions that represent the
+relevant states of affairs and are concerned with the relevant objects.
+
+
+4.1221 An internal property of a fact can also be bed a feature of that
+fact (in the sense in which we speak of facial features, for example).
+
+
+4.123 A property is internal if it is unthinkable that its object should
+not possess it. (This shade of blue and that one stand, eo ipso, in the
+internal relation of lighter to darker. It is unthinkable that these two
+objects should not stand in this relation.) (Here the shifting use of the
+word 'object' corresponds to the shifting use of the words 'property' and
+'relation'.)
+
+
+4.124 The existence of an internal property of a possible situation is not
+expressed by means of a proposition: rather, it expresses itself in the
+proposition representing the situation, by means of an internal property of
+that proposition. It would be just as nonsensical to assert that a
+proposition had a formal property as to deny it.
+
+
+4.1241 It is impossible to distinguish forms from one another by saying
+that one has this property and another that property: for this presupposes
+that it makes sense to ascribe either property to either form.
+
+
+4.125 The existence of an internal relation between possible situations
+expresses itself in language by means of an internal relation between the
+propositions representing them.
+
+
+4.1251 Here we have the answer to the vexed question 'whether all relations
+are internal or external'.
+
+
+4.1252 I call a series that is ordered by an internal relation a series of
+forms. The order of the number-series is not governed by an external
+relation but by an internal relation. The same is true of the series of
+propositions 'aRb', '(d : c) : aRx . xRb', '(d x,y) : aRx . xRy . yRb', and
+so forth. (If b stands in one of these relations to a, I call b a successor
+of a.)
+
+
+4.126 We can now talk about formal concepts, in the same sense that we
+speak of formal properties. (I introduce this expression in order to
+exhibit the source of the confusion between formal concepts and concepts
+proper, which pervades the whole of traditional logic.) When something
+falls under a formal concept as one of its objects, this cannot be
+expressed by means of a proposition. Instead it is shown in the very sign
+for this object. (A name shows that it signifies an object, a sign for a
+number that it signifies a number, etc.) Formal concepts cannot, in fact,
+be represented by means of a function, as concepts proper can. For their
+characteristics, formal properties, are not expressed by means of
+functions. The expression for a formal property is a feature of certain
+symbols. So the sign for the characteristics of a formal concept is a
+distinctive feature of all symbols whose meanings fall under the concept.
+So the expression for a formal concept is a propositional variable in which
+this distinctive f
+
+eature alone is constant.
+
+
+4.127 The propositional variable signifies the formal concept, and its
+values signify the objects that fall under the concept.
+
+
+4.1271 Every variable is the sign for a formal concept. For every variable
+represents a constant form that all its values possess, and this can be
+regarded as a formal property of those values.
+
+
+4.1272 Thus the variable name 'x' is the proper sign for the pseudo-concept
+object. Wherever the word 'object' ('thing', etc.) is correctly used, it is
+expressed in conceptual notation by a variable name. For example, in the
+proposition, 'There are 2 objects which. . .', it is expressed by ' (dx,y)
+... '. Wherever it is used in a different way, that is as a proper concept-
+word, nonsensical pseudo-propositions are the result. So one cannot say,
+for example, 'There are objects', as one might say, 'There are books'. And
+it is just as impossible to say, 'There are 100 objects', or, 'There are !0
+objects'. And it is nonsensical to speak of the total number of objects.
+The same applies to the words 'complex', 'fact', 'function', 'number', etc.
+They all signify formal concepts, and are represented in conceptual
+notation by variables, not by functions or classes (as Frege and Russell
+believed). '1 is a number', 'There is only one zero', and all similar
+expressions are nonsensical. (It is just as nonsensical to say, 'There is
+only one 1', as it would be to say, '2 + 2 at 3 o'clock equals 4'.)
+
+
+4.12721 A formal concept is given immediately any object falling under it
+is given. It is not possible, therefore, to introduce as primitive ideas
+objects belonging to a formal concept and the formal concept itself. So it
+is impossible, for example, to introduce as primitive ideas both the
+concept of a function and specific functions, as Russell does; or the
+concept of a number and particular numbers.
+
+
+4.1273 If we want to express in conceptual notation the general
+proposition, 'b is a successor of a', then we require an expression for the
+general term of the series of forms 'aRb', '(d : c) : aRx . xRb', '(d x,y)
+: aRx . xRy . yRb', ... , In order to express the general term of a series
+of forms, we must use a variable, because the concept 'term of that series
+of forms' is a formal concept. (This is what Frege and Russell overlooked:
+consequently the way in which they want to express general propositions
+like the one above is incorrect; it contains a vicious circle.) We can
+determine the general term of a series of forms by giving its first term
+and the general form of the operation that produces the next term out of
+the proposition that precedes it.
+
+
+4.1274 To ask whether a formal concept exists is nonsensical. For no
+proposition can be the answer to such a question. (So, for example, the
+question, 'Are there unanalysable subject-predicate propositions?' cannot
+be asked.)
+
+
+4.128 Logical forms are without number. Hence there are no preeminent
+numbers in logic, and hence there is no possibility of philosophical monism
+or dualism, etc.
+
+
+4.2 The sense of a proposition is its agreement and disagreement with
+possibilities of existence and non-existence of states of affairs. 4.21 The
+simplest kind of proposition, an elementary proposition, asserts the
+existence of a state of affairs.
+
+
+4.211 It is a sign of a proposition's being elementary that there can be no
+elementary proposition contradicting it.
+
+
+4.22 An elementary proposition consists of names. It is a nexus, a
+concatenation, of names.
+
+
+4.221 It is obvious that the analysis of propositions must bring us to
+elementary propositions which consist of names in immediate combination.
+This raises the question how such combination into propositions comes
+about.
+
+
+4.2211 Even if the world is infinitely complex, so that every fact consists
+of infinitely many states of affairs and every state of affairs is composed
+of infinitely many objects, there would still have to be objects and states
+of affairs.
+
+
+4.23 It is only in the nexus of an elementary proposition that a name
+occurs in a proposition.
+
+
+4.24 Names are the simple symbols: I indicate them by single letters ('x',
+'y', 'z'). I write elementary propositions as functions of names, so that
+they have the form 'fx', 'O (x,y)', etc. Or I indicate them by the letters
+'p', 'q', 'r'.
+
+
+4.241 When I use two signs with one and the same meaning, I express this by
+putting the sign '=' between them. So 'a = b' means that the sign 'b' can
+be substituted for the sign 'a'. (If I use an equation to introduce a new
+sign 'b', laying down that it shall serve as a substitute for a sign a that
+is already known, then, like Russell, I write the equation-- definition--in
+the form 'a = b Def.' A definition is a rule dealing with signs.)
+
+
+4.242 Expressions of the form 'a = b' are, therefore, mere representational
+devices. They state nothing about the meaning of the signs 'a' and 'b'.
+
+
+4.243 Can we understand two names without knowing whether they signify the
+same thing or two different things?--Can we understand a proposition in
+which two names occur without knowing whether their meaning is the same or
+different? Suppose I know the meaning of an English word and of a German
+word that means the same: then it is impossible for me to be unaware that
+they do mean the same; I must be capable of translating each into the
+other. Expressions like 'a = a', and those derived from them, are neither
+elementary propositions nor is there any other way in which they have
+sense. (This will become evident later.)
+
+
+4.25 If an elementary proposition is true, the state of affairs exists: if
+an elementary proposition is false, the state of affairs does not exist.
+
+
+4.26 If all true elementary propositions are given, the result is a
+complete description of the world. The world is completely described by
+giving all elementary propositions, and adding which of them are true and
+which false. For n states of affairs, there are possibilities of existence
+and non-existence. Of these states of affairs any combination can exist and
+the remainder not exist.
+
+
+4.28 There correspond to these combinations the same number of
+possibilities of truth--and falsity--for n elementary propositions.
+
+
+4.3 Truth-possibilities of elementary propositions mean Possibilities of
+existence and non-existence of states of affairs.
+
+
+4.31 We can represent truth-possibilities by schemata of the following kind
+('T' means 'true', 'F' means 'false'; the rows of 'T's' and 'F's' under the
+row of elementary propositions symbolize their truth-possibilities in a way
+that can easily be understood):
+
+
+4.4 A proposition is an expression of agreement and disagreement with truth-
+possibilities of elementary propositions.
+
+
+4.41 Truth-possibilities of elementary propositions are the conditions of
+the truth and falsity of propositions.
+
+
+4.411 It immediately strikes one as probable that the introduction of
+elementary propositions provides the basis for understanding all other
+kinds of proposition. Indeed the understanding of general propositions
+palpably depends on the understanding of elementary propositions.
+
+
+4.42 For n elementary propositions there are ways in which a proposition
+can agree and disagree with their truth possibilities.
+
+
+4.43 We can express agreement with truth-possibilities by correlating the
+mark 'T' (true) with them in the schema. The absence of this mark means
+disagreement.
+
+
+4.431 The expression of agreement and disagreement with the truth
+possibilities of elementary propositions expresses the truth-conditions of
+a proposition. A proposition is the expression of its truth-conditions.
+(Thus Frege was quite right to use them as a starting point when he
+explained the signs of his conceptual notation. But the explanation of the
+concept of truth that Frege gives is mistaken: if 'the true' and 'the
+false' were really objects, and were the arguments in Pp etc., then Frege's
+method of determining the sense of 'Pp' would leave it absolutely
+undetermined.)
+
+
+4.44 The sign that results from correlating the mark 'I" with truth-
+possibilities is a propositional sign.
+
+
+4.441 It is clear that a complex of the signs 'F' and 'T' has no object (or
+complex of objects) corresponding to it, just as there is none
+corresponding to the horizontal and vertical lines or to the brackets.--
+There are no 'logical objects'. Of course the same applies to all signs
+that express what the schemata of 'T's' and 'F's' express.
+
+
+4.442 For example, the following is a propositional sign: (Frege's
+'judgement stroke' '|-' is logically quite meaningless: in the works of
+Frege (and Russell) it simply indicates that these authors hold the
+propositions marked with this sign to be true. Thus '|-' is no more a
+component part of a proposition than is, for instance, the proposition's
+number. It is quite impossible for a proposition to state that it itself is
+true.) If the order or the truth-possibilities in a scheme is fixed once
+and for all by a combinatory rule, then the last column by itself will be
+an expression of the truth-conditions. If we now write this column as a
+row, the propositional sign will become '(TT-T) (p,q)' or more explicitly
+'(TTFT) (p,q)' (The number of places in the left-hand pair of brackets is
+determined by the number of terms in the right-hand pair.)
+
+
+4.45 For n elementary propositions there are Ln possible groups of truth-
+conditions. The groups of truth-conditions that are obtainable from the
+truth-possibilities of a given number of elementary propositions can be
+arranged in a series.
+
+
+4.46 Among the possible groups of truth-conditions there are two extreme
+cases. In one of these cases the proposition is true for all the truth-
+possibilities of the elementary propositions. We say that the truth-
+conditions are tautological. In the second case the proposition is false
+for all the truth-possibilities: the truth-conditions are contradictory .
+In the first case we call the proposition a tautology; in the second, a
+contradiction.
+
+
+4.461 Propositions show what they say; tautologies and contradictions show
+that they say nothing. A tautology has no truth-conditions, since it is
+unconditionally true: and a contradiction is true on no condition.
+Tautologies and contradictions lack sense. (Like a point from which two
+arrows go out in opposite directions to one another.) (For example, I know
+nothing about the weather when I know that it is either raining or not
+raining.)
+
+
+4.46211 Tautologies and contradictions are not, however, nonsensical. They
+are part of the symbolism, much as '0' is part of the symbolism of
+arithmetic.
+
+
+4.462 Tautologies and contradictions are not pictures of reality. They do
+not represent any possible situations. For the former admit all possible
+situations, and latter none . In a tautology the conditions of agreement
+with the world--the representational relations--cancel one another, so that
+it does not stand in any representational relation to reality.
+
+
+4.463 The truth-conditions of a proposition determine the range that it
+leaves open to the facts. (A proposition, a picture, or a model is, in the
+negative sense, like a solid body that restricts the freedom of movement of
+others, and in the positive sense, like a space bounded by solid substance
+in which there is room for a body.) A tautology leaves open to reality the
+whole--the infinite whole--of logical space: a contradiction fills the
+whole of logical space leaving no point of it for reality. Thus neither of
+them can determine reality in any way.
+
+
+4.464 A tautology's truth is certain, a proposition's possible, a
+contradiction's impossible. (Certain, possible, impossible: here we have
+the first indication of the scale that we need in the theory of
+probability.)
+
+
+4.465 The logical product of a tautology and a proposition says the same
+thing as the proposition. This product, therefore, is identical with the
+proposition. For it is impossible to alter what is essential to a symbol
+without altering its sense.
+
+
+4.466 What corresponds to a determinate logical combination of signs is a
+determinate logical combination of their meanings. It is only to the
+uncombined signs that absolutely any combination corresponds. In other
+words, propositions that are true for every situation cannot be
+combinations of signs at all, since, if they were, only determinate
+combinations of objects could correspond to them. (And what is not a
+logical combination has no combination of objects corresponding to it.)
+Tautology and contradiction are the limiting cases--indeed the
+disintegration--of the combination of signs.
+
+
+4.4661 Admittedly the signs are still combined with one another even in
+tautologies and contradictions--i.e. they stand in certain relations to one
+another: but these relations have no meaning, they are not essential to the
+symbol .
+
+
+4.5 It now seems possible to give the most general propositional form: that
+is, to give a description of the propositions of any sign-language
+whatsoever in such a way that every possible sense can be expressed by a
+symbol satisfying the description, and every symbol satisfying the
+description can express a sense, provided that the meanings of the names
+are suitably chosen. It is clear that only what is essential to the most
+general propositional form may be included in its description--for
+otherwise it would not be the most general form. The existence of a general
+propositional form is proved by the fact that there cannot be a proposition
+whose form could not have been foreseen (i.e. constructed). The general
+form of a proposition is: This is how things stand.
+
+
+4.51 Suppose that I am given all elementary propositions: then I can simply
+ask what propositions I can construct out of them. And there I have all
+propositions, and that fixes their limits.
+
+
+4.52 Propositions comprise all that follows from the totality of all
+elementary propositions (and, of course, from its being the totality of
+them all ). (Thus, in a certain sense, it could be said that all
+propositions were generalizations of elementary propositions.)
+
+
+4.53 The general propositional form is a variable.

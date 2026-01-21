@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import os
 import logging
+import re
 from socials_data.core.llm import LLMProcessor
 
 class DataProcessor:
@@ -125,7 +126,7 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a list of strings (chunks).
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
@@ -136,14 +137,41 @@ class TextDataProcessor(DataProcessor):
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # Normalize newlines
+            text = text.replace('\r\n', '\n').replace('\r', '\n')
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Split into paragraphs (separated by 2 or more newlines)
+            paragraphs = re.split(r'\n\s*\n', text)
+
+            # Clean each paragraph: replace internal newlines with space, strip whitespace
+            cleaned_paragraphs = []
+            for p in paragraphs:
+                # Replace newlines within paragraph with space
+                clean_p = re.sub(r'\s+', ' ', p).strip()
+                if clean_p:
+                    cleaned_paragraphs.append(clean_p)
+
+            # Chunking
+            chunks = []
+            current_chunk = []
+            current_len = 0
+            MAX_CHUNK_SIZE = 4000
+
+            for p in cleaned_paragraphs:
+                p_len = len(p)
+                if current_len + p_len + 2 > MAX_CHUNK_SIZE: # +2 for newline
+                    if current_chunk:
+                        chunks.append("\n\n".join(current_chunk))
+                        current_chunk = []
+                        current_len = 0
+
+                current_chunk.append(p)
+                current_len += p_len + 2 # +2 for the \n\n that will join them
+
+            if current_chunk:
+                chunks.append("\n\n".join(current_chunk))
+
+            return chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

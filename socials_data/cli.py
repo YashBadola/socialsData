@@ -1,7 +1,9 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import SocialsDatabase
 import os
+import json
 
 @click.group()
 def main():
@@ -78,6 +80,104 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="sync-db")
+def sync_db():
+    """Sync file-based datasets into the SQLite database."""
+    db = SocialsDatabase()
+    db.init_db()
+
+    manager = PersonalityManager()
+    personalities = manager.list_personalities()
+
+    click.echo(f"Syncing {len(personalities)} personalities to database...")
+
+    for p_id in personalities:
+        try:
+            meta = manager.get_metadata(p_id)
+            click.echo(f"Syncing {p_id}...")
+
+            # Upsert personality
+            db.upsert_personality(
+                p_id,
+                meta.get("name"),
+                meta.get("description"),
+                meta.get("system_prompt"),
+                meta
+            )
+
+            # Clear old content
+            db.clear_personality_content(p_id)
+
+            # Sources
+            sources_map = {} # title -> id
+            for src in meta.get("sources", []):
+                s_id = db.add_source(p_id, src.get("title"), src.get("url"), src.get("type"))
+                sources_map[src.get("title")] = s_id
+
+            # Processed Data
+            processed_file = manager.base_dir / p_id / "processed" / "data.jsonl"
+            if processed_file.exists():
+                with open(processed_file, "r") as f:
+                    for line in f:
+                        try:
+                            record = json.loads(line)
+                            text = record.get("text")
+                            source_name = record.get("source") # This might be filename, not title
+
+                            # Try to match source
+                            s_id = None
+                            if source_name:
+                                # Try exact match on title
+                                if source_name in sources_map:
+                                    s_id = sources_map[source_name]
+                                else:
+                                    # Fuzzy match: check if title is part of filename or vice versa
+                                    # Normalize source_name: remove extension, replace _ with space
+                                    norm_name = os.path.splitext(source_name)[0].replace("_", " ").lower()
+                                    for title, tid in sources_map.items():
+                                        norm_title = title.lower()
+                                        if norm_title in norm_name or norm_name in norm_title:
+                                            s_id = tid
+                                            break
+
+                            db.add_content(p_id, text, "text", source_id=s_id, meta={"original_source": source_name})
+                        except json.JSONDecodeError:
+                            pass
+
+            # QA Data
+            qa_file = manager.base_dir / p_id / "processed" / "qa.jsonl"
+            if qa_file.exists():
+                with open(qa_file, "r") as f:
+                    for line in f:
+                        try:
+                            record = json.loads(line)
+                            # QA record: instruction, response
+                            # We'll store it as a JSON string or combined text?
+                            # Let's store as text for searchability: "Q: ... A: ..."
+                            text = f"Q: {record.get('instruction')}\nA: {record.get('response')}"
+                            db.add_content(p_id, text, "qa", meta=record)
+                        except json.JSONDecodeError:
+                            pass
+
+        except Exception as e:
+            click.echo(f"Error syncing {p_id}: {e}")
+
+    db.close()
+    click.echo("Database sync complete.")
+
+@main.command(name="search")
+@click.argument("query")
+def search(query):
+    """Search the database for content."""
+    db = SocialsDatabase()
+    results = db.search(query)
+    if not results:
+        click.echo("No results found.")
+    else:
+        for text, name, c_type in results:
+            click.echo(f"[{name}] ({c_type}): {text[:200]}...")
+            click.echo("-" * 40)
 
 if __name__ == "__main__":
     main()

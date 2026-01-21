@@ -1,7 +1,10 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import DatabaseManager
 import os
+import json
+from pathlib import Path
 
 @click.group()
 def main():
@@ -78,6 +81,83 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="populate-db")
+@click.argument("personality_id", required=False)
+def populate_db(personality_id):
+    """Populate the SQLite database from file system."""
+    db = DatabaseManager()
+    manager = PersonalityManager()
+
+    if personality_id:
+        p_ids = [personality_id]
+    else:
+        p_ids = manager.list_personalities()
+
+    for p_id in p_ids:
+        click.echo(f"Populating {p_id}...")
+        try:
+            # clear existing data to prevent duplicates
+            db.clear_personality_data(p_id)
+
+            p_dir = manager.base_dir / p_id
+            metadata_path = p_dir / "metadata.json"
+
+            if not metadata_path.exists():
+                click.echo(f"Skipping {p_id}: No metadata.json")
+                continue
+
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                meta = json.load(f)
+
+            db.add_personality(
+                meta.get('id', p_id),
+                meta['name'],
+                meta.get('description', ''),
+                meta.get('system_prompt', '')
+            )
+
+            # Add works
+            works_map = {}
+            if 'sources' in meta:
+                for source in meta['sources']:
+                    w_id = db.add_work(
+                        meta.get('id', p_id),
+                        source.get('title', 'Unknown'),
+                        source.get('type', 'unknown'),
+                        source.get('url', '')
+                    )
+                    works_map[source.get('title')] = w_id
+
+            # Add raw data as excerpts
+            raw_dir = p_dir / "raw"
+            if raw_dir.exists():
+                for raw_file in raw_dir.iterdir():
+                    if raw_file.is_file() and raw_file.suffix == '.txt':
+                        work_title = raw_file.stem.replace("_", " ").title()
+                        w_id = db.add_work(
+                            meta.get('id', p_id),
+                            work_title,
+                            "raw_file",
+                            ""
+                        )
+
+                        try:
+                            with open(raw_file, 'r', encoding='utf-8') as f:
+                                content = f.read()
+
+                            parts = content.split('\n\n')
+                            for part in parts:
+                                if part.strip():
+                                    db.add_excerpt(w_id, part.strip(), source_filename=raw_file.name)
+                        except Exception as e:
+                            click.echo(f"Failed to read {raw_file}: {e}")
+
+        except Exception as e:
+            click.echo(f"Error processing {p_id}: {e}")
+
+    db.close()
+    click.echo("Database population complete.")
 
 if __name__ == "__main__":
     main()

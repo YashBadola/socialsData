@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 import os
 import logging
@@ -136,10 +137,12 @@ class TextDataProcessor(DataProcessor):
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
+            # Basic cleaning: collapse multiple newlines, strip whitespace but preserve paragraphs
+            lines = [line.strip() for line in text.splitlines()]
             cleaned_text = "\n".join(lines)
+
+            # Reduce multiple newlines to max 2 to preserve paragraph structure but avoid huge gaps
+            cleaned_text = re.sub(r'\n{3,}', '\n\n', cleaned_text)
 
             # Simple chunking if text is too large could be added here
             # For now, we return the whole cleaned text as one chunk

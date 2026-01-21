@@ -1,0 +1,633 @@
+6 The general form of a truth-function is [p, E, N(E)]. This is the general
+form of a proposition.
+
+
+6.001 What this says is just that every proposition is a result of
+successive applications to elementary propositions of the operation N(E)
+
+
+6.002 If we are given the general form according to which propositions are
+constructed, then with it we are also given the general form according to
+which one proposition can be generated out of another by means of an
+operation.
+
+
+6.01 Therefore the general form of an operation /'(n) is [E, N(E)] ' (n) (
+= [n, E, N(E)]). This is the most general form of transition from one
+proposition to another.
+
+
+6.02 And this is how we arrive at numbers. I give the following definitions
+x = /0x Def., /'/v'x = /v+1'x Def. So, in accordance with these rules,
+which deal with signs, we write the series x, /'x, /'/'x, /'/'/'x, ... , in
+the following way /0'x, /0+1'x, /0+1+1'x, /0+1+1+1'x, ... . Therefore,
+instead of '[x, E, /'E]', I write '[/0'x, /v'x, /v+1'x]'. And I give the
+following definitions 0 + 1 = 1 Def., 0 + 1 + 1 = 2 Def., 0 + 1 + 1 +1 = 3
+Def., (and so on).
+
+
+6.021 A number is the exponent of an operation.
+
+
+6.022 The concept of number is simply what is common to all numbers, the
+general form of a number. The concept of number is the variable number. And
+the concept of numerical equality is the general form of all particular
+cases of numerical equality.
+
+
+6.03 The general form of an integer is [0, E, E +1].
+
+
+6.031 The theory of classes is completely superfluous in mathematics. This
+is connected with the fact that the generality required in mathematics is
+not accidental generality.
+
+
+6.1 The propositions of logic are tautologies.
+
+
+6.11 Therefore the propositions of logic say nothing. (They are the
+analytic propositions.)
+
+
+6.111 All theories that make a proposition of logic appear to have content
+are false. One might think, for example, that the words 'true' and 'false'
+signified two properties among other properties, and then it would seem to
+be a remarkable fact that every proposition possessed one of these
+properties. On this theory it seems to be anything but obvious, just as,
+for instance, the proposition, 'All roses are either yellow or red', would
+not sound obvious even if it were true. Indeed, the logical proposition
+acquires all the characteristics of a proposition of natural science and
+this is the sure sign that it has been construed wrongly.
+
+
+6.112 The correct explanation of the propositions of logic must assign to
+them a unique status among all propositions.
+
+
+6.113 It is the peculiar mark of logical propositions that one can
+recognize that they are true from the symbol alone, and this fact contains
+in itself the whole philosophy of logic. And so too it is a very important
+fact that the truth or falsity of non-logical propositions cannot be
+recognized from the propositions alone.
+
+
+6.12 The fact that the propositions of logic are tautologies shows the
+formal--logical--properties of language and the world. The fact that a
+tautology is yielded by this particular way of connecting its constituents
+characterizes the logic of its constituents. If propositions are to yield a
+tautology when they are connected in a certain way, they must have certain
+structural properties. So their yielding a tautology when combined in this
+shows that they possess these structural properties.
+
+
+6.1201 For example, the fact that the propositions 'p' and 'Pp' in the
+combination '(p . Pp)' yield a tautology shows that they contradict one
+another. The fact that the propositions 'p z q', 'p', and 'q', combined
+with one another in the form '(p z q) . (p) :z: (q)', yield a tautology
+shows that q follows from p and p z q. The fact that '(x) . fxx :z: fa' is
+a tautology shows that fa follows from (x) . fx. Etc. etc.
+
+
+6.1202 It is clear that one could achieve the same purpose by using
+contradictions instead of tautologies.
+
+
+6.1203 In order to recognize an expression as a tautology, in cases where
+no generality-sign occurs in it, one can employ the following intuitive
+method: instead of 'p', 'q', 'r', etc. I write 'TpF', 'TqF', 'TrF', etc.
+Truth-combinations I express by means of brackets, e.g. and I use lines to
+express the correlation of the truth or falsity of the whole proposition
+with the truth-combinations of its truth-arguments, in the following way So
+this sign, for instance, would represent the proposition p z q. Now, by way
+of example, I wish to examine the proposition P(p .Pp) (the law of
+contradiction) in order to determine whether it is a tautology. In our
+notation the form 'PE' is written as and the form 'E . n' as Hence the
+proposition P(p . Pp). reads as follows If we here substitute 'p' for 'q'
+and examine how the outermost T and F are connected with the innermost
+ones, the result will be that the truth of the whole proposition is
+correlated with all the truth-combinations of its argument, and its falsity
+with none of the truth-combinations.
+
+
+6.121 The propositions of logic demonstrate the logical properties of
+propositions by combining them so as to form propositions that say nothing.
+This method could also be called a zero-method. In a logical proposition,
+propositions are brought into equilibrium with one another, and the state
+of equilibrium then indicates what the logical constitution of these
+propositions must be.
+
+
+6.122 It follows from this that we can actually do without logical
+propositions; for in a suitable notation we can in fact recognize the
+formal properties of propositions by mere inspection of the propositions
+themselves.
+
+
+6.1221 If, for example, two propositions 'p' and 'q' in the combination 'p
+z q' yield a tautology, then it is clear that q follows from p. For
+example, we see from the two propositions themselves that 'q' follows from
+'p z q . p', but it is also possible to show it in this way: we combine
+them to form 'p z q . p :z: q', and then show that this is a tautology.
+
+
+6.1222 This throws some light on the question why logical propositions
+cannot be confirmed by experience any more than they can be refuted by it.
+Not only must a proposition of logic be irrefutable by any possible
+experience, but it must also be unconfirmable by any possible experience.
+
+
+6.1223 Now it becomes clear why people have often felt as if it were for us
+to 'postulate ' the 'truths of logic'. The reason is that we can postulate
+them in so far as we can postulate an adequate notation.
+
+
+6.1224 It also becomes clear now why logic was called the theory of forms
+and of inference.
+
+
+6.123 Clearly the laws of logic cannot in their turn be subject to laws of
+logic. (There is not, as Russell thought, a special law of contradiction
+for each 'type'; one law is enough, since it is not applied to itself.)
+
+
+6.1231 The mark of a logical proposition is not general validity. To be
+general means no more than to be accidentally valid for all things. An
+ungeneralized proposition can be tautological just as well as a generalized
+one.
+
+
+6.1232 The general validity of logic might be called essential, in contrast
+with the accidental general validity of such propositions as 'All men are
+mortal'. Propositions like Russell's 'axiom of reducibility' are not
+logical propositions, and this explains our feeling that, even if they were
+true, their truth could only be the result of a fortunate accident.
+
+
+6.1233 It is possible to imagine a world in which the axiom of reducibility
+is not valid. It is clear, however, that logic has nothing to do with the
+question whether our world really is like that or not.
+
+
+6.124 The propositions of logic describe the scaffolding of the world, or
+rather they represent it. They have no 'subject-matter'. They presuppose
+that names have meaning and elementary propositions sense; and that is
+their connexion with the world. It is clear that something about the world
+must be indicated by the fact that certain combinations of symbols--whose
+essence involves the possession of a determinate character--are
+tautologies. This contains the decisive point. We have said that some
+things are arbitrary in the symbols that we use and that some things are
+not. In logic it is only the latter that express: but that means that logic
+is not a field in which we express what we wish with the help of signs, but
+rather one in which the nature of the absolutely necessary signs speaks for
+itself. If we know the logical syntax of any sign-language, then we have
+already been given all the propositions of logic.
+
+
+6.125 It is possible--indeed possible even according to the old conception
+of logic--to give in advance a description of all 'true' logical
+propositions.
+
+
+6.1251 Hence there can never be surprises in logic.
+
+
+6.126 One can calculate whether a proposition belongs to logic, by
+calculating the logical properties of the symbol. And this is what we do
+when we 'prove' a logical proposition. For, without bothering about sense
+or meaning, we construct the logical proposition out of others using only
+rules that deal with signs . The proof of logical propositions consists in
+the following process: we produce them out of other logical propositions by
+successively applying certain operations that always generate further
+tautologies out of the initial ones. (And in fact only tautologies follow
+from a tautology.) Of course this way of showing that the propositions of
+logic are tautologies is not at all essential to logic, if only because the
+propositions from which the proof starts must show without any proof that
+they are tautologies.
+
+
+6.1261 In logic process and result are equivalent. (Hence the absence of
+surprise.)
+
+
+6.1262 Proof in logic is merely a mechanical expedient to facilitate the
+recognition of tautologies in complicated cases.
+
+
+6.1263 Indeed, it would be altogether too remarkable if a proposition that
+had sense could be proved logically from others, and so too could a logical
+proposition. It is clear from the start that a logical proof of a
+proposition that has sense and a proof in logic must be two entirely
+different things.
+
+
+6.1264 A proposition that has sense states something, which is shown by its
+proof to be so. In logic every proposition is the form of a proof. Every
+proposition of logic is a modus ponens represented in signs. (And one
+cannot express the modus ponens by means of a proposition.)
+
+
+6.1265 It is always possible to construe logic in such a way that every
+proposition is its own proof.
+
+
+6.127 All the propositions of logic are of equal status: it is not the case
+that some of them are essentially derived propositions. Every tautology
+itself shows that it is a tautology.
+
+
+6.1271 It is clear that the number of the 'primitive propositions of logic'
+is arbitrary, since one could derive logic from a single primitive
+proposition, e.g. by simply constructing the logical product of Frege's
+primitive propositions. (Frege would perhaps say that we should then no
+longer have an immediately self-evident primitive proposition. But it is
+remarkable that a thinker as rigorous as Frege appealed to the degree of
+self-evidence as the criterion of a logical proposition.)
+
+
+6.13 Logic is not a body of doctrine, but a mirror-image of the world.
+Logic is transcendental.
+
+
+6.2 Mathematics is a logical method. The propositions of mathematics are
+equations, and therefore pseudo-propositions.
+
+
+6.21 A proposition of mathematics does not express a thought.
+
+
+6.211 Indeed in real life a mathematical proposition is never what we want.
+Rather, we make use of mathematical propositions only in inferences from
+propositions that do not belong to mathematics to others that likewise do
+not belong to mathematics. (In philosophy the question, 'What do we
+actually use this word or this proposition for?' repeatedly leads to
+valuable insights.)
+
+
+6.22 The logic of the world, which is shown in tautologies by the
+propositions of logic, is shown in equations by mathematics.
+
+
+6.23 If two expressions are combined by means of the sign of equality, that
+means that they can be substituted for one another. But it must be manifest
+in the two expressions themselves whether this is the case or not. When two
+expressions can be substituted for one another, that characterizes their
+logical form.
+
+
+6.231 It is a property of affirmation that it can be construed as double
+negation. It is a property of '1 + 1 + 1 + 1' that it can be construed as
+'(1 + 1) + (1 + 1)'.
+
+
+6.232 Frege says that the two expressions have the same meaning but
+different senses. But the essential point about an equation is that it is
+not necessary in order to show that the two expressions connected by the
+sign of equality have the same meaning, since this can be seen from the two
+expressions themselves.
+
+
+6.2321 And the possibility of proving the propositions of mathematics means
+simply that their correctness can be perceived without its being necessary
+that what they express should itself be compared with the facts in order to
+determine its correctness.
+
+
+6.2322 It is impossible to assert the identity of meaning of two
+expressions. For in order to be able to assert anything about their
+meaning, I must know their meaning, and I cannot know their meaning without
+knowing whether what they mean is the same or different.
+
+
+6.2323 An equation merely marks the point of view from which I consider the
+two expressions: it marks their equivalence in meaning.
+
+
+6.233 The question whether intuition is needed for the solution of
+mathematical problems must be given the answer that in this case language
+itself provides the necessary intuition.
+
+
+6.2331 The process of calculating serves to bring about that intuition.
+Calculation is not an experiment.
+
+
+6.234 Mathematics is a method of logic.
+
+
+6.2341 It is the essential characteristic of mathematical method that it
+employs equations. For it is because of this method that every proposition
+of mathematics must go without saying.
+
+
+6.24 The method by which mathematics arrives at its equations is the method
+of substitution. For equations express the substitutability of two
+expressions and, starting from a number of equations, we advance to new
+equations by substituting different expressions in accordance with the
+equations.
+
+
+6.241 Thus the proof of the proposition 2 t 2 = 4 runs as follows: (/v)n'x
+= /v x u'x Def., /2 x 2'x = (/2)2'x = (/2)1 + 1'x = /2' /2'x = /1 + 1'/1 +
+1'x = (/'/)'(/'/)'x =/'/'/'/'x = /1 + 1 + 1 + 1'x = /4'x. 6.3 The
+exploration of logic means the exploration of everything that is subject to
+law . And outside logic everything is accidental.
+
+
+6.31 The so-called law of induction cannot possibly be a law of logic,
+since it is obviously a proposition with sense.---Nor, therefore, can it be
+an a priori law.
+
+
+6.32 The law of causality is not a law but the form of a law.
+
+
+6.321 'Law of causality'--that is a general name. And just as in mechanics,
+for example, there are 'minimum-principles', such as the law of least
+action, so too in physics there are causal laws, laws of the causal form.
+
+
+6.3211 Indeed people even surmised that there must be a 'law of least
+action' before they knew exactly how it went. (Here, as always, what is
+certain a priori proves to be something purely logical.)
+
+
+6.33 We do not have an a priori belief in a law of conservation, but rather
+a priori knowledge of the possibility of a logical form.
+
+
+6.34 All such propositions, including the principle of sufficient reason,
+tile laws of continuity in nature and of least effort in nature, etc. etc.--
+all these are a priori insights about the forms in which the propositions
+of science can be cast.
+
+
+6.341 Newtonian mechanics, for example, imposes a unified form on the
+description of the world. Let us imagine a white surface with irregular
+black spots on it. We then say that whatever kind of picture these make, I
+can always approximate as closely as I wish to the description of it by
+covering the surface with a sufficiently fine square mesh, and then saying
+of every square whether it is black or white. In this way I shall have
+imposed a unified form on the description of the surface. The form is
+optional, since I could have achieved the same result by using a net with a
+triangular or hexagonal mesh. Possibly the use of a triangular mesh would
+have made the description simpler: that is to say, it might be that we
+could describe the surface more accurately with a coarse triangular mesh
+than with a fine square mesh (or conversely), and so on. The different nets
+correspond to different systems for describing the world. Mechanics
+determines one form of description of the world by saying that all
+propositions used in the description of the world must be obtained in a
+given way from a given set of propositions--the axioms of mechanics. It
+thus supplies the bricks for building the edifice of science, and it says,
+'Any building that you want to erect, whatever it may be, must somehow be
+constructed with these bricks, and with these alone.' (Just as with the
+number-system we must be able to write down any number we wish, so with the
+system of mechanics we must be able to write down any proposition of
+physics that we wish.)
+
+
+6.342 And now we can see the relative position of logic and mechanics. (The
+net might also consist of more than one kind of mesh: e.g. we could use
+both triangles and hexagons.) The possibility of describing a picture like
+the one mentioned above with a net of a given form tells us nothing about
+the picture. (For that is true of all such pictures.) But what does
+characterize the picture is that it can be described completely by a
+particular net with a particular size of mesh. Similarly the possibility of
+describing the world by means of Newtonian mechanics tells us nothing about
+the world: but what does tell us something about it is the precise way in
+which it is possible to describe it by these means. We are also told
+something about the world by the fact that it can be described more simply
+with one system of mechanics than with another.
+
+
+6.343 Mechanics is an attempt to construct according to a single plan all
+the true propositions that we need for the description of the world.
+
+
+6.3431 The laws of physics, with all their logical apparatus, still speak,
+however indirectly, about the objects of the world.
+
+
+6.3432 We ought not to forget that any description of the world by means of
+mechanics will be of the completely general kind. For example, it will
+never mention particular point-masses: it will only talk about any point-
+masses whatsoever.
+
+
+6.35 Although the spots in our picture are geometrical figures,
+nevertheless geometry can obviously say nothing at all about their actual
+form and position. The network, however, is purely geometrical; all its
+properties can be given a priori. Laws like the principle of sufficient
+reason, etc. are about the net and not about what the net describes.
+
+
+6.36 If there were a law of causality, it might be put in the following
+way: There are laws of nature. But of course that cannot be said: it makes
+itself manifest.
+
+
+6.361 One might say, using Hertt:'s terminology, that only connexions that
+are subject to law are thinkable.
+
+
+6.3611 We cannot compare a process with 'the passage of time'--there is no
+such thing--but only with another process (such as the working of a
+chronometer). Hence we can describe the lapse of time only by relying on
+some other process. Something exactly analogous applies to space: e.g. when
+people say that neither of two events (which exclude one another) can
+occur, because there is nothing to cause the one to occur rather than the
+other, it is really a matter of our being unable to describe one of the two
+events unless there is some sort of asymmetry to be found. And if such an
+asymmetry is to be found, we can regard it as the cause of the occurrence
+of the one and the non-occurrence of the other.
+
+
+6.36111 Kant's problem about the right hand and the left hand, which cannot
+be made to coincide, exists even in two dimensions. Indeed, it exists in
+one-dimensional space in which the two congruent figures, a and b, cannot
+be made to coincide unless they are moved out of this space. The right hand
+and the left hand are in fact completely congruent. It is quite irrelevant
+that they cannot be made to coincide. A right-hand glove could be put on
+the left hand, if it could be turned round in four-dimensional space.
+
+
+6.362 What can be described can happen too: and what the law of causality
+is meant to exclude cannot even be described.
+
+
+6.363 The procedure of induction consists in accepting as true the simplest
+law that can be reconciled with our experiences.
+
+
+6.3631 This procedure, however, has no logical justification but only a
+psychological one. It is clear that there are no grounds for believing that
+the simplest eventuality will in fact be realized.
+
+
+6.36311 It is an hypothesis that the sun will rise tomorrow: and this means
+that we do not know whether it will rise.
+
+
+6.37 There is no compulsion making one thing happen because another has
+happened. The only necessity that exists is logical necessity.
+
+
+6.371 The whole modern conception of the world is founded on the illusion
+that the so-called laws of nature are the explanations of natural
+phenomena.
+
+
+6.372 Thus people today stop at the laws of nature, treating them as
+something inviolable, just as God and Fate were treated in past ages. And
+in fact both are right and both wrong: though the view of the ancients is
+clearer in so far as they have a clear and acknowledged terminus, while the
+modern system tries to make it look as if everything were explained.
+
+
+6.373 The world is independent of my will.
+
+
+6.374 Even if all that we wish for were to happen, still this would only be
+a favour granted by fate, so to speak: for there is no logical connexion
+between the will and the world, which would guarantee it, and the supposed
+physical connexion itself is surely not something that we could will.
+
+
+6.375 Just as the only necessity that exists is logical necessity, so too
+the only impossibility that exists is logical impossibility.
+
+
+6.3751 For example, the simultaneous presence of two colours at the same
+place in the visual field is impossible, in fact logically impossible,
+since it is ruled out by the logical structure of colour. Let us think how
+this contradiction appears in physics: more or less as follows--a particle
+cannot have two velocities at the same time; that is to say, it cannot be
+in two places at the same time; that is to say, particles that are in
+different places at the same time cannot be identical. (It is clear that
+the logical product of two elementary propositions can neither be a
+tautology nor a contradiction. The statement that a point in the visual
+field has two different colours at the same time is a contradiction.)
+
+
+6.4 All propositions are of equal value.
+
+
+6.41 The sense of the world must lie outside the world. In the world
+everything is as it is, and everything happens as it does happen: in it no
+value exists--and if it did exist, it would have no value. If there is any
+value that does have value, it must lie outside the whole sphere of what
+happens and is the case. For all that happens and is the case is
+accidental. What makes it non-accidental cannot lie within the world, since
+if it did it would itself be accidental. It must lie outside the world.
+
+
+6.42 So too it is impossible for there to be propositions of ethics.
+Propositions can express nothing that is higher.
+
+
+6.421 It is clear that ethics cannot be put into words. Ethics is
+transcendental. (Ethics and aesthetics are one and the same.)
+
+
+6.422 When an ethical law of the form, 'Thou shalt ...' is laid down, one's
+first thought is, 'And what if I do, not do it?' It is clear, however, that
+ethics has nothing to do with punishment and reward in the usual sense of
+the terms. So our question about the consequences of an action must be
+unimportant.--At least those consequences should not be events. For there
+must be something right about the question we posed. There must indeed be
+some kind of ethical reward and ethical punishment, but they must reside in
+the action itself. (And it is also clear that the reward must be something
+pleasant and the punishment something unpleasant.)
+
+
+6.423 It is impossible to speak about the will in so far as it is the
+subject of ethical attributes. And the will as a phenomenon is of interest
+only to psychology.
+
+
+6.43 If the good or bad exercise of the will does alter the world, it can
+alter only the limits of the world, not the facts--not what can be
+expressed by means of language. In short the effect must be that it becomes
+an altogether different world. It must, so to speak, wax and wane as a
+whole. The world of the happy man is a different one from that of the
+unhappy man.
+
+
+6.431 So too at death the world does not alter, but comes to an end.
+
+
+6.4311 Death is not an event in life: we do not live to experience death.
+If we take eternity to mean not infinite temporal duration but
+timelessness, then eternal life belongs to those who live in the present.
+Our life has no end in just the way in which our visual field has no
+limits.
+
+
+6.4312 Not only is there no guarantee of the temporal immortality of the
+human soul, that is to say of its eternal survival after death; but, in any
+case, this assumption completely fails to accomplish the purpose for which
+it has always been intended. Or is some riddle solved by my surviving for
+ever? Is not this eternal life itself as much of a riddle as our present
+life? The solution of the riddle of life in space and time lies outside
+space and time. (It is certainly not the solution of any problems of
+natural science that is required.)
+
+
+6.432 How things are in the world is a matter of complete indifference for
+what is higher. God does not reveal himself in the world.
+
+
+6.4321 The facts all contribute only to setting the problem, not to its
+solution.
+
+
+6.44 It is not how things are in the world that is mystical, but that it
+exists.
+
+
+6.45 To view the world sub specie aeterni is to view it as a whole--a
+limited whole. Feeling the world as a limited whole--it is this that is
+mystical.
+
+
+6.5 When the answer cannot be put into words, neither can the question be
+put into words. The riddle does not exist. If a question can be framed at
+all, it is also possible to answer it.
+
+
+6.51 Scepticism is not irrefutable, but obviously nonsensical, when it
+tries to raise doubts where no questions can be asked. For doubt can exist
+only where a question exists, a question only where an answer exists, and
+an answer only where something can be said.
+
+
+6.52 We feel that even when all possible scientific questions have been
+answered, the problems of life remain completely untouched. Of course there
+are then no questions left, and this itself is the answer.
+
+
+6.521 The solution of the problem of life is seen in the vanishing of the
+problem. (Is not this the reason why those who have found after a long
+period of doubt that the sense of life became clear to them have then been
+unable to say what constituted that sense?)
+
+
+6.522 There are, indeed, things that cannot be put into words. They make
+themselves manifest. They are what is mystical.
+
+
+6.53 The correct method in philosophy would really be the following: to say
+nothing except what can be said, i.e. propositions of natural science--i.e.
+something that has nothing to do with philosophy -- and then, whenever
+someone else wanted to say something metaphysical, to demonstrate to him
+that he had failed to give a meaning to certain signs in his propositions.
+Although it would not be satisfying to the other person--he would not have
+the feeling that we were teaching him philosophy--this method would be the
+only strictly correct one.
+
+
+6.54 My propositions are elucidatory in this way: he who understands me
+finally recognizes them as senseless, when he has climbed out through them,
+on them, over them. (He must so to speak throw away the ladder, after he
+has climbed up on it.) He must transcend these propositions, and then he
+will see the world aright.

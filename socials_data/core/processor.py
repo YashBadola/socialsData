@@ -3,17 +3,21 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
 
     def process(self, personality_dir, skip_qa=False):
         """
         Reads files from raw/, processes them, and writes to processed/data.jsonl.
         If skip_qa is False, it also attempts to generate Q&A pairs.
+        Also populates the SQLite database.
         """
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
@@ -32,10 +36,7 @@ class DataProcessor:
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         # Prepare files
-        # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
@@ -44,18 +45,29 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
-                            # 1. Write standard text data
+                            # Save to DB Document
+                            # Note: content here is the cleaned text, which acts as content for document.
+                            # Ideally we store raw content in document and processed in chunks,
+                            # but _process_file does cleaning. Let's store cleaned content in document for now.
+                            doc_id = self.db.add_document(personality_id, file_path.name, content)
+
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
+                                # Save to DB Chunk
+                                chunk_id = self.db.add_chunk(doc_id, chunk)
+
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
                                 # 2. If we have a system prompt and valid text, generate Q&A
                                 if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                    print(f"Generating Q&A for {file_path.name}...")
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
+                                        # Save to DB QA
+                                        self.db.add_qa_pair(chunk_id, pair.get('question', ''), pair.get('answer', ''))
+
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
              finally:
@@ -111,7 +123,6 @@ class DataProcessor:
                         for pair in qa_pairs:
                             pair["source"] = source
                             qa_f.write(json.dumps(pair) + "\n")
-                            # flush to see progress?
                             qa_f.flush()
                 except json.JSONDecodeError:
                     continue
@@ -127,29 +138,20 @@ class TextDataProcessor(DataProcessor):
         """
         Handles text files. Returns the content as a string.
         """
-        # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
-            # In a real system, we might log a warning or have other processors
             return None
 
         try:
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
             lines = [line.strip() for line in text.splitlines() if line.strip()]
             cleaned_text = "\n".join(lines)
-
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
             return cleaned_text
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None
 
-# Future placeholders for other types
 class AudioDataProcessor(DataProcessor):
     def _process_file(self, file_path):
-        # TODO: Implement Whisper or other transcription logic here
         pass

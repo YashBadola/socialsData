@@ -13,6 +13,11 @@
       "type": "book",
       "title": "An Enquiry Concerning Human Understanding",
       "url": "https://www.gutenberg.org/ebooks/9662"
+    },
+    {
+      "type": "autobiography",
+      "title": "My Own Life",
+      "url": "https://davidhume.org/texts/mol/"
     }
   ],
   "license": "Public Domain"

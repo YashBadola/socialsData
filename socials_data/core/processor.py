@@ -3,17 +3,20 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
+        self.db.init_db()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
-        If skip_qa is False, it also attempts to generate Q&A pairs.
+        Reads files from raw/, processes them, writes to processed/data.jsonl AND populates the database.
         """
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
@@ -32,10 +35,7 @@ class DataProcessor:
         processed_dir.mkdir(parents=True, exist_ok=True)
 
         # Prepare files
-        # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
              if not skip_qa:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
@@ -44,20 +44,29 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
-                            # 1. Write standard text data
+                            # DB: Add Document
+                            doc_id = self.db.add_document(personality_id, file_path.name, content)
+
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
+                                # File output
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
-                                # 2. If we have a system prompt and valid text, generate Q&A
+                                # DB: Add Chunk
+                                chunk_id = self.db.add_chunk(doc_id, chunk)
+
+                                # 2. Generate Q&A
                                 if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                    print(f"Generating Q&A for {file_path.name}...")
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
+
+                                        # DB: Add QA
+                                        self.db.add_qa_pair(chunk_id, pair.get("question"), pair.get("answer"))
              finally:
                  if not skip_qa and 'qa_f' in locals():
                      qa_f.close()
@@ -148,7 +157,6 @@ class TextDataProcessor(DataProcessor):
             print(f"Error processing {file_path}: {e}")
             return None
 
-# Future placeholders for other types
 class AudioDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         # TODO: Implement Whisper or other transcription logic here

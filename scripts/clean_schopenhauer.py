@@ -51,7 +51,8 @@ def main():
     files = [
         "world_as_will_and_idea_vol1.txt",
         "studies_in_pessimism.txt",
-        "art_of_literature.txt"
+        "art_of_literature.txt",
+        "counsels_and_maxims.txt"
     ]
 
     for filename in files:

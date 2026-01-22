@@ -1,0 +1,59 @@
+{
+  "biography": {
+    "early_life": "Simone de Beauvoir was born on January 9, 1908, in Paris, into a bourgeois family. She was intellectually precocious and rejected her Catholic upbringing in her teens, declaring herself an atheist. She studied philosophy at the Sorbonne and the École Normale Supérieure, where she met Jean-Paul Sartre, forming a lifelong intellectual and romantic partnership.",
+    "career": "She taught at the lycée level until 1943. She became a prominent figure in French intellectual life, co-founding the journal 'Les Temps Modernes' with Sartre and Maurice Merleau-Ponty. She wrote novels, essays, and memoirs. Her most famous work, 'The Second Sex' (1949), is a foundational text of modern feminism.",
+    "later_years": "In her later years, she became active in the women's liberation movement, notably signing the Manifesto of the 343 in 1971 advocating for abortion rights. She also wrote about aging in 'The Coming of Age'. She died on April 14, 1986, and is buried next to Sartre in Montparnasse Cemetery."
+  },
+  "concepts": [
+    {
+      "name": "The Other",
+      "definition": "The concept that women have been defined as the 'Other' in relation to men, who are the Subject or the Absolute. This othering denies women their full humanity and agency."
+    },
+    {
+      "name": "Becoming a Woman",
+      "definition": "The famous declaration 'One is not born, but rather becomes, a woman.' This encapsulates the idea that gender is a social construct imposed on biological sex, and that 'femininity' is a result of conditioning rather than an innate essence."
+    },
+    {
+      "name": "Ethics of Ambiguity",
+      "definition": "The idea that human existence is fundamentally ambiguous, caught between biology and freedom, facticity and transcendence. Authentic morality accepts this ambiguity and assumes the responsibility of willing freedom for oneself and others."
+    },
+    {
+      "name": "Immanence vs. Transcendence",
+      "definition": "Immanence refers to stagnation, passivity, and being an object (often the state forced upon women). Transcendence refers to acting, creating, and moving forward into the future (the state reserved for men). Beauvoir argues women must claim transcendence."
+    }
+  ],
+  "works": [
+    {
+      "title": "The Second Sex",
+      "year": 1949,
+      "description": "A detailed analysis of women's oppression and a foundational tract of contemporary feminism. It argues that men fundamentally oppress women by characterizing them, on every level, as the Other."
+    },
+    {
+      "title": "The Ethics of Ambiguity",
+      "year": 1947,
+      "description": "A philosophical essay defending existentialist ethics. It argues that to be free is not to have license to do anything, but to accept the burden of creating meaning."
+    },
+    {
+      "title": "She Came to Stay",
+      "year": 1943,
+      "description": "Her first novel, exploring the complexities of a love triangle and the problem of the other's consciousness."
+    },
+    {
+      "title": "The Mandarins",
+      "year": 1954,
+      "description": "A novel set after World War II, following the personal lives of a close-knit group of French intellectuals. It won the Prix Goncourt."
+    },
+    {
+      "title": "Memoirs of a Dutiful Daughter",
+      "year": 1958,
+      "description": "The first volume of her autobiography, covering her childhood and early education."
+    }
+  ],
+  "quotes": [
+    "One is not born, but rather becomes, a woman.",
+    "Man is defined as a human being and a woman as a female - whenever she behaves as a human being she is said to imitate the male.",
+    "I am too intelligent, too demanding, and too resourceful for anyone to be able to take charge of me entirely. No one knows me or loves me completely. I have only myself.",
+    "To will oneself free is also to will others free.",
+    "The body is not a thing, it is a situation: it is our grasp on the world and our sketch of our project."
+  ]
+}

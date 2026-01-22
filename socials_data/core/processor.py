@@ -3,86 +3,73 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import DatabaseManager
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = DatabaseManager()
 
     def process(self, personality_dir, skip_qa=False):
         """
-        Reads files from raw/, processes them, and writes to processed/data.jsonl.
+        Reads files from raw/, processes them, and writes to database.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
         personality_dir = Path(personality_dir)
         raw_dir = personality_dir / "raw"
-        processed_dir = personality_dir / "processed"
-        output_file = processed_dir / "data.jsonl"
-        qa_output_file = processed_dir / "qa.jsonl"
 
         metadata_file = personality_dir / "metadata.json"
         system_prompt = None
+        personality_id = personality_dir.name
+
         if metadata_file.exists():
             try:
                 with open(metadata_file, "r") as f:
                     meta = json.load(f)
                     system_prompt = meta.get("system_prompt")
+                    # Ensure metadata is synced
+                    self.db.upsert_personality(meta)
+                    personality_id = meta.get("id", personality_id)
             except Exception as e:
                 logging.error(f"Failed to read metadata: {e}")
 
-        processed_dir.mkdir(parents=True, exist_ok=True)
+        # Clear existing data for this personality
+        self.db.clear_processed_data(personality_id)
 
-        # Prepare files
-        # We overwrite to ensure clean state.
-        with open(output_file, "w", encoding="utf-8") as out_f:
-             # If not skipping QA, we open QA file too, initially empty or appending?
-             # To keep it simple, we overwrite both if running full process.
-             if not skip_qa:
-                 qa_f = open(qa_output_file, "w", encoding="utf-8")
+        for file_path in raw_dir.iterdir():
+            if file_path.is_file():
+                content = self._process_file(file_path)
+                if content:
+                    # 1. Write standard text data
+                    chunks = content if isinstance(content, list) else [content]
 
-             try:
-                for file_path in raw_dir.iterdir():
-                    if file_path.is_file():
-                        content = self._process_file(file_path)
-                        if content:
-                            # 1. Write standard text data
-                            chunks = content if isinstance(content, list) else [content]
+                    for chunk in chunks:
+                        self.db.insert_processed_data(personality_id, chunk, file_path.name)
 
-                            for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
-                                out_f.write(json.dumps(record) + "\n")
-
-                                # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
-                                    qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
-                                    for pair in qa_pairs:
-                                        pair["source"] = file_path.name
-                                        qa_f.write(json.dumps(pair) + "\n")
-             finally:
-                 if not skip_qa and 'qa_f' in locals():
-                     qa_f.close()
+                        # 2. If we have a system prompt and valid text, generate Q&A
+                        if not skip_qa and system_prompt and self.llm_processor.client:
+                            print(f"Generating Q&A for {file_path.name}...") # User feedback
+                            qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
+                            for pair in qa_pairs:
+                                self.db.insert_qa_pair(personality_id, file_path.name, pair["instruction"], pair["response"])
 
     def generate_qa_only(self, personality_dir):
         """
-        Generates Q&A pairs from existing processed/data.jsonl.
+        Generates Q&A pairs from existing data in database.
         Useful if one wants to run QA generation separately or re-run it.
         """
         personality_dir = Path(personality_dir)
-        processed_dir = personality_dir / "processed"
-        input_file = processed_dir / "data.jsonl"
-        qa_output_file = processed_dir / "qa.jsonl"
-
-        if not input_file.exists():
-            print(f"Error: {input_file} does not exist. Run 'process' first.")
-            return
 
         metadata_file = personality_dir / "metadata.json"
         system_prompt = None
+        personality_id = personality_dir.name
+
         if metadata_file.exists():
             try:
                 with open(metadata_file, "r") as f:
                     meta = json.load(f)
                     system_prompt = meta.get("system_prompt")
+                    personality_id = meta.get("id", personality_id)
             except Exception as e:
                 logging.error(f"Failed to read metadata: {e}")
                 return
@@ -95,28 +82,24 @@ class DataProcessor:
             print("No OpenAI API Key found. Cannot generate Q&A.")
             return
 
-        print(f"Generating Q&A from existing data for {personality_dir.name}...")
+        print(f"Generating Q&A from existing data for {personality_id}...")
 
-        with open(input_file, "r", encoding="utf-8") as in_f, \
-             open(qa_output_file, "w", encoding="utf-8") as qa_f:
+        # Clear existing QA
+        self.db.clear_qa_pairs(personality_id)
 
-            for line in in_f:
-                try:
-                    record = json.loads(line)
-                    chunk = record.get("text")
-                    source = record.get("source", "unknown")
+        # Get data from DB
+        processed_data = self.db.get_processed_data(personality_id)
 
-                    if chunk:
-                        qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
-                        for pair in qa_pairs:
-                            pair["source"] = source
-                            qa_f.write(json.dumps(pair) + "\n")
-                            # flush to see progress?
-                            qa_f.flush()
-                except json.JSONDecodeError:
-                    continue
+        if not processed_data:
+             print("No processed data found. Run 'process' first.")
+             return
 
-        print(f"Done. Q&A saved to {qa_output_file}")
+        for text, source in processed_data:
+            qa_pairs = self.llm_processor.generate_qa_pairs(text, system_prompt)
+            for pair in qa_pairs:
+                self.db.insert_qa_pair(personality_id, source, pair["instruction"], pair["response"])
+
+        print(f"Done. Q&A saved to database.")
 
 
     def _process_file(self, file_path):

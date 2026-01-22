@@ -1,0 +1,28 @@
+{
+  "relationships": [
+    {
+      "name": "Jean-Paul Sartre",
+      "relation": "Life Partner & Intellectual Collaborator",
+      "description": "Shared a lifelong open relationship and intellectual partnership. While sharing the foundation of existentialism (existence precedes essence), de Beauvoir critiqued and expanded on Sartre's concept of absolute freedom by emphasizing the constraints of the situation and the interdependence of freedoms.",
+      "divergence": "Sartre emphasized radical freedom; de Beauvoir emphasized the ambiguity of freedom situated in a social context."
+    },
+    {
+      "name": "Maurice Merleau-Ponty",
+      "relation": "Colleague & Friend",
+      "description": "Fellow existential phenomenology philosopher. Influenced de Beauvoir's understanding of the body and perception.",
+      "divergence": "They disagreed on political engagement and the role of the intellectual in communism."
+    },
+    {
+      "name": "Albert Camus",
+      "relation": "Associate (Estranged)",
+      "description": "Initially part of the same intellectual circle in post-war Paris. Their relationship deteriorated due to political differences regarding the Soviet Union and the use of violence in revolution.",
+      "divergence": "Camus rejected revolutionary violence (The Rebel); de Beauvoir and Sartre defended it under certain circumstances."
+    },
+    {
+      "name": "Hegel",
+      "relation": "Philosophical Influence",
+      "description": "De Beauvoir adapted Hegel's Master-Slave dialectic to explain the relationship between men and women in 'The Second Sex'.",
+      "divergence": "She applied the dialectic to gender, arguing that women have not yet successfully revolted to gain recognition."
+    }
+  ]
+}

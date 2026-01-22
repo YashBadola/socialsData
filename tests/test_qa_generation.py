@@ -45,22 +45,27 @@ class TestQAGeneration(unittest.TestCase):
         # Initialize processor
         # We need to force LLMProcessor to accept the mock even if env var is missing
         with patch.dict('os.environ', {'OPENAI_API_KEY': 'fake-key'}):
-            processor = TextDataProcessor()
+            # Patch DatabaseManager to use a temporary DB
+            from socials_data.core.db import DatabaseManager
+            temp_db_path = self.test_dir / "test.db"
 
-            # Run process
-            processor.process(self.test_dir)
+            with patch("socials_data.core.processor.DatabaseManager", side_effect=lambda: DatabaseManager(temp_db_path)):
+                processor = TextDataProcessor()
 
-            # Verify qa.jsonl
-            qa_file = self.processed_dir / "qa.jsonl"
-            self.assertTrue(qa_file.exists())
+                # Run process
+                processor.process(self.test_dir)
 
-            with open(qa_file, "r") as f:
-                lines = f.readlines()
-                self.assertEqual(len(lines), 1)
-                data = json.loads(lines[0])
-                self.assertEqual(data["instruction"], "What is this?")
-                self.assertEqual(data["response"], "This is a test sentence.")
-                self.assertEqual(data["source"], "test.txt")
+                # Verify DB
+                conn = processor.db.get_connection()
+                cursor = conn.cursor()
+                cursor.execute("SELECT * FROM qa_pairs WHERE personality_id = 'test_person'")
+                rows = cursor.fetchall()
+                conn.close()
+
+                self.assertEqual(len(rows), 1)
+                # rows[0] = (id, personality_id, source, question, answer)
+                self.assertEqual(rows[0][3], "What is this?")
+                self.assertEqual(rows[0][4], "This is a test sentence.")
 
     @patch("socials_data.core.llm.OpenAI")
     def test_skip_qa(self, MockOpenAI):
@@ -69,27 +74,26 @@ class TestQAGeneration(unittest.TestCase):
         MockOpenAI.return_value = mock_client
 
         with patch.dict('os.environ', {'OPENAI_API_KEY': 'fake-key'}):
-            processor = TextDataProcessor()
-            # Run with skip_qa=True
-            processor.process(self.test_dir, skip_qa=True)
+            # Patch DatabaseManager to use a temporary DB
+            from socials_data.core.db import DatabaseManager
+            temp_db_path = self.test_dir / "test.db"
 
-            # Verify qa.jsonl is empty or not written to
-            qa_file = self.processed_dir / "qa.jsonl"
-            # In current implementation, we open it with 'w', so it exists but empty?
-            # Actually, if we skip_qa, we never write to it, but we might have opened it?
-            # Let's check the logic: "if not skip_qa: qa_f = open..."
-            # So if skip_qa is True, qa_f is never created/touched.
-            # But wait, my implementation:
-            # if not skip_qa: qa_f = open(...)
-            # So the file might NOT exist if it didn't before.
-            # But "processed_dir" is cleaned/created.
+            with patch("socials_data.core.processor.DatabaseManager", side_effect=lambda: DatabaseManager(temp_db_path)):
+                processor = TextDataProcessor()
+                # Run with skip_qa=True
+                processor.process(self.test_dir, skip_qa=True)
 
-            # Since we just created the dir in setUp, and process() with skip_qa=True
-            # won't create qa.jsonl, it should not exist.
-            self.assertFalse(qa_file.exists())
+                # Verify qa_pairs is empty
+                conn = processor.db.get_connection()
+                cursor = conn.cursor()
+                cursor.execute("SELECT * FROM qa_pairs WHERE personality_id = 'test_person'")
+                rows = cursor.fetchall()
+                conn.close()
 
-            # Verify mock was NOT called
-            mock_client.chat.completions.create.assert_not_called()
+                self.assertEqual(len(rows), 0)
+
+                # Verify mock was NOT called
+                mock_client.chat.completions.create.assert_not_called()
 
 if __name__ == "__main__":
     unittest.main()

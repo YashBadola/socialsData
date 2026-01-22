@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 from pathlib import Path
+from socials_data.core.db import DatabaseManager
 
 PERSONALITIES_DIR = Path(__file__).parent.parent / "personalities"
 
@@ -9,6 +10,7 @@ class PersonalityManager:
     def __init__(self, base_dir=None):
         self.base_dir = Path(base_dir) if base_dir else PERSONALITIES_DIR
         self.base_dir.mkdir(parents=True, exist_ok=True)
+        self.db = DatabaseManager()
 
     def list_personalities(self):
         """Returns a list of available personality IDs."""
@@ -41,6 +43,9 @@ class PersonalityManager:
 
         with open(target_dir / "metadata.json", "w") as f:
             json.dump(metadata, f, indent=2)
+
+        # Sync to DB
+        self.db.upsert_personality(metadata)
 
         return safe_id
 

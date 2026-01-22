@@ -50,13 +50,9 @@ def process(personality_id, skip_qa):
 
     click.echo(f"Processing data for {personality_id}...")
     processor.process(personality_dir, skip_qa=skip_qa)
-    click.echo(f"Done. Data saved to {personality_dir}/processed/data.jsonl")
+    click.echo(f"Done. Data saved to database.")
 
-    # Check if QA file was created and notify user
-    qa_file = personality_dir / "processed" / "qa.jsonl"
-    if qa_file.exists() and qa_file.stat().st_size > 0:
-        click.echo(f"Done. Q&A data saved to {qa_file}")
-    elif not skip_qa and processor.llm_processor.client is None and os.environ.get("OPENAI_API_KEY"):
+    if not skip_qa and processor.llm_processor.client is None and os.environ.get("OPENAI_API_KEY"):
          # If key is present but client is None, it means import failed.
          click.echo("Warning: OPENAI_API_KEY present but 'openai' package issues prevented Q&A generation.")
     elif not skip_qa and processor.llm_processor.client is None:

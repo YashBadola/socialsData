@@ -11,7 +11,8 @@ setup(
         "datasets",
         "pandas",
         "tqdm",
-        "openai"
+        "openai",
+        "sqlalchemy"
     ],
     entry_points={
         "console_scripts": [

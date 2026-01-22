@@ -3,17 +3,21 @@ from pathlib import Path
 import os
 import logging
 from socials_data.core.llm import LLMProcessor
+from socials_data.core.db import Database
 
 class DataProcessor:
     def __init__(self):
         self.llm_processor = LLMProcessor()
+        self.db = Database()
 
     def process(self, personality_dir, skip_qa=False):
         """
         Reads files from raw/, processes them, and writes to processed/data.jsonl.
         If skip_qa is False, it also attempts to generate Q&A pairs.
         """
+        self.db.init_db()
         personality_dir = Path(personality_dir)
+        personality_id = personality_dir.name
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
@@ -44,10 +48,19 @@ class DataProcessor:
                     if file_path.is_file():
                         content = self._process_file(file_path)
                         if content:
+                            # DB: Add document
+                            # Note: content might be list or str. If list, we join? or store first chunk?
+                            # For simple text processor, content is str.
+                            doc_content = content if isinstance(content, str) else str(content)
+                            doc_id = self.db.add_document(personality_id, file_path.name, doc_content)
+
                             # 1. Write standard text data
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
+                                # DB: Add chunk
+                                chunk_id = self.db.add_chunk(doc_id, chunk)
+
                                 record = {"text": chunk, "source": file_path.name}
                                 out_f.write(json.dumps(record) + "\n")
 
@@ -56,6 +69,9 @@ class DataProcessor:
                                     print(f"Generating Q&A for {file_path.name}...") # User feedback
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
+                                        # DB: Add QA pair
+                                        self.db.add_qa_pair(chunk_id, pair["question"], pair["answer"])
+
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
              finally:

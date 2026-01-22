@@ -1,0 +1,29 @@
+{
+  "relationships": [
+    {
+      "name": "Jean-Paul Sartre",
+      "relation": "Partner & Intellectual Collaborator",
+      "description": "Lifelong partner and fellow existentialist. Shared key concepts like freedom and bad faith, though Beauvoir focused more on the ethical and social implications."
+    },
+    {
+      "name": "Maurice Merleau-Ponty",
+      "relation": "Colleague",
+      "description": "Philosophical peer. His phenomenology of the body influenced her understanding of how the body is situated in the world."
+    },
+    {
+      "name": "Albert Camus",
+      "relation": "Associate (estranged)",
+      "description": "Fellow writer and philosopher. Initially close, but they diverged on political grounds regarding communism and the Soviet Union."
+    },
+    {
+      "name": "Friedrich Nietzsche",
+      "relation": "Influence",
+      "description": "Influenced her views on the death of God and the necessity of creating one's own values."
+    },
+    {
+      "name": "Immanuel Kant",
+      "relation": "Critique/Influence",
+      "description": "She engages with Kantian ethics, accepting the idea of treating humanity as an end, but criticizing the abstract nature of his moral law."
+    }
+  ]
+}

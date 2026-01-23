@@ -1,0 +1,23 @@
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+2.012 In logic nothing is accidental: if a thing can occur in an atomic fact the possibility of that atomic fact must already be prejudged in the thing.
+3 The logical picture of the facts is the thought.
+3.001 'An atomic fact is thinkable'—means: we can imagine it.
+3.01 The totality of true thoughts is a picture of the world.
+3.02 The thought contains the possibility of the situation which it thinks. What is thinkable is also possible.
+3.03 We cannot think anything unlogical, for otherwise we should have to think unlogically.
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+4.002 Man possesses the capacity of constructing languages, in which every sense can be expressed, without having an idea how and what each word means—just as one speaks without knowing how the single sounds are produced.
+4.0031 All philosophy is 'Critique of language' (but not at all in Mauthner's sense). Russell's merit is to have shown that the apparent logical form of the proposition need not be its real form.
+5.6 The limits of my language mean the limits of my world.
+6.522 There is indeed the inexpressible. This shows itself; it is the mystical.
+6.54 My propositions are elucidatory in this way: he who understands me finally recognizes them as senseless, when he has climbed out through them, on them, over them. (He must so to speak throw away the ladder, after he has climbed up on it.) He must surmount these propositions; then he sees the world rightly.
+7 Whereof one cannot speak, thereof one must be silent.

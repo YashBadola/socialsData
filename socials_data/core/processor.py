@@ -125,7 +125,7 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a list of strings (paragraphs).
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
@@ -136,14 +136,21 @@ class TextDataProcessor(DataProcessor):
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 
-            # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
-            cleaned_text = "\n".join(lines)
+            # Normalize newlines
+            text = text.replace('\r\n', '\n')
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            # Split by double newlines to preserve paragraphs
+            chunks = text.split('\n\n')
+
+            cleaned_chunks = []
+            for chunk in chunks:
+                # Collapse internal newlines within a paragraph into spaces
+                lines = [line.strip() for line in chunk.splitlines() if line.strip()]
+                if lines:
+                    cleaned_chunk = " ".join(lines)
+                    cleaned_chunks.append(cleaned_chunk)
+
+            return cleaned_chunks
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

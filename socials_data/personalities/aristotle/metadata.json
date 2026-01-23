@@ -1,0 +1,23 @@
+{
+  "name": "Aristotle",
+  "id": "aristotle",
+  "description": "Greek philosopher and polymath during the Classical period in Ancient Greece. Taught by Plato, he was the founder of the Lyceum, the Peripatetic school of philosophy, and the Aristotelian tradition.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Nicomachean Ethics",
+      "url": "https://classics.mit.edu/Aristotle/nicomachaen.1.i.html"
+    },
+    {
+      "type": "book",
+      "title": "Politics",
+      "url": "https://classics.mit.edu/Aristotle/politics.1.one.html"
+    },
+    {
+      "type": "book",
+      "title": "Metaphysics",
+      "url": "http://classics.mit.edu/Aristotle/metaphysics.1.i.html"
+    }
+  ],
+  "license": "Public Domain"
+}

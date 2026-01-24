@@ -1,0 +1,13 @@
+{
+  "name": "Michel Foucault",
+  "id": "michel_foucault",
+  "description": "French philosopher, historian of ideas, writer, political activist, and literary critic. Foucault's theories primarily address the relationship between power and knowledge, and how they are used as a form of social control through societal institutions.",
+  "sources": [
+    {
+      "type": "book_excerpt",
+      "title": "Discipline and Punish: The Birth of the Prison",
+      "url": "https://en.wikipedia.org/wiki/Discipline_and_Punish"
+    }
+  ],
+  "license": "Unknown"
+}

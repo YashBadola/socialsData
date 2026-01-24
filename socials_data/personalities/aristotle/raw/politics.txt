@@ -1,0 +1,944 @@
+The Project Gutenberg eBook of Politics, by Aristotle
+
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
+
+Title: Politics
+        A Treatise on Government
+
+Author: Aristotle
+
+Translator: William Ellis
+
+Release date: October 1, 2004 [eBook #6762]
+                Most recently updated: January 24, 2013
+
+Language: English
+
+Credits: Produced by Eric Eldred, and David Widger
+
+
+*** START OF THE PROJECT GUTENBERG EBOOK POLITICS ***
+
+
+
+
+A TREATISE ON GOVERNMENT
+
+By Aristotle
+
+Translated From The Greek Of Aristotle By William Ellis, A.M.
+
+London, J.M. Dent & Sons Ltd., New York, E.P. Dutton & Co. 1912.
+
+
+
+
+INTRODUCTION
+
+Aristotle, born 384 B.C., at Stagira, was the son of Nicomachus,
+physician to the King of Macedonia. In 367 B.C., he went to Athens,
+where he remained for twenty years as a pupil of Plato; and on the death
+of the latter in 347, he went to Atarneus, in Mysia, where he married.
+In 342, he was appointed teacher to Alexander, son of Philip of
+Macedonia; and in 335, he opened a school in the Lyceum at Athens. on
+the death of Alexander in 323, Aristotle was obliged to leave Athens; he
+died at Chalcis, in Eubœa, 322 B.C.
+
+His works include “Organum” (logic); “Rhetoric”; “Poetics”;
+“Nicomachean Ethics”; “Politics”; “History of Animals”; “Physics”;
+“Metaphysics”; “Psychology”; and “Meteorology.”
+
+       *       *       *       *       *
+
+The “Politics” of Aristotle is the second part of a treatise of which
+the “Ethics” is the first part. It looks back to the “Ethics” as the
+“Ethics” looks forward to the “Politics.” For Aristotle did not separate,
+as we are inclined to do, the sphere of the statesman from that of
+the moralist. In the “Ethics,” he has described the character necessary
+for the good life, but that life is for him essentially a life to be
+lived in society, and when he comes to the “Politics” he considers the
+form of government under which the good life may be lived.
+
+In the “Ethics,” he defines the happiness which is the aim of the
+individual; in the “Politics,” he makes the determination of the form
+of government which will best secure that happiness his aim.
+
+Some of his Political theories are certainly not applicable to modern
+conditions; we cannot accept his views on slavery, for instance; and the
+Greek city-state is not a possible form of government in the modern
+world. But the spirit of his enquiry is as real to-day as when he wrote.
+In no other non-Christian writer is there so serious a recognition of
+the responsibility of the State for the moral welfare of the citizen.
+The State does not exist for the sake of mere life, but for the sake of
+the good life; and that is a view which we can never afford to forget.
+
+It is to be remembered that the “Politics” is only a fragment of a larger
+work, and that it was probably left by its author in an incomplete
+state. This will account for the rather abrupt ending, and for the lack
+of connection between the different parts of the treatise.
+
+The translation of William Ellis (1776) has been revised for the present
+edition.
+
+A.D.L.
+
+
+
+
+CONTENTS
+
+ BOOK I.
+   Of the nature of a family and a city--Of the difference between a
+   king and a magistrate--Of the members of a family, and of a
+   slave--Of the difference between natural slaves and those made so by
+   law--Of the domestic tie between husband and wife, father and
+   son--Of the acquisition of property--Of the art of gain--Of the
+   monopoly of Thales--Of the economics of a family--Of the virtues
+   which belong to the different members of a family--Of the separate
+   government of the women and children.
+
+ BOOK II.
+   Of the purpose of this treatise--Of the community of goods and
+   wives, as recommended by Plato--Of the inconveniences of this
+   system--Of the community of goods and not of wives--Of the
+   inconveniences of a community of goods--Of the nature of property
+   and the value of the different systems--Of the laws of Phaleas--Of
+   the laws of Hippodamus--Of the Lacedæmonian government--Of the
+   Cretan government--Of the Carthaginian government--Of the Athenian
+   government--Of the laws of Zaleucus and Charondas.
+
+ BOOK III.
+   Of the citizen and his nature--Of the definition of a citizen--Of
+   the definition of a city--Of the virtues of a citizen--Of the
+   virtues of a good man--Of the social tie--Of the different forms of
+   government--Of the division of governments into good and bad--Of the
+   true end of the state--Of the definition of justice--Of the supreme
+   power in the state--Of the nature of a king--Of the absolute
+   monarchy--Of the different forms of monarchy.
+
+ BOOK IV.
+   Of the tasks of political science--Of the difference between the
+   various forms of government--Of the different forms of democracy--Of
+   the different forms of oligarchy--Of the republic and its forms--Of
+   the definition of a republic--Of the nature of a tyranny--Of the
+   reasons for the variety of forms of government--Of the best form of
+   government--Of the best government for the average man--Of the
+   causes of the variety of democracies and oligarchies--Of the three
+   powers in the state--Of the methods of electing magistrates--Of the
+   various forms of the judicial power.
+
+ BOOK V.
+   Of the nature of sedition and change in the different forms of
+   government--Of the general causes of sedition--Of the causes of
+   sedition in the different forms of government--Of the means for
+   preserving the state--Of the method of preserving monarchies--Of the
+   causes of the destruction of monarchies--Of the means for preserving
+   monarchies--Of the criticism of Plato's theory of revolutions.
+
+ BOOK VI.
+   Of the different varieties of democracy--Of the nature of the
+   democratic idea of liberty--Of the method of constructing a
+   democracy--Of the method of constructing an oligarchy--Of the
+   various magistracies in the state.
+
+ BOOK VII.
+   Of the nature of the good life--Of the life of the state--Of the
+   best form of government--Of the nature of the citizen--Of the nature
+   of the country--Of the position of the capital city--Of the nature
+   of the citizens--Of the parts of the state--Of the definition of the
+   parts of the state--Of the division of the land--Of the situation of
+   the city--Of the nature of the public buildings--Of the citizens'
+   education--Of the time for marriage--Of the management of
+   children--Of the age for education.
+
+ BOOK VIII.
+   Of the nature of the public education--Of the subjects of
+   education--Of the study of gymnastics--Of the study of music--Of the
+   educational value of music.
+
+
+
+
+A TREATISE ON GOVERNMENT
+
+
+
+
+BOOK I
+
+
+CHAPTER I
+
+Every state is a society of some sort, and every society is established
+for some good purpose; for an apparent good is the spring of all human
+actions: it is evident that this is the principle upon which they are
+every one founded, and this is still more true of that which is the
+most principal of all, and incloses all the rest, and that is, a
+political state. Now they are wrong who think that a magistrate of a
+republic, a king, the master of a family, and the master of a slave are
+the same; for they hold, that the difference between them consists only
+in the superior or inferior number of those they govern, and not in the
+nature of their authority, in this manner: that he who governs but few,
+is a master of a family; he who governs many, a magistrate of a
+republic; which implies, that there is no difference between a great
+family and a little city: and with respect to a magistrate of a
+republic and a king, that he is a king who governs by his own will; but
+he who, according to the rules of the political science, governs and
+submits by turns, is a magistrate of a republic: but this is false,
+which will appear from hence; for if we examine things in their first
+growth, we shall be able to obtain the best insight into them.
+
+Now, it is necessary to unite those two together, which cannot exist
+without each other, as the male and female, for the business of
+procreation (and this not by choice, but by that natural impulse which
+acts both upon plants and animals, the desire of leaving behind them
+others like themselves), and the ruling and the subject power, for the
+preservation of both: for that which is capable of foreseeing by the
+exercise of the mind is by nature intended to be lord and master; but
+that which can with its body perform such designs is a subject and a
+slave; hence the master and the slave have one and the same interest.
+
+[1252b] Nature then has distinguished between the female and the slave:
+for she is not niggardly, like the artist who makes the Delphic swords,
+for she constructs nothing for a double purpose, but everything for its
+proper use, as every instrument is best made when it is intended for
+one, and not for many uses: but among barbarians, the female and the
+slave are upon a level in the community, the reason for which is, that
+they have no ruling power amongst them; but their society is a society
+of slave and slave, the male and the female: wherefore the poets say
+it is proper for the Greeks to govern the barbarians; as if a barbarian
+and a slave were by nature one. Now of these two societies the domestic
+is the first, and Hesiod is right when he says, “First a house, then
+a wife, then an ox for the plough,” for the poor man has always an ox
+before he has a slave.
+
+That society then which nature has established for daily support is
+the families, and those who compose it are called by Charondas
+“Homosipuoi,” and by Epimenides the Cretan “Homokapnoi;” but the
+society of many families, which was first instituted for their lasting,
+mutual advantage, is a village, and a village is most naturally
+composed of the descendants of one family, whom some call “Homogalactoi,”
+the children and the children’s children thereof: for which reason
+cities were originally governed by kings, as the barbarian states now
+are, which are composed of those who had before submitted to kingly
+government; for every family is governed by the elder, as are the
+branches thereof, on account of their relationship thereunto, and this
+is what Homer says, “Each one rules his wife and children;” and in this
+they resemble the Cyclops’ government, for they lived separately; and
+thus also they think the gods are governed by a monarch, because they
+themselves were so originally, and some are so still; for men imagine,
+not only the forms of the gods, but their ways of life to be like their
+own. But when many villages so join themselves together as to form
+but one society, that society is a city, and contains in itself, if I
+may so speak, the end and perfection of government: first founded that
+we might live, but continued that we may live happily. For which reason
+every city must be allowed to be the work of nature, if we admit that
+the original society between male and female is; for to this as their
+end all civil settlements tend: and the end of everything is the nature
+of it. For what every being is in its most perfect state, that
+certainly is the nature of that being, whether it be a man, a horse, or
+a house: besides, whatsoever produces the final cause and the end which
+we desire, must be best; but a government complete in itself is that
+final cause and what is best. [1253a] Hence it is evident that a city
+is a natural production, and that man is naturally a political animal,
+and that whosoever is naturally and not accidentally unfit for society,
+must be either inferior or superior to man: like the man in Homer, who
+is railed at for being
+
+“Without society, without law, without family.”
+
+For he who is such by nature is violently addicted to war; he is like a
+solitary bird of prey. For nature, as we say, does nothing in vain, and
+man is the only animal whom she has endowed with the gift of speech.
+And though mere sound is but an indication of pleasure or pain, and is
+therefore found in other animals (for their nature attains to the
+perception of pain and pleasure and the intimation of it to one
+another, and no further), the power of speech is intended to set forth
+the expedient and inexpedient, and therefore likewise the just and the
+unjust. And it is a characteristic of man that he alone has any sense
+of good and evil, of just and unjust, and the like, and the association
+of living beings who have this sense makes a family and a state.
+
+Further, the state is by nature clearly prior to the family and to the
+individual, since the whole is of necessity prior to the part; for
+example, if the whole body be destroyed, there will be no foot or hand,
+except in an equivocal sense, as we might speak of a stone hand; for
+when destroyed the hand will be no better than that. But things are
+defined by their function and power; and we ought not to say that they
+are the same when they no longer have their proper quality, but only
+that they have the same name. The proof that the state is a creation
+of nature and prior to the individual is that the individual, when
+isolated, is not self-sufficing; and therefore he is like a part in
+relation to the whole. But he who is unable to live in society, or who
+has no need because he is sufficient for himself, must be either a
+beast or a god: he is no part of a state. A social instinct is planted
+in all men by nature, and yet he who first founded the state was the
+greatest of benefactors. For man, when perfected, is the best of
+animals, but, when separated from law and justice, he is the worst of
+all; since armed injustice is the more dangerous, and he is equipped at
+birth with arms, meant to be used by intelligence and virtue, which he
+may use for the worst ends. Wherefore, if he have not virtue, he is
+the most unholy and the most savage of animals, and the most full of
+lust and gluttony. But justice is the bond of men in states, for the
+administration of justice, which is the determination of what is just,
+is the principle of order in political society.
+
+
+CHAPTER II
+
+Now that we have clearly seen what are the parts of which a city is
+composed, it will be necessary to treat of a family, for every city is
+made up of families, and every family has its parts, which are those
+which constitute a complete one; and these are in their several
+relations, a man and his slave, a husband and his wife, a father and
+his children, and these are the three things we are to examine into:
+what each of them is, and what each ought to be; that is to say, the
+herile, the nuptial, and the paternal. [1253b] I take the term nuptial
+and paternal, as not having any proper one of their own to express the
+relation between husband and wife, father and child: to these three we
+shall add a fourth, which though some authors have treated as the whole
+of domestic economy, and others as a principal part of it, is not to be
+overlooked; I mean the art of getting money. But let us first consider
+that society which is the master and the slave, that we may see what
+is necessary to it, and if we can collect anything therefrom which
+may lead to a greater knowledge of the subject than is now generally
+entertained; for some persons think that a government over slaves is a
+particular science, and that (as we said in the beginning) the
+government of a family, a slave, a republic, and a kingdom, are all the
+same thing. Others think that it is contrary to nature to be a master;
+for it is by law that one man is a slave and another free, though by
+nature there is no difference between them; for which reason it is
+unjust, as being founded in violence.
+
+Since then a subsistence is necessary to a family, the means of
+procuring it is a part of the science of economics; for without
+necessaries it is impossible to live, and to live well. And as in all
+arts which have a definite end, if that end is to be obtained, their
+proper instruments are necessary, so is it in the economy of a family:
+but of instruments some are animate and some inanimate; as to the pilot
+of the ship, the rudder is an inanimate instrument, the look-out man an
+animate one: for in every art a servant is to be agreed as an
+instrument; thus property is a thing necessary to existence, and an
+instrument of existence; and wealth is a number of instruments; and a
+slave is a living possession, and every servant is an instrument
+preceding and taking the lead of all other instruments. For if every
+instrument could perform its own work, obeying or anticipating the will
+of others, like the statues of Daedalus, or the tripods of Vulcan,
+which, says the poet,
+
+“Self-moved, enter the assembly of gods;”
+
+if, in like manner, the shuttle would weave and the plectrum touch the
+lyre without a hand to guide them, chief workmen would not want
+servants, nor masters slaves. Now, what are usually called instruments,
+are those with which we perform our work; but a possession is of the
+nature of a thing to be used; for with a shuttle we weave a piece of
+cloth, but a coat or a bed we have for our use. [1254a] And further, as
+production and use differ specifically (for both of these have their
+instruments), so must the instruments of each be different also. Now
+life is a thing to be used, and not to be produced; therefore a slave
+is a minister in things appertaining to life. A possession may be
+considered as a part of anything, for a part is not only a part of
+something, but depends wholly on it; so is a possession and a slave;
+for a master is only a master of the slave, but does not depend on him;
+but a slave is not only a slave to the master, but depends wholly on
+him. It is evident then what the nature and the power of a slave is;
+for he who by nature is not his own but another’s, and is yet a man,
+is by nature a slave; and he may be said to be another’s who, being a
+human being, is also a possession. And a possession may be defined as
+an instrument of action, separable from the possessor.
+
+
+CHAPTER III
+
+But whether any one is such by nature, and whether it is advantageous
+and just for any one to be a slave or no, or whether all slavery is
+contrary to nature, shall be considered hereafter; not that it is
+difficult either to perceive it by reason, or to learn it from fact;
+for to command and to obey is not only a necessary, but a useful thing;
+and some beings, from the very moment of their birth, are set apart for
+one or other of these classes. There are many species of those who rule
+and those who obey; and the rule is always better in proportion as
+those who are ruled are better; as the rule over man is better than
+the rule over a wild beast; for that work is better which is executed
+by better artists; and where one commands and another obeys, there is a
+work to be done. For in all things which form a composite whole and
+which are made up of parts, whether continuous or discrete, a
+distinction between the ruling and the subject element comes to light.
+Such a duality exists in living creatures, but not in them only; it
+originates in the constitution of the universe; even in things which
+have no life there is a ruling principle, as in musical harmony. But we
+are wandering from the subject. We will, therefore, restrict ourselves
+to the living creature, which, in the first place, consists of soul and
+body: and of these two, the one is by nature the ruler, and the other
+the subject. But then we must look for the intentions of nature in
+things which retain their nature, and not in things which are
+corrupted. And therefore we must study the man who is in the most
+perfect state both of body and soul, for in him we shall see the true
+relation of the two; although in bad or corrupted natures the body
+will often appear to rule over the soul, because they are in an evil
+and unnatural condition. [1254b] At all events we may firstly observe
+in living creatures both a despotical and a constitutional rule; for
+the soul rules the body with a despotical rule, whereas the intellect
+rules the appetites with a constitutional and royal rule. And it is
+clear that the rule of the soul over the body, and of the mind and
+the rational element over the passionate, is natural and expedient;
+whereas the equality of the two or the rule of the inferior is always
+hurtful. The same holds good of animals as well as of men; for tame
+animals have a better nature than wild, and all tame animals are better
+off when they are ruled by man; for then they are preserved. Again, the
+male is by nature superior, and the female inferior; and the one rules,
+and the other is ruled; this principle, of necessity, extends to all
+mankind. Where then there is such a difference as that between soul and
+body, or between men and animals (as in the case of those whose
+business is to use their body, and who can do nothing better), the
+lower sort are by nature slaves, and it is better for them as for all
+inferiors that they should be under the rule of a master. For he who
+can be, and therefore is, another’s, and he who participates in reason
+enough to apprehend, but not to have, is a slave by nature. Whereas the
+lower animals cannot even apprehend reason; they obey their instincts.
+And indeed the use made of slaves and of tame animals is not very
+different; for both with their bodies minister to the needs of life.
+Nature would like to distinguish between the bodies of freemen and
+slaves, making the one strong for servile labour, the other upright,
+and although useless for such services, useful for political life in
+the arts both of war and peace. But the opposite often happens—that
+some have the souls and others have the bodies of freemen. And
+doubtless if men differed from one another in the mere forms of their
+bodies as much as the statues of the Gods do from men, all would
+acknowledge that the inferior class should be slaves of the superior.
+And if this is true of the body, how much more just that a similar
+distinction should exist in the soul? but the beauty of the body is
+seen, whereas the beauty of the soul is not seen. [1255a] It is clear,
+then, that some men are by nature free, and others slaves, and that for
+these latter slavery is both expedient and right.
+
+
+CHAPTER IV
+
+But that those who take the opposite view have in a certain way right
+on their side, may be easily seen. For the words slavery and slave are
+used in two senses. There is a slave or slavery by law as well as by
+nature. The law of which I speak is a sort of convention, the law by
+which whatever is taken in war is supposed to belong to the victors.
+But this right many jurists impeach, as they would an orator who
+brought forward an unconstitutional measure: they detest the notion
+that, because one man has the power of doing violence and is superior
+in brute strength, another shall be his slave and subject. Even among
+philosophers there is a difference of opinion. The origin of the
+dispute, and what makes the views invade each other’s territory, is as
+follows: in some sense virtue, when furnished with means, has actually
+the greatest power of exercising force: and as superior power is only
+found where there is superior excellence of some kind, power seems to
+imply virtue, and the dispute to be simply one about justice (for it is
+due to one party identifying justice with goodwill, while the other
+identifies it with the mere rule of the stronger). If these views are
+thus set out separately, the other views have no force or plausibility
+against the view that the superior in virtue ought to rule, or be
+master. Others, clinging, as they think, to a principle of justice (for
+law and custom are a sort of justice), assume that slavery in
+accordance with the custom of war is justified by law, but at the same
+moment they deny this. For what if the cause of the war be unjust? And
+again, no one would ever say that he is a slave who is unworthy to be a
+slave. Were this the case, men of the highest rank would be slaves and
+the children of slaves if they or their parents chance to have been
+taken captive and sold. Wherefore Hellenes do not like to call Hellenes
+slaves, but confine the term to barbarians. Yet, in using this
+language, they really mean the natural slave of whom we spoke at first;
+for it must be admitted that some are slaves everywhere, others
+nowhere. The same principle applies to nobility. Hellenes regard
+themselves as noble everywhere, and not only in their own country, but
+they deem the barbarians noble only when at home, thereby implying that
+there are two sorts of nobility and freedom, the one absolute, the
+other relative. The Helen of Theodectes says:
+
+“Who would presume to call me servant who am on both sides sprung from
+the stem of the Gods?”
+
+What does this imply but that they distinguish freedom and slavery,
+noble and humble birth, by the two principles of good and evil? They
+think that as men and animals beget men and animals, so from good men a
+good man springs. But this is what nature, though she may intend it,
+cannot always accomplish.
+
+[1255b] We see then that there is some foundation for this difference
+of opinion, and that all are not either slaves by nature or freemen by
+nature, and also that there is in some cases a marked distinction
+between the two classes, rendering it expedient and right for the one
+to be slaves and the others to be masters: the one practising
+obedience, the others exercising the authority and lordship which
+nature intended them to have. The abuse of this authority is injurious
+to both; for the interests of part and whole, of body and soul, are the
+same, and the slave is a part of the master, a living but separated
+part of his bodily frame. Hence, where the relation of master and slave
+between them is natural they are friends and have a common interest,
+but where it rests merely on law and force the reverse is true.
+
+
+CHAPTER V
+
+From what has been said, it is evident that the power of a master and
+that of a magistrate are not the same, nor are all governments the same
+as some assert: for the one is over free men, the other over slaves;
+and the government of a family is monarchical (for every house is
+governed by one alone), but a city is a government of free men and
+equals. A master is not so called from his knowing how to govern, but
+because he is such; and in the same manner a slave and a free man. But
+there may be a science of the master and a science of the slave. The
+science of the slave would be such as the man of Syracuse taught, who
+made money by instructing slaves in their ordinary duties. And such a
+knowledge may be carried further, so as to include the art of cookery
+and similar menial offices. For the duties of slaves are different,
+some more honourable, others more menial; as the proverb says, “Slave
+before slave, master before master.” The duties of a slave are such as
+these; but the science of a master consists rather in the use than in
+the possession of slaves. A master is not so called because he acquires
+slaves, but because he uses them. This science, however, is not
+anything great or wonderful; for what the slave ought to know how to
+do, that the master ought to know how to order; for which reason, those
+who are in a situation to be exempt from this trouble leave the
+management of it to a steward, and spend their own time in politics or
+philosophy. The art of acquiring slaves, I mean of justly acquiring
+them, differs both from the art of the master and the art of the slave,
+being a species of hunting or war. And enough of the distinctions
+between master and slave.
+
+
+CHAPTER VI
+
+Let us now inquire generally into the nature of all kinds of property
+and the art of getting wealth, in accordance with our subject; for the
+slave is a part of property. [1256a] In the first place, we may ask
+whether the art of getting wealth is the same with the art of managing
+a family or a part of it, or instrumental to it; and if the last,
+whether in the way that the art of making shuttles is instrumental to
+the art of weaving, or in the way that the casting of bronze is
+instrumental to the art of the statuary, for they are not instrumental
+in the same way, but the one provides tools and the other material; and
+by material I mean the substratum out of which any work is made; thus
+wool is the material of the weaver, bronze of the statuary. Now it is
+easy to see that the art of household management is not identical with
+the art of getting wealth, for the one uses the material which the
+other provides. For the art which uses household stores can be no other
+than the art of household management. There is, however, a doubt
+whether the art of getting wealth is a part of household management or
+a distinct art. If the getter of wealth has to consider whence wealth
+and property can be procured, but there are many sorts of property and
+riches, then are husbandry, and the care and culture of animals, part
+of the art of household management or distinct arts? Again, there are
+many species of food, and therefore there are many kinds of lives both
+of animals and men; they must all have food, and the differences in
+their food have made differences in their ways of life. For of beasts,
+some are gregarious, others are solitary, according to the nature of
+their food, some eat grass, some eat flesh, some eat all things. Nature
+has accommodated their way of life to their habits, and since the same
+things are not equally pleasant to all, their instincts and ways of
+life differ. So it is also with men; their lives differ with their
+mode of subsistence. Some have their maintenance from the fruits of the
+earth and from animals, without any trouble, or just so much as is
+necessary to collect them, and these are the nomads. And since it is
+necessary for their cattle to have change of pasture, they are obliged
+to lead a wandering life. Others live by the chase, some hunting one
+thing, some another; some live by rapine; others get their food from
+fishing in lakes and rivers; while others hunt birds or wild beasts.
+But the greater part of mankind live by agriculture.
+
+Thus the different lives of men are the pastoral, the predatory, the
+agricultural, and that of the hunter. [1256b] Sometimes men are forced
+to combine these lives, that the one may supply what the other wants,
+when a single means of support is not sufficient. Thus, if a man is a
+shepherd and at the same time a freebooter, he has a double means of
+support; and so of the husbandman and the hunter. And they adapt their
+mode of life to their opportunities. Now this kind of property is
+evidently given by nature to all living creatures, from the instant of
+their first production to their full growth. For even at the beginning,
+some animals bring forth with their young food enough to support them
+until they can supply themselves, as the vermiparous and oviparous; but
+the viviparous have milk for their young. We may therefore infer, that
+what is made for man at his birth is preserved for him when he is grown
+up, and that plants are for the sake of animals, and animals for the
+sake of man: tame animals for the use he can make of them as well as
+for the food they supply; and wild animals, if not all, at least the
+greater part, are for the sake of food and other conveniences, such as
+clothing and the like. If then nature makes nothing without some end in
+view, nothing to no purpose, it must be that nature has made all of
+them for the sake of man. For this reason the art of war is, in some
+sense, a part of the art of acquisition, for hunting is a part of it,
+which it is necessary for us to employ against wild beasts, and against
+those of mankind who, being intended by nature for slavery, are
+unwilling to submit to it, and on this occasion, such a war is by
+nature just.
+
+That species of acquisition, then, only which is according to nature,
+is part of economy; and this ought to be at hand, or if not,
+immediately procured, for those who are to live in society or in a
+city, and store it up as necessary for life and useful to the community
+of the state or family. And true wealth seems to consist in these; and
+the acquisition of those possessions which are necessary for a happy
+life is not infinite, though Solon says otherwise in this verse:
+
+“No bounds to riches can be fixed for man;”
+
+for there is a boundary fixed, as in other arts; for the instruments
+of no art are infinite, either in their number or their magnitude;
+[1257a] but riches are a number of instruments in domestic and civil
+economy; it is therefore evident that there is a natural art of
+acquisition, both in domestic and civil economy, and for what reason.
+
+
+CHAPTER VII
+
+There is another species of acquisition which they particularly call
+pecuniary, and with great propriety; and by this indeed it seems that
+there are no bounds to riches and wealth. Now many persons suppose this
+to be the same as the other; but it is not the same, though not very
+different; the one is natural, the other is not, but rather the effect
+of art and skill. We will consider it in this manner: of every thing
+which we possess there are two uses: both belong to the thing as such,
+but not in the same manner; for one is the proper, and the other the
+improper or secondary use of it. For example, a shoe is used for wear,
+and is used for exchange; both are uses of the shoe. He who gives a
+shoe in exchange for money or food to him who wants one, does indeed
+use the shoe as a shoe, but this is not its proper or primary purpose,
+for a shoe is not made to be an object of barter. The same may be said
+of all other possessions, for the art of exchange extends to all of
+them, and it arises at first from what is natural, from the circumstance
+that some have too little, others too much. Hence we may infer that
+retail trade is not a natural part of the art of getting wealth; had it
+been so, men would have ceased to exchange when they had supplied each
+other’s wants. In the first community, indeed, which is the family,
+this art is obviously of no use, but it begins to be useful when the
+society increases. For the members of the family originally had all
+things in common; later, when the family divided into parts, the parts
+shared in many things, and different parts in different things, which
+they had to give in exchange for what they wanted, a kind of barter
+which is still practised among barbarous nations who exchange with one
+another the necessaries of life and nothing more; giving and receiving
+wine, for example, in exchange for corn, and the like. This sort of
+barter is not part of the wealth-getting art and is not contrary to
+nature, but is needed for the satisfaction of men’s natural wants. For
+the other or more complex form of exchange grew, as might have been
+inferred, out of the simpler. When the inhabitants of one country
+became more dependent on those of another, and they imported what they
+needed, and exported what they had too much of, money necessarily came
+into use. [1257b] For the various necessaries of life are not easily
+carried about, and hence men agreed to employ in their dealings with
+each other something which was intrinsically useful and easily
+applicable to the purposes of life, for example, iron, silver, and the
+like. Of this the value was at first measured simply by size and
+weight, but in process of time it was put into a stamp, to save the
+trouble of weighing, and to mark the value.
+
+When the use of coin had once been discovered, out of the barter of
+necessary articles arose the other art of wealth getting, namely,
+retail trade; which was at first probably a simple matter, but became
+more complicated as soon as men learned by experience whence and by
+what exchanges the greatest profit could be made. Originating in the
+use of coin, the art of getting wealth is generally thought to be
+chiefly concerned with it, and to be the art which produces riches and
+wealth; having to consider how they may be accumulated. Indeed, riches
+is assumed by many to be only a quantity of coin, because the arts of
+getting wealth and retail trade are concerned with coin. Others
+maintain that coined money is a mere sham, a thing not natural, but
+conventional only, because, if the users substitute another commodity
+for it, it is worthless, and because it is not useful as a means to any
+of the necessities of life, and, indeed, he who is rich in coin may
+often be in want of necessary food. But how can that be wealth of which
+a man may have a great abundance and yet perish with hunger, like Midas
+in the fable, whose insatiable prayer turned everything that was set
+before him into gold?
+
+Hence men seek after a better notion of riches and of the art of
+getting wealth than the mere acquisition of coin, and they are right.
+For natural riches and the natural art of wealth-getting are a
+different thing; in their true form they are part of the management of
+a household; whereas retail trade is the art of producing wealth, not
+in every way, but by exchange. And it is thought to be concerned with
+coin; for coin is the unit of exchange and the measure or limit of it.
+And there is no bound to the riches which spring from this art of
+wealth getting. As in the art of medicine there is no limit to the
+pursuit of health, and as in the other arts there is no limit to the
+pursuit of their several ends, for they aim at accomplishing their ends
+to the uttermost, (but of the means there is a limit, for the end is
+always the limit), so, too, in this art of wealth-getting there is no
+limit of the end, which is riches of the spurious kind, and the
+acquisition of wealth. But the art of wealth-getting which consists in
+household management, on the other hand, has a limit; the unlimited
+acquisition of wealth is not its business. [1258a] And, therefore, in
+one point of view, all riches must have a limit; nevertheless, as a
+matter of fact, we find the opposite to be the case; for all getters of
+wealth increase their hoard of coin without limit. The source of the
+confusion is the near connection between the two sorts of wealth-getting;
+in either, the instrument is the same, although the use is different,
+and so they pass into one another; for each is a use of the same
+property, but with a difference: accumulation is the end in the one
+case, but there is a further end in the other. Hence some persons are
+led to believe that getting wealth is the object of household
+management, and the whole idea of their lives is that they ought either
+to increase their money without limit, or at any rate not to lose it.
+The origin of this disposition in men is that they are intent upon
+living only, and not upon living well; and, as their desires are
+unlimited they also desire that the means of gratifying them should be
+without limit. Those who do aim at a good life seek the means of
+obtaining bodily pleasures; and, since the enjoyment of these appears
+to depend on property, they are absorbed in getting wealth: and so
+there arises the second species of wealth-getting. For, as their
+enjoyment is in excess, they seek an art which produces the excess of
+enjoyment; and, if they are not able to supply their pleasures by the
+art of getting wealth, they try other arts, using in turn every faculty
+in a manner contrary to nature. The quality of courage, for example,
+is not intended to make wealth, but to inspire confidence; neither is
+this the aim of the general’s or of the physician’s art; but the one
+aims at victory and the other at health. Nevertheless, some men turn
+every quality or art into a means of getting wealth; this they conceive
+to be the end, and to the promotion of the end they think all things
+must contribute.
+
+Thus, then, we have considered the art of wealth-getting which is
+unnecessary, and why men want it; and also the necessary art of
+wealth-getting, which we have seen to be different from the other, and
+to be a natural part of the art of managing a household, concerned with
+the provision of food, not, however, like the former kind, unlimited,
+but having a limit.
+
+
+CHAPTER VIII
+
+And we have found the answer to our original question, Whether the art
+of getting wealth is the business of the manager of a household and of
+the statesman or not their business? viz., that wealth is presupposed
+by them. For as political science does not make men, but takes them
+from nature and uses them, so too nature provides them with earth or
+sea or the like as a source of food. At this stage begins the duty of
+the manager of a household, who has to order the things which nature
+supplies; he may be compared to the weaver who has not to make but to
+use wool, and to know, too, what sort of wool is good and serviceable
+or bad and unserviceable. Were this otherwise, it would be difficult to
+see why the art of getting wealth is a part of the management of a
+household and the art of medicine not; for surely the members of a
+household must have health just as they must have life or anything
+else. [1258b] The answer is that as from one point of view the master
+of the house and the ruler of the state have to consider about health,
+from another the art of medicine has to do so; and so the art of
+getting wealth is a part of the household management in one sense, but
+in another not, but is the business of a subordinate art. But strictly
+speaking, as I have already said, the means of life must be provided
+beforehand by nature; for the business of nature is to furnish food to
+that which is born, and the food of the offspring is always what
+remains over of that from which it is produced. Wherefore the art of
+getting wealth out of fruits and animals is always natural.
+
+There are two sorts of wealth-getting, as I have said; one is a part of
+household management, the other is retail trade: the former necessary
+and honourable, while that which consists in exchange is justly
+censured; for it is unnatural, and a mode by which men gain from one
+another. The most hated sort, and with the greatest reason, is usury,
+which makes a gain out of money itself, and not from the natural
+object of it. For money was intended to be used in exchange, but not
+to increase at interest. And this term interest, which means the birth
+of money from money, is applied to the breeding of money because the
+offspring resembles the parent. Wherefore of all modes of getting
+wealth this is the most unnatural.
+
+
+CHAPTER IX
+
+Enough has been said about the theory of wealth-getting; we will now
+proceed to the practical part. The discussion of such matters is not
+unworthy of philosophy, but to be engaged in them practically is
+illiberal and irksome. The useful parts of wealth-getting are, first,
+the knowledge of live-stock—which are most profitable, and where, and
+how—as, for example, what sort of horses or sheep or oxen or any other
+animals are most likely to give a return. A man ought to know which of
+these pay better than others, and which pay best in particular places,
+for some do better in one place and some in another. Second, husbandry,
+which may be either tillage or planting, and the keeping of bees and of
+fish, or fowl, or of any animals which may be useful to man. These are
+the divisions of the true or proper art of wealth-getting and come
+first. Of the other, which consists in exchange, the first and most
+important division is commerce (of which there are three kinds—the
+provision of a ship, the conveyance of goods, exposure for sale—these
+again differing as they are safer or more profitable), the second is
+usury, the third, service for hire—of this, one kind is employed in the
+mechanical arts, the other in unskilled and bodily labour. [1259a]
+There is a third sort of wealth-getting which is between the two and
+shares in both, that which comes from the earth, and from things
+growing from the earth which, although they bear no fruit, are
+nevertheless profitable; for example, the cutting of timber and all
+mining. The art of mining, by which minerals are obtained, has many
+branches, for there are various kinds of things dug out of the earth.
+Of the several divisions of wealth-getting I now speak generally; a
+minute consideration of them might be useful in practice, but it would
+be tiresome to dwell upon them at greater length now.
+
+Those occupations are most truly arts in which there is the least
+element of chance; they are the meanest in which the body is most
+deteriorated, the most servile in which there is the most use of the
+body, and the most illiberal in which there is the least need of
+excellence.
+
+Works have been written upon these subjects by various persons; for
+example, by Charetides the Parian, and Apollodorus the Lemnian, who
+have treated of Tillage and Planting, while others have treated of
+other branches; any one who cares for such matters may refer to their
+writings. It would be well also to collect the scattered stories of the
+ways in which individuals have succeeded in amassing a fortune; for all
+this is useful to persons who value the art of getting wealth. There is
+the anecdote of Thales the Milesian and his financial device, which
+involves a principle of universal application, but is attributed to him
+on account of his reputation for wisdom. He was reproached for his
+poverty, which was supposed to show that philosophy was of no use.
+According to the story, he knew by his skill in the stars while it was
+yet winter that there would be a great harvest of olives in the coming
+year; so, having a little money, he gave deposits for the use of all
+the olive-presses in Chios and Miletus, which he hired at a low price
+because no one bid against him. When the harvest-time came, and many
+were wanted all at once and of a sudden, he let them out at any rate
+which he pleased, and made a quantity of money. Thus he showed the
+world that philosophers can easily be rich if they like, but that their
+ambition is of another sort. He is supposed to have given a striking
+proof of his wisdom, but, as I was saying, his device for getting
+wealth is of universal application, and is nothing but the creation of
+a monopoly. [1259b] It is an art often practised by cities when they
+are in want of money; they make a monopoly of provisions.
+
+There was a man of Sicily, who, having money deposited with him, bought
+up an all the iron from the iron mines; afterwards, when the merchants
+from their various markets came to buy, he was the only seller, and
+without much increasing the price he gained 200 per cent. Which when
+Dionysius heard, he told him that he might take away his money, but
+that he must not remain at Syracuse, for he thought that the man had
+discovered a way of making money which was injurious to his own
+interests. He made the same discovery as Thales; they both contrived to
+create a monopoly for themselves. And statesmen as well ought to know
+these things; for a state is often as much in want of money and of such
+devices for obtaining it as a household, or even more so; hence some
+public men devote themselves entirely to finance.
+
+
+CHAPTER X
+
+Of household management we have seen that there are three parts—one is
+the rule of a master over slaves, which has been discussed already,
+another of a father, and the third of a husband. A husband and father
+rules over wife and children, both free, but the rule differs, the rule
+over his children being a royal, over his wife a constitutional rule.
+For although there may be exceptions to the order of nature, the male
+is by nature fitter for command than the female, just as the elder and
+full-grown is superior to the younger and more immature. But in most
+constitutional states the citizens rule and are ruled by turns, for the
+idea of a constitutional state implies that the natures of the citizens
+are equal, and do not differ at all. Nevertheless, when one rules and
+the other is ruled we endeavour to create a difference of outward
+forms and names and titles of respect, which may be illustrated by the
+saying of Amasis about his foot-pan. The relation of the male to the
+female is of this kind, but it lasts throughout life. The rule of a
+father over his children is royal, for he receives both love and the
+respect due to his age, exercising a kind of royal power. And therefore
+Homer has appropriately called Zeus “Father of Gods and men,” because
+he is the king of them all. For a king is the natural superior of his
+subjects, but he should be of the same kin or kind with them, and such
+is the relation of elder and younger, of father and son.
+
+
+CHAPTER XI
+
+[1260a] Thus it is clear that household management attends more to men
+than to the acquisition of inanimate things, and to human excellence
+more than to the excellence of property which we call wealth, and to
+the virtue of freemen more than to the virtue of slaves. A question may
+indeed be raised, whether there is any excellence at all in a slave
+beyond those of an instrument and of a menial—whether he can have the
+virtues of temperance, courage, justice, and the like; or whether
+slaves possess only bodily and menial services. And the question on
+either side is liable to difficulties. If they have virtue, in what
+will they differ from freemen? On the other hand, since they are men
+and share in reason, it seems absurd to say that they have no virtue. A
+similar question may be raised about women and children, whether they
+too have virtues: ought a woman to be temperate and brave and just, and
+is a child to be called temperate, and intemperate, or not? So in
+general we may ask about the natural ruler, and the natural subject,
+whether they have the same or different virtues. For a noble nature is
+equally required in both, but if so, why should one of them always
+rule, and the other always be ruled? Nor can the difference be one of
+degree, for the difference between ruler and subject is a difference of
+kind, which the difference of more and less never is. Yet how strange
+that the subject should have no virtue! For if he have no self-command
+and no justice, how will he perform a servant’s duties? and, if the
+ruler have no virtue, how can he govern well? if he lacks
+self-command, he will be tyrannical and indulgent.
+
+Both, then, must share in virtue, but in different ways, as natural
+subjects also differ. The same distinction exists in the soul. The soul
+has by nature a ruling and a subject part, and each of these we say has
+a different virtue, that is to say, a rational and an irrational
+virtue. It is clear then that the same distinction must hold in the
+case of the others, so that there are many persons who are by nature
+rulers and subjects. For the free man rules the slave, the male the
+female, and the man the child in a different way. And all possess the
+various parts of the soul, but possess them in different ways; for the
+slave has not the deliberative faculty at all; the woman has, but it is
+without authority, and the child has, but it is immature. So it must
+necessarily be with the moral virtues also; all may be supposed to
+partake of them, but only in such manner and degree as is required by
+each for the fulfilment of his duty. [1260b] Hence the ruler ought to
+have moral virtue in perfection, for his duty is entirely that of a
+master artificer, and the master artificer is reason; the subjects, on
+the other hand, require only that measure of virtue which is proper to
+each of them. Clearly, then, moral virtue belongs to all of them; but
+the temperance of a man and of a woman, or the courage and justice of a
+man and of a woman, are not, as Socrates maintained, the same; the
+courage of a man is shown in commanding, of a woman in obeying. And
+this holds of all other virtues, as will be more clearly seen if we
+look at them in detail, for those who say generally that virtue
+consists in a good disposition or in doing one’s duty, or something of
+the sort, deceive themselves; far better than such definitions is their
+mode of speaking, who, like Gorgias, enumerate the virtues. All classes
+must be deemed to have their special attributes; as the poet says of
+women,
+
+“Silence is a woman’s glory,”
+
+but this is not equally the glory of man. The child is imperfect, and
+therefore obviously his virtue is not relative to himself alone, but to
+the perfect man and to his teacher, and in like manner the virtue of
+the slave is relative to a master. Now we determined that a slave is
+useful for the wants of life, and therefore he will obviously require
+only so much virtue as will prevent him from failing in his duty
+through cowardice and intemperance. Some one will ask whether, if what
+I say is true, virtue will not be required also in the artisans, for
+they often fail in their work through misconduct. But is there not a
+great difference in the two cases? For the slave shares in his master’s
+life; the artisan is less closely connected with him, and only attains
+excellence in proportion as he becomes a slave, for the meaner sort of
+mechanic has a special and separate slavery; and moreover the slave
+exists by nature, not so the shoemaker or other artisan. It is
+manifest, then, that the master ought to be the source of such
+excellence in the slave, and not the mere possessor of the art of
+mastership which trains the slave in his duties. Wherefore they are
+mistaken who forbid us to converse with slaves and say that we should
+employ command only, for slaves stand even more in need of admonition
+than children.
+
+The relations of husband and wife, parent and child, their several
+virtues, what in their intercourse with one another is good, and what
+is evil, and how we may pursue the good and escape the evil, will have
+to be discussed when we speak of the different forms of government. For,
+inasmuch as every family is a part of a state, and these relationships
+are the parts of a family, the virtue of the part must have regard to
+the virtue of the whole. And therefore women and children must be
+trained by education with an eye to the state, if the virtues of either
+of them are supposed to make any difference in the virtues of the
+state. And they must make a difference: for the children grow up to be
+citizens, and half the free persons in a state are women.
+
+Of these matters, enough has been said; of what remains, let us speak
+at another time. Regarding, then, our present inquiry as complete, we
+will make a new beginning. And, first, let us examine the various
+theories of a perfect state.

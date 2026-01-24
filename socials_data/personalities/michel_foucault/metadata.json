@@ -1,0 +1,23 @@
+{
+  "name": "Michel Foucault",
+  "id": "michel_foucault",
+  "description": "French philosopher, historian of ideas, social theorist, and philologist. His theories address the relationship between power and knowledge, and how they are used as a form of social control through societal institutions.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Discipline and Punish: The Birth of the Prison",
+      "url": "https://en.wikipedia.org/wiki/Discipline_and_Punish"
+    },
+    {
+      "type": "book",
+      "title": "The History of Sexuality",
+      "url": "https://en.wikipedia.org/wiki/The_History_of_Sexuality"
+    },
+    {
+      "type": "lecture",
+      "title": "Society Must Be Defended",
+      "url": "https://en.wikipedia.org/wiki/Society_Must_Be_Defended"
+    }
+  ],
+  "license": "Public Domain (Excerpts/Simulated)"
+}

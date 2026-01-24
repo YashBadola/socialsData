@@ -1,0 +1,24 @@
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+1.21 Any one can either be the case or not be the case, and everything else remain the same.
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+2.012 In logic nothing is accidental: if a thing can occur in an atomic fact the possibility of that atomic fact must already be prejudged in the thing.
+2.1 We make to ourselves pictures of facts.
+2.11 The picture presents the facts in logical space, the existence and non-existence of atomic facts.
+2.12 The picture is a model of reality.
+3 The logical picture of the facts is the thought.
+3.001 "An atomic fact is thinkable"—means: we can imagine it.
+3.01 The totality of true thoughts is a picture of the world.
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+4.002 Man possesses the capacity of constructing languages, in which every sense can be expressed, without having an idea how and what each word means—just as one speaks without knowing how the single sounds are produced. Colloquial language is a part of the human organism and is not less complicated than it. From it it is humanly impossible to gather immediately the logic of language. Language disguises the thought; so that from the external form of the clothes one cannot infer the form of the thought they clothe, because the external form of the clothes is constructed with quite another object than to let the form of the body be recognized. The silent adjustments to understand colloquial language are enormously complicated.
+5.6 The limits of my language mean the limits of my world.
+6.41 The sense of the world must lie outside the world. In the world everything is as it is and happens as it does happen. In it there is no value—and if there were, it would be of no value. If there is a value which is of value, it must lie outside all happening and being-so. For all happening and being-so is accidental. What makes it non-accidental cannot lie in the world, for otherwise this would again be accidental. It must lie outside the world.
+6.522 There is indeed the inexpressible. This shows itself; it is the mystical.
+7 Whereof one cannot speak, thereof one must be silent.

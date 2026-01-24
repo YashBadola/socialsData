@@ -1,0 +1,9 @@
+1. The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+2. What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+3. The logical picture of the facts is the thought.
+4. The thought is the significant proposition.
+5. Propositions are truth-functions of elementary propositions.
+6. The general form of truth-function is: [p, ξ, N(ξ)].
+7. Whereof one cannot speak, thereof one must be silent.

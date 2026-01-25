@@ -1,0 +1,15 @@
+AXIOMS
+
+I. Everything which exists, exists either in itself or in something else.
+
+II. That which cannot be conceived through anything else must be conceived through itself.
+
+III. From a given definite cause an effect necessarily follows; and, on the other hand, if no definite cause be granted, it is impossible that an effect can follow.
+
+IV. The knowledge of an effect depends on and involves the knowledge of a cause.
+
+V. Things which have nothing in common cannot be understood, the one by means of the other; the conception of one does not involve the conception of the other.
+
+VI. A true idea must correspond with its ideate or object.
+
+VII. If a thing can be conceived as non-existent, its essence does not involve existence.

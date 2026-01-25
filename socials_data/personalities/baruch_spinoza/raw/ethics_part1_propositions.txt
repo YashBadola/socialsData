@@ -1,0 +1,30 @@
+PROPOSITIONS.
+
+PROP. I. Substance is by nature prior to its modifications.
+Proof.—This is evident from Def. iii. and v.
+
+PROP. II. Two substances, having different attributes, have nothing in common.
+Proof.—Also evident from Def. iii. For each must exist in itself, and be conceived through itself; in other words, the conception of one does not imply the conception of the other.
+
+PROP. III. Things which have nothing in common cannot be one the cause of the other.
+Proof.—If they have nothing in common, it follows that one cannot be apprehended by means of the other (Ax. v.), and, therefore, one cannot be the cause of the other (Ax. iv.). Q.E.D.
+
+PROP. IV. Two or more distinct things are distinguished one from the other, either by the difference of the attributes of the substances or by the difference of their modifications.
+Proof.—Everything which exists, exists either in itself or in something else (Ax. i.),—that is (Def. iii. and v.), nothing is granted in addition to the understanding, except substance and its modifications. Nothing is, therefore, given, besides the understanding, by which several things may be distinguished one from the other, except the substances, or, in other words (see Ax. iv.), their attributes and modifications. Q.E.D.
+
+PROP. V. There cannot exist in the universe two or more substances having the same nature or attribute.
+
+PROP. VI. One substance cannot be produced by another substance.
+
+PROP. VII. Existence belongs to the nature of substance.
+Proof.—Substance cannot be produced by anything external (Corollary, Prop. vi.), it must, therefore, be its own cause—that is (Def. i.), its essence necessarily involves existence, or existence belongs to its nature.
+
+PROP. XI. God, or substance, consisting of infinite attributes, of each of which expresses eternal and infinite essentiality, necessarily exists.
+
+PROP. XIV. Besides God no substance can be granted or conceived.
+Proof.—As God is a being absolutely infinite, of whom no attribute that expresses the essence of substance can be denied (Def. vi.), and he necessarily exists (Prop. xi.); if any substance besides God were granted, it would have to be explained by some attribute of God, and thus two substances with the same attribute would exist, which (Prop. v.) is absurd; therefore, besides God no substance can be granted, or, consequently, be conceived. If it could be conceived, it would necessarily have to be conceived as existent; but this (by the first part of this proof) is absurd. Therefore, besides God no substance can be granted or conceived. Q.E.D.
+
+Corollary I.—Clearly, therefore: 1. God is one, that is (Def. vi.) only one substance can be granted in the universe, and that substance is absolutely infinite, as we have already indicated (in the note to Prop. x.).
+Corollary II.—It follows: 2. That extension and thought are either attributes of God or (by Ax. i.) accidents (affectiones) of the attributes of God.
+
+PROP. XV. Whatever is, is in God, and without God nothing can be, or be conceived.

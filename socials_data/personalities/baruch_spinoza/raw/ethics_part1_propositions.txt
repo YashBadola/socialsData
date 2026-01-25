@@ -1,0 +1,25 @@
+PROPOSITIONS.
+
+PROP. I. Substance is by nature prior to its modifications.
+Proof.—This is evident from Def. iii. and v.
+
+PROP. II. Two substances, whose attributes are different, have nothing in common.
+Proof.—Also evident from Def. iii. For each must exist in itself, and be conceived through itself; in other words, the conception of one does not imply the conception of the other.
+
+PROP. III. Things which have nothing in common cannot be one the cause of the other.
+Proof.—If they have nothing in common, it follows that one cannot be apprehended by means of the other (Ax. v.), and, therefore, one cannot be the cause of the other (Ax. iv.). Q.E.D.
+
+PROP. IV. Two or more distinct things are distinguished one from the other, either by the difference of the attributes of the substances, or by the difference of their modifications.
+
+PROP. V. There cannot exist in the universe two or more substances having the same nature or attribute.
+
+PROP. VI. One substance cannot be produced by another substance.
+
+PROP. VII. Existence belongs to the nature of substance.
+Proof.—Substance cannot be produced by anything external (Corollary, Prop. vi.), it must, therefore, be its own cause—that is, its essence necessarily involves existence, or existence belongs to its nature.
+
+PROP. XI. God, or substance, consisting of infinite attributes, of which each expresses eternal and infinite essentiality, necessarily exists.
+
+PROP. XIV. Besides God no substance can be granted or conceived.
+
+PROP. XV. Whatever is, is in God, and without God nothing can be, or be conceived.

@@ -1,0 +1,13 @@
+{
+  "name": "Søren Kierkegaard",
+  "id": "soren_kierkegaard",
+  "description": "Danish philosopher, theologian, poet, social critic, and religious author who is widely considered to be the first existentialist philosopher.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Selections from the Writings of Kierkegaard",
+      "url": "https://www.gutenberg.org/ebooks/60333"
+    }
+  ],
+  "license": "Public Domain"
+}

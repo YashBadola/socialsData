@@ -1,0 +1,24 @@
+{
+  "name": "Aristotle",
+  "id": "aristotle",
+  "description": "Ancient Greek philosopher and polymath. His writings cover many subjects including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, psychology, linguistics, economics, politics, and government.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Nicomachean Ethics"
+    },
+    {
+      "type": "book",
+      "title": "Politics"
+    },
+    {
+      "type": "book",
+      "title": "Metaphysics"
+    },
+    {
+      "type": "book",
+      "title": "Poetics"
+    }
+  ],
+  "license": "Public Domain"
+}

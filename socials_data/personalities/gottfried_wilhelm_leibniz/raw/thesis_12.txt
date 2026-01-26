@@ -1,0 +1,3 @@
+12. Now besides this principle of change there must also be in the
+   monad a variety which changes. This variety constitutes, so to speak,
+   the specific nature and the variety of the simple substances.

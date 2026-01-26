@@ -1,0 +1,3 @@
+11. It follows from what has just been said, that the natural changes
+   of the monad come from an internal principle, because an external cause
+   can have no influence on its inner being.

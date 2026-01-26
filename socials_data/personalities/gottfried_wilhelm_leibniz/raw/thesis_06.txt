@@ -1,0 +1,4 @@
+6. We may say then, that the existence of monads can begin or end only
+   all at once, that is to say, the monad can begin only through creation
+   and end only through annihilation. Compounds, however, begin or end by
+   parts.

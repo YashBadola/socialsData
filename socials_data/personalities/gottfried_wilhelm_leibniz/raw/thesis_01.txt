@@ -1,0 +1,3 @@
+   1. The monad, of which we will speak here, is nothing else than a
+   simple substance, which goes to make up compounds; by simple, we mean
+   without parts.

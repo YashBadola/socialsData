@@ -1,0 +1,4 @@
+9. Each monad, indeed, must be different from every other monad. For
+   there are never in nature two beings which are exactly alike, and in
+   which it is not possible to find a difference either internal or based
+   on an intrinsic property.

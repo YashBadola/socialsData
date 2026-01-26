@@ -28,6 +28,12 @@ def test_workflow():
     all_text_aurelius = " ".join([item["text"] for item in ds_aurelius])
     assert "Of my grandfather Verus" in all_text_aurelius
 
+    ds_leibniz = load_dataset("gottfried_wilhelm_leibniz")
+    assert len(ds_leibniz) == 1
+    all_text_leibniz = " ".join([item["text"] for item in ds_leibniz])
+    assert "The monad, of which we will speak here" in all_text_leibniz
+    assert "sufficient reason" in all_text_leibniz
+
     print("Workflow test passed!")
 
 if __name__ == "__main__":

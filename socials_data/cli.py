@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.database import DatabaseManager
 import os
 
 @click.group()
@@ -78,6 +79,26 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.group()
+def db():
+    """Database management commands."""
+    pass
+
+@db.command()
+def init():
+    """Initialize the SQLite database."""
+    manager = DatabaseManager()
+    manager.init_db()
+    click.echo("Database initialized.")
+
+@db.command()
+@click.argument("personality_id")
+def sync(personality_id):
+    """Sync a personality's processed data to the database."""
+    manager = DatabaseManager()
+    manager.sync_personality(personality_id)
+    click.echo(f"Synced {personality_id} to database.")
 
 if __name__ == "__main__":
     main()

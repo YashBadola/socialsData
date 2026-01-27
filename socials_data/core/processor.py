@@ -48,13 +48,20 @@ class DataProcessor:
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
+                                if isinstance(chunk, dict):
+                                    record = chunk
+                                    if "source" not in record:
+                                        record["source"] = file_path.name
+                                else:
+                                    record = {"text": chunk, "source": file_path.name}
+
                                 out_f.write(json.dumps(record) + "\n")
 
                                 # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
+                                text_for_qa = record.get("text")
+                                if not skip_qa and system_prompt and self.llm_processor.client and text_for_qa:
                                     print(f"Generating Q&A for {file_path.name}...") # User feedback
-                                    qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
+                                    qa_pairs = self.llm_processor.generate_qa_pairs(text_for_qa, system_prompt)
                                     for pair in qa_pairs:
                                         pair["source"] = file_path.name
                                         qa_f.write(json.dumps(pair) + "\n")
@@ -125,14 +132,18 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a string, or a dict/list if JSON.
         """
         # Basic extensions check
-        if file_path.suffix.lower() not in ['.txt', '.md']:
+        if file_path.suffix.lower() not in ['.txt', '.md', '.json']:
             # In a real system, we might log a warning or have other processors
             return None
 
         try:
+            if file_path.suffix.lower() == '.json':
+                with open(file_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+
             with open(file_path, "r", encoding="utf-8") as f:
                 text = f.read()
 

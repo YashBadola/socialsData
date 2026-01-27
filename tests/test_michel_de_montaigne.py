@@ -1,0 +1,36 @@
+import pytest
+from socials_data.core.loader import load_dataset
+
+def test_load_montaigne_dataset():
+    """Test that the Montaigne dataset can be loaded and contains valid data."""
+    dataset = load_dataset("michel_de_montaigne")
+
+    assert len(dataset) > 0, "Dataset should not be empty"
+
+    first_item = dataset[0]
+    assert "text" in first_item, "Item should contain 'text' field"
+    assert "source" in first_item, "Item should contain 'source' field"
+
+    text = first_item["text"]
+    assert isinstance(text, str), "Text should be a string"
+    assert len(text) > 0, "Text should not be empty"
+
+    sources = set(item["source"] for item in dataset)
+    expected_sources = {"essays.txt"}
+    assert sources.issubset(expected_sources), f"Found unexpected sources: {sources - expected_sources}"
+
+    # Specific keywords we expect in Montaigne's text
+    keywords = ["Montaigne", "book", "life", "death", "mind", "judgment", "virtue"]
+    found_keywords = False
+    for item in dataset:
+        for keyword in keywords:
+            if keyword in item["text"]:
+                found_keywords = True
+                break
+        if found_keywords:
+            break
+
+    assert found_keywords, "Did not find expected keywords in the dataset"
+
+if __name__ == "__main__":
+    test_load_montaigne_dataset()

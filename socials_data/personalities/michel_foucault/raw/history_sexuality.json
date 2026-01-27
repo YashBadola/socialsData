@@ -1,0 +1,30 @@
+[
+  {
+    "text": "Power is everywhere; not because it embraces everything, but because it comes from everywhere.",
+    "work": "The History of Sexuality, Vol 1",
+    "year": 1976,
+    "chapter": "Method",
+    "themes": ["power", "resistance", "omnipresence"]
+  },
+  {
+    "text": "Where there is power, there is resistance, and yet, or rather consequently, this resistance is never in a position of exteriority in relation to power.",
+    "work": "The History of Sexuality, Vol 1",
+    "year": 1976,
+    "chapter": "Method",
+    "themes": ["resistance", "power dynamics"]
+  },
+  {
+    "text": "The confession has become one of the West's most highly valued techniques for producing truth. We have become a singularly confessing society.",
+    "work": "The History of Sexuality, Vol 1",
+    "year": 1976,
+    "chapter": "The Repressive Hypothesis",
+    "themes": ["confession", "truth", "subjectivity"]
+  },
+  {
+    "text": "Bio-power was without question an indispensable element in the development of capitalism; the latter would not have been possible without the controlled insertion of bodies into the machinery of production and the adjustment of the phenomena of population to economic processes.",
+    "work": "The History of Sexuality, Vol 1",
+    "year": 1976,
+    "chapter": "Right of Death and Power over Life",
+    "themes": ["biopower", "capitalism", "population"]
+  }
+]

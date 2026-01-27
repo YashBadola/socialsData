@@ -1,0 +1,23 @@
+[
+  {
+    "text": "Discipline 'makes' individuals; it is the specific technique of a power that regards individuals both as objects and as instruments of its exercise. It is not a triumphant power, which because of its excess can pride itself on its own omnipotence; it is a modest, suspicious power, which functions as a calculated, but permanent economy.",
+    "work": "Discipline and Punish",
+    "year": 1975,
+    "chapter": "Docile Bodies",
+    "themes": ["power", "discipline", "subjectivity"]
+  },
+  {
+    "text": "The Panopticon is a machine for dissociating the see/being seen dyad: in the peripheric ring, one is totally seen, without ever seeing; in the central tower, one sees everything without ever being seen.",
+    "work": "Discipline and Punish",
+    "year": 1975,
+    "chapter": "Panopticism",
+    "themes": ["surveillance", "panopticon", "visibility"]
+  },
+  {
+    "text": "Is it surprising that prisons resemble factories, schools, barracks, hospitals, which all resemble prisons?",
+    "work": "Discipline and Punish",
+    "year": 1975,
+    "chapter": "Carceral Archipelago",
+    "themes": ["institutions", "normalization", "carceral"]
+  }
+]

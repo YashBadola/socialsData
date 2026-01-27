@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.exporter import SQLiteExporter
 import os
 
 @click.group()
@@ -78,6 +79,27 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="export-db")
+@click.argument("personality_id")
+def export_db(personality_id):
+    """Export processed data to a SQLite database."""
+    manager = PersonalityManager()
+    try:
+        manager.get_metadata(personality_id)
+    except FileNotFoundError:
+        click.echo(f"Error: Personality '{personality_id}' not found.")
+        return
+
+    personality_dir = manager.base_dir / personality_id
+    exporter = SQLiteExporter(personality_id, personality_dir)
+
+    click.echo(f"Exporting data for {personality_id} to SQLite...")
+    try:
+        exporter.export()
+        click.echo("Done.")
+    except Exception as e:
+        click.echo(f"Error exporting database: {e}")
 
 if __name__ == "__main__":
     main()

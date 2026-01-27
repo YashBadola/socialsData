@@ -1,0 +1,18 @@
+{
+  "name": "Jean-Paul Sartre",
+  "id": "jean_paul_sartre",
+  "description": "French philosopher, playwright, novelist, screenwriter, political activist, biographer, and literary critic. He was one of the key figures in the philosophy of existentialism and phenomenology, and one of the leading figures in 20th-century French philosophy and Marxism.",
+  "sources": [
+    {
+      "type": "book",
+      "title": "Existentialism is a Humanism",
+      "url": "https://www.marxists.org/reference/archive/sartre/works/exist/sartre.htm"
+    },
+    {
+      "type": "book",
+      "title": "Being and Nothingness",
+      "url": "https://en.wikipedia.org/wiki/Being_and_Nothingness"
+    }
+  ],
+  "license": "Public Domain / Fair Use"
+}

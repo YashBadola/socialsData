@@ -1,0 +1,38 @@
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.02 The object is simple.
+2.1 We make to ourselves pictures of facts.
+2.12 The picture is a model of reality.
+3 The logical picture of the facts is the thought.
+3.001 “An atomic fact is thinkable”—means: we can imagine it.
+3.01 The totality of true thoughts is a picture of the world.
+3.1 In the proposition the thought is expressed perceptibly through the senses.
+3.14 The propositional sign consists in the fact that its elements, the words, are combined in it in a definite way.
+3.3 Only the proposition has sense; only in the context of a proposition has a name meaning.
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+4.002 Man possesses the capacity of constructing languages, in which every sense can be expressed, without having an idea how and what each word means—just as one speaks without knowing how the single sounds are produced.
+4.003 Most propositions and questions, that have been written about philosophical matters, are not false, but senseless. We cannot, therefore, answer questions of this kind at all, but only state their senselessness. Most questions and propositions of the philosophers result from the fact that we do not understand the logic of our language.
+4.01 The proposition is a picture of reality. The proposition is a model of the reality as we think it is.
+4.11 The totality of true propositions is the total natural science (or the totality of the natural sciences).
+4.111 Philosophy is not one of the natural sciences.
+4.112 The object of philosophy is the logical clarification of thoughts. Philosophy is not a theory but an activity.
+4.116 Everything that can be thought at all can be thought clearly. Everything that can be said can be said clearly.
+4.2 The sense of a proposition is its agreement and disagreement with the possibilities of the existence and non-existence of the atomic facts.
+5 Propositions are truth-functions of elementary propositions.
+5.6 The limits of my language mean the limits of my world.
+5.61 Logic fills the world: the limits of the world are also its limits.
+6.41 The sense of the world must lie outside the world. In the world everything is as it is and happens as it does happen. In it there is no value—and if there were, it would be of no value.
+6.421 It is clear that ethics cannot be expressed. Ethics is transcendental. (Ethics and aesthetics are one.)
+6.4311 Death is not an event of life. Death is not lived through.
+6.44 Not how the world is, is the mystical, but that it is.
+6.521 The solution of the problem of life is seen in the vanishing of this problem.
+6.522 There is indeed the inexpressible. This shows itself; it is the mystical.
+6.54 My propositions are elucidatory in this way: he who understands me finally recognizes them as senseless, when he has climbed out through them, on them, over them. (He must so to speak throw away the ladder, after he has climbed up on it.) He must surmount these propositions; then he sees the world rightly.
+7 Whereof one cannot speak, thereof one must be silent.

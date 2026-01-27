@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import os
 import logging
+import sqlite3
 from socials_data.core.llm import LLMProcessor
 
 class DataProcessor:
@@ -12,12 +13,14 @@ class DataProcessor:
         """
         Reads files from raw/, processes them, and writes to processed/data.jsonl.
         If skip_qa is False, it also attempts to generate Q&A pairs.
+        Also exports data to a SQLite database.
         """
         personality_dir = Path(personality_dir)
         raw_dir = personality_dir / "raw"
         processed_dir = personality_dir / "processed"
         output_file = processed_dir / "data.jsonl"
         qa_output_file = processed_dir / "qa.jsonl"
+        db_output_file = processed_dir / "knowledge.db"
 
         metadata_file = personality_dir / "metadata.json"
         system_prompt = None
@@ -31,6 +34,8 @@ class DataProcessor:
 
         processed_dir.mkdir(parents=True, exist_ok=True)
 
+        all_records = []
+
         # Prepare files
         # We overwrite to ensure clean state.
         with open(output_file, "w", encoding="utf-8") as out_f:
@@ -40,27 +45,82 @@ class DataProcessor:
                  qa_f = open(qa_output_file, "w", encoding="utf-8")
 
              try:
-                for file_path in raw_dir.iterdir():
-                    if file_path.is_file():
-                        content = self._process_file(file_path)
-                        if content:
-                            # 1. Write standard text data
-                            chunks = content if isinstance(content, list) else [content]
+                if raw_dir.exists():
+                    for file_path in raw_dir.iterdir():
+                        if file_path.is_file():
+                            content = self._process_file(file_path)
+                            if content:
+                                # 1. Write standard text data
+                                chunks = content if isinstance(content, list) else [content]
 
-                            for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
-                                out_f.write(json.dumps(record) + "\n")
+                                for chunk in chunks:
+                                    # Normalize to record dict
+                                    if isinstance(chunk, dict):
+                                        record = chunk
+                                        if "source" not in record:
+                                            record["source"] = file_path.name
+                                    else:
+                                        record = {"text": chunk, "source": file_path.name}
 
-                                # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
-                                    print(f"Generating Q&A for {file_path.name}...") # User feedback
-                                    qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
-                                    for pair in qa_pairs:
-                                        pair["source"] = file_path.name
-                                        qa_f.write(json.dumps(pair) + "\n")
+                                    all_records.append(record)
+                                    out_f.write(json.dumps(record) + "\n")
+
+                                    # 2. If we have a system prompt and valid text, generate Q&A
+                                    # Use 'text' field for Q&A generation
+                                    text_for_qa = record.get("text", "")
+                                    if not skip_qa and system_prompt and self.llm_processor.client and text_for_qa:
+                                        print(f"Generating Q&A for {file_path.name}...") # User feedback
+                                        qa_pairs = self.llm_processor.generate_qa_pairs(text_for_qa, system_prompt)
+                                        for pair in qa_pairs:
+                                            pair["source"] = file_path.name
+                                            qa_f.write(json.dumps(pair) + "\n")
              finally:
                  if not skip_qa and 'qa_f' in locals():
                      qa_f.close()
+
+        # 3. Export to SQLite
+        if all_records:
+            self._export_to_sqlite(all_records, db_output_file)
+
+    def _export_to_sqlite(self, records, db_path):
+        """Exports records to a SQLite database."""
+        try:
+            # Remove existing db to start fresh
+            if db_path.exists():
+                db_path.unlink()
+
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+
+            # Determine columns dynamically from all records
+            all_keys = set()
+            for r in records:
+                all_keys.update(r.keys())
+
+            # Ensure 'id' is primary key if not present (we'll use rowid or auto inc if needed, but let's keep it simple)
+            columns = sorted(list(all_keys))
+            # Create table
+            # We treat everything as TEXT for simplicity, or try to infer types?
+            # SQLite is flexible. TEXT is safe.
+            cols_def = ", ".join([f'"{col}" TEXT' for col in columns])
+            create_query = f"CREATE TABLE knowledge ({cols_def})"
+            cursor.execute(create_query)
+
+            # Insert data
+            for r in records:
+                # Prepare values matching columns order
+                values = [str(r.get(col, "")) for col in columns]
+                placeholders = ", ".join(["?" for _ in columns])
+                # Quote column names to avoid reserved keyword conflicts
+                quoted_columns = [f'"{col}"' for col in columns]
+                insert_query = f"INSERT INTO knowledge ({', '.join(quoted_columns)}) VALUES ({placeholders})"
+                cursor.execute(insert_query, values)
+
+            conn.commit()
+            conn.close()
+            print(f"Exported {len(records)} records to {db_path}")
+        except Exception as e:
+            print(f"Error exporting to SQLite: {e}")
 
     def generate_qa_only(self, personality_dir):
         """
@@ -125,10 +185,24 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files and json files.
+        For text/md: Returns the content as a string.
+        For json: Returns the content as a list of dicts or a dict.
         """
-        # Basic extensions check
-        if file_path.suffix.lower() not in ['.txt', '.md']:
+        suffix = file_path.suffix.lower()
+
+        # JSON handling
+        if suffix == '.json':
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                return data
+            except Exception as e:
+                print(f"Error processing JSON {file_path}: {e}")
+                return None
+
+        # Text/MD handling
+        if suffix not in ['.txt', '.md']:
             # In a real system, we might log a warning or have other processors
             return None
 

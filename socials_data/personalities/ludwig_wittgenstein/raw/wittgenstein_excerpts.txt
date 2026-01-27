@@ -1,0 +1,57 @@
+1. The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+1.21 Any one can either be the case or not be the case, and everything else remain the same.
+2. What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+2.012 In logic nothing is accidental: if a thing can occur in an atomic fact the possibility of that atomic fact must already be prejudged in the thing.
+
+3. The logical picture of the facts is the thought.
+3.001 "An atomic fact is thinkable"—means: we can imagine it.
+3.01 The totality of true thoughts is the picture of the world.
+3.02 The thought contains the possibility of the state of affairs which it thinks. What is thinkable is also possible.
+3.03 We cannot think anything unlogical, for otherwise we should have to think unlogically.
+
+4. The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+4.002 Man possesses the capacity of constructing languages, in which every sense can be expressed, without having an idea how and what each word means—just as one speaks without knowing how the single sounds are produced.
+Colloquial language is a part of the human organism and is not less complicated than it.
+From it it is humanly impossible to gather immediately the logic of language.
+Language disguises the thought; so that from the external form of the clothes one cannot infer the form of the thought they clothe, because the external form of the clothes is constructed with quite another object than to let the form of the body be recognized.
+The silent adjustments to understand colloquial language are enormously complicated.
+
+5.6 The limits of my language mean the limits of my world.
+
+6.41 The sense of the world must lie outside the world. In the world everything is as it is and happens as it does happen. In it there is no value—and if there were, it would be of no value.
+If there is a value which is of value, it must lie outside all happening and being-so. For all happening and being-so is accidental.
+What makes it non-accidental cannot lie in the world, for otherwise this would again be accidental.
+It must lie outside the world.
+
+7. Whereof one cannot speak, thereof one must be silent.
+
+(From Philosophical Investigations)
+
+1. "Excalibur" is a proper name in the ordinary sense. The sword Excalibur consists of parts combined in a particular way. If they are combined differently Excalibur does not exist. But it is clear that the sentence "Excalibur has a sharp blade" makes sense whether Excalibur is still whole or is broken up. But if "Excalibur" is the name of an object, this object no longer exists when Excalibur is broken in pieces; and as no object would then correspond to the name it would have no meaning. But then the sentence "Excalibur has a sharp blade" would contain a word that had no meaning, and hence the sentence would be nonsense. But it does make sense; so there must always be something corresponding to the words of which it consists. So the word "Excalibur" must disappear when the sense is analysed and its place be taken by words which name simples. It will be reasonable to call these simples the constituent parts of reality.
+
+23. But how many kinds of sentence are there? Say assertion, question, and command?—There are countless kinds: countless different kinds of use of what we call "symbols", "words", "sentences". And this multiplicity is not something fixed, given once for all; but new types of language, new language-games, as we may say, come into existence, and others become obsolete and get forgotten. (We can get a rough picture of this from the changes in mathematics.)
+Here the term "language-game" is meant to bring into prominence the fact that the speaking of language is part of an activity, or of a form of life.
+Review the multiplicity of language-games in the following examples, and in others:
+Giving orders, and obeying them—
+Describing the appearance of an object, or giving its measurements—
+Constructing an object from a description (a drawing)—
+Reporting an event—
+Speculating about an event—
+Forming and testing a hypothesis—
+Presenting the results of an experiment in tables and diagrams—
+Making up a story; and reading it—
+Play-acting—
+Singing catches—
+Guessing riddles—
+Making a joke; telling it—
+Solving a problem in practical arithmetic—
+Translating from one language into another—
+Asking, thanking, cursing, greeting, praying.

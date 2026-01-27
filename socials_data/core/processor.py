@@ -48,7 +48,11 @@ class DataProcessor:
                             chunks = content if isinstance(content, list) else [content]
 
                             for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
+                                record = {
+                                    "text": chunk,
+                                    "source": file_path.name,
+                                    "personality_id": personality_dir.name
+                                }
                                 out_f.write(json.dumps(record) + "\n")
 
                                 # 2. If we have a system prompt and valid text, generate Q&A

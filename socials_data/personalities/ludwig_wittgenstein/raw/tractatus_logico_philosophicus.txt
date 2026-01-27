@@ -1,0 +1,44 @@
+Tractatus Logico-Philosophicus
+
+Preface
+
+This book will perhaps only be understood by those who have themselves already thought the thoughts which are expressed in it—or similar thoughts. It is therefore not a text-book. Its object would be attained if it afforded pleasure to one who read it with understanding.
+
+The book deals with the problems of philosophy and shows, as I believe, that the method of formulating these problems rests on the misunderstanding of the logic of our language. Its whole meaning could be summed up somewhat as follows: What can be said at all can be said clearly; and whereof one cannot speak thereof one must be silent.
+
+The book will, therefore, draw a limit to thinking, or rather—not to thinking, but to the expression of thoughts; for, in order to draw a limit to thinking we should have to be able to think both sides of this limit (we should therefore have to be able to think what cannot be thought). The limit can, therefore, only be drawn in language and what lies on the other side of the limit will be simply nonsense.
+
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+1.21 Any one can either be the case or not be the case, and everything else remain the same.
+
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+2.012 In logic nothing is accidental: if a thing can occur in an atomic fact the possibility of that atomic fact must already be prejudged in the thing.
+
+3 The logical picture of the facts is the thought.
+3.001 "An atomic fact is thinkable"—means: we can imagine it.
+3.01 The totality of true thoughts is a picture of the world.
+3.02 The thought contains the possibility of the state of affairs which it thinks. What is thinkable is also possible.
+3.03 We cannot think anything unlogical, for otherwise we should have to think unlogically.
+
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+4.002 Man possesses the capacity of constructing languages, in which every sense can be expressed, without having an idea how and what each word means—just as one speaks without knowing how the single sounds are produced.
+Colloquial language is a part of the human organism and is not less complicated than it.
+From it it is humanly impossible to gather immediately the logic of language.
+Language disguises the thought; so that from the external form of the clothes one cannot infer the form of the thought they clothe, because the external form of the clothes is constructed with quite another object than to let the form of the body be recognized.
+The silent adjustments to understand colloquial language are enormously complicated.
+
+5 Propositions are truth-functions of elementary propositions.
+(An elementary proposition is a truth-function of itself.)
+
+6 The general form of truth-function is: [p, ξ, N(ξ)].
+This is the general form of proposition.
+
+7 Whereof one cannot speak, thereof one must be silent.

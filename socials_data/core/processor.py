@@ -42,21 +42,40 @@ class DataProcessor:
              try:
                 for file_path in raw_dir.iterdir():
                     if file_path.is_file():
-                        content = self._process_file(file_path)
-                        if content:
-                            # 1. Write standard text data
-                            chunks = content if isinstance(content, list) else [content]
+                        processed_items = self._process_file(file_path)
+                        if processed_items:
+                            # Normalize to list
+                            items = processed_items if isinstance(processed_items, list) else [processed_items]
 
-                            for chunk in chunks:
-                                record = {"text": chunk, "source": file_path.name}
+                            for item in items:
+                                # Convert string to dict record for legacy support
+                                if isinstance(item, str):
+                                    record = {"text": item, "source": file_path.name}
+                                elif isinstance(item, dict):
+                                    record = item
+                                    # Ensure source is present
+                                    if "source" not in record:
+                                        record["source"] = file_path.name
+                                    # Ensure text is present (skip if not?)
+                                    if "text" not in record:
+                                        continue
+                                else:
+                                    continue # Skip unknown types
+
                                 out_f.write(json.dumps(record) + "\n")
 
                                 # 2. If we have a system prompt and valid text, generate Q&A
-                                if not skip_qa and system_prompt and self.llm_processor.client:
+                                chunk = record.get("text")
+                                if not skip_qa and system_prompt and self.llm_processor.client and chunk:
                                     print(f"Generating Q&A for {file_path.name}...") # User feedback
                                     qa_pairs = self.llm_processor.generate_qa_pairs(chunk, system_prompt)
                                     for pair in qa_pairs:
-                                        pair["source"] = file_path.name
+                                        # Propagate source and potential other metadata?
+                                        # For now just source.
+                                        pair["source"] = record.get("source")
+                                        # Maybe add title if present?
+                                        if "title" in record:
+                                            pair["title"] = record["title"]
                                         qa_f.write(json.dumps(pair) + "\n")
              finally:
                  if not skip_qa and 'qa_f' in locals():
@@ -125,7 +144,7 @@ class DataProcessor:
 class TextDataProcessor(DataProcessor):
     def _process_file(self, file_path):
         """
-        Handles text files. Returns the content as a string.
+        Handles text files. Returns the content as a string or a list of dicts if metadata is found.
         """
         # Basic extensions check
         if file_path.suffix.lower() not in ['.txt', '.md']:
@@ -134,16 +153,48 @@ class TextDataProcessor(DataProcessor):
 
         try:
             with open(file_path, "r", encoding="utf-8") as f:
-                text = f.read()
+                content = f.read()
+
+            metadata = {}
+            text_body = content
+
+            # Check for simple frontmatter (--- ... ---)
+            if content.strip().startswith("---"):
+                parts = content.split("---", 2)
+                if len(parts) >= 3:
+                    # parts[0] is empty (before first ---)
+                    # parts[1] is metadata block
+                    # parts[2] is content
+                    frontmatter = parts[1]
+                    text_body = parts[2]
+
+                    # Simple parsing of key: value
+                    for line in frontmatter.splitlines():
+                        line = line.strip()
+                        if ":" in line:
+                            key, val = line.split(":", 1)
+                            key = key.strip()
+                            val = val.strip()
+                            # Handle comma separated lists for known list fields
+                            if key in ["topics", "tags"]:
+                                val = [v.strip() for v in val.split(",") if v.strip()]
+                            metadata[key] = val
 
             # Basic cleaning: collapse multiple newlines, strip whitespace
-            # This can be made more sophisticated
-            lines = [line.strip() for line in text.splitlines() if line.strip()]
+            lines = [line.strip() for line in text_body.splitlines() if line.strip()]
             cleaned_text = "\n".join(lines)
 
-            # Simple chunking if text is too large could be added here
-            # For now, we return the whole cleaned text as one chunk
-            return cleaned_text
+            if not cleaned_text:
+                return None
+
+            if metadata:
+                record = {"text": cleaned_text}
+                record.update(metadata)
+                return [record]
+            else:
+                # Legacy behavior: return just text string
+                return cleaned_text
+
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
             return None

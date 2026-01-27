@@ -1,0 +1,16 @@
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+3 The logical picture of the facts is the thought.
+3.01 The totality of true thoughts is a picture of the world.
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+5 Propositions are truth-functions of elementary propositions.
+6 The general form of truth-function is: [p, xi, N(xi)].
+7 Whereof one cannot speak, thereof one must remain silent.

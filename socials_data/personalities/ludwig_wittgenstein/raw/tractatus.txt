@@ -1,0 +1,20 @@
+1 The world is everything that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by these being all the facts.
+1.12 For the totality of facts determines both what is the case, and also all that is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+2 What is the case, the fact, is the existence of atomic facts.
+2.01 An atomic fact is a combination of objects (entities, things).
+2.011 It is essential to a thing that it can be a constituent part of an atomic fact.
+3 The logical picture of the facts is the thought.
+3.001 "An atomic fact is thinkable"—means: we can imagine it.
+4 The thought is the significant proposition.
+4.001 The totality of propositions is the language.
+5 Propositions are truth-functions of elementary propositions.
+5.6 The limits of my language mean the limits of my world.
+6 The general form of truth-function is: [p, ξ, N(ξ)].
+6.4 All propositions are of equal value.
+6.41 The sense of the world must lie outside the world.
+6.522 There are, indeed, things that cannot be put into words. They make themselves manifest. They are what is mystical.
+7 Whereof one cannot speak, thereof one must be silent.

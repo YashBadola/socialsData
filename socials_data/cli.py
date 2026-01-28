@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import DatabaseManager
 import os
 
 @click.group()
@@ -78,6 +79,47 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="init-db")
+def init_db():
+    """Initialize the SQLite database."""
+    db = DatabaseManager()
+    db.init_db()
+    click.echo("Database initialized.")
+
+@main.command(name="sync-db")
+@click.argument("personality_id")
+def sync_db(personality_id):
+    """Sync a personality's processed data to the database."""
+    manager = PersonalityManager()
+    try:
+        manager.get_metadata(personality_id)
+    except FileNotFoundError:
+        click.echo(f"Error: Personality '{personality_id}' not found.")
+        return
+
+    personality_dir = manager.base_dir / personality_id
+    db = DatabaseManager()
+    db.sync_personality(personality_id, personality_dir)
+    click.echo(f"Synced {personality_id} to database.")
+
+@main.command(name="query")
+@click.argument("sql_query")
+def query(sql_query):
+    """Run a SQL query against the database."""
+    db = DatabaseManager()
+    try:
+        columns, results = db.query(sql_query)
+        if results:
+            # Simple table print
+            click.echo(" | ".join(columns))
+            click.echo("-" * (len(" | ".join(columns))))
+            for row in results:
+                click.echo(" | ".join(str(item) for item in row))
+        else:
+            click.echo("Query executed successfully (No results returned).")
+    except Exception as e:
+        click.echo(f"Error executing query: {e}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,36 @@
+Tractatus Logico-Philosophicus
+
+1 The world is all that is the case.
+1.1 The world is the totality of facts, not of things.
+1.11 The world is determined by the facts, and by their being all the facts.
+1.12 For the totality of facts determines what is the case, and also whatever is not the case.
+1.13 The facts in logical space are the world.
+1.2 The world divides into facts.
+1.21 Each item can be the case or not the case while everything else remains the same.
+
+2 What is the case—a fact—is the existence of states of affairs.
+2.01 A state of affairs (a state of things) is a combination of objects (things).
+2.02 The object is simple.
+2.0201 Every statement about complexes can be resolved into a statement about their constituents and into the propositions that describe the complexes completely.
+
+3 A logical picture of facts is a thought.
+3.001 "An atomic fact is thinkable"—means: we can picture it.
+3.01 The totality of true thoughts is a picture of the world.
+3.02 A thought contains the possibility of the situation of which it is the thought. What is thinkable is possible.
+
+4 A thought is a proposition with a sense.
+4.001 The totality of propositions is language.
+4.002 Man possesses the ability to construct languages capable of expressing every sense, without having any idea how each word has meaning or what its meaning is—just as people speak without knowing how the individual sounds are produced.
+Everyday language is a part of the human organism and is no less complicated than it.
+It is not humanly possible to gather immediately from it what the logic of language is.
+Language disguises thought. So much so, that from the outward form of the clothing it is impossible to infer the form of the thought beneath it, because the outward form of the clothing is not designed to reveal the form of the body, but for entirely different purposes.
+The tacit conventions on which the understanding of everyday language depends are enormously complicated.
+
+5 A proposition is a truth-function of elementary propositions.
+(An elementary proposition is a truth-function of itself.)
+
+6 The general form of a truth-function is [p, xi, N(xi)]. This is the general form of a proposition.
+6.522 There are, indeed, things that cannot be put into words. They make themselves manifest. They are what is mystical.
+6.53 The correct method in philosophy would really be the following: to say nothing except what can be said, i.e. propositions of natural science—i.e. something that has nothing to do with philosophy—and then, whenever someone else wanted to say something metaphysical, to demonstrate to him that he had failed to give a meaning to certain signs in his propositions. Although it would not be satisfying to the other person—he would not have the feeling that we were teaching him philosophy—this method would be the only strictly correct one.
+
+7 Whereof one cannot speak, thereof one must be silent.

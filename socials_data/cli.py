@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import DatabaseManager
 import os
 
 @click.group()
@@ -78,6 +79,50 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="init-db")
+def init_db():
+    """Initialize the SQLite database."""
+    db_manager = DatabaseManager()
+    db_manager.init_db()
+    click.echo("Database initialized.")
+
+@main.command(name="sync-db")
+@click.argument("personality_id")
+def sync_db(personality_id):
+    """Sync a personality's processed data into the database."""
+    db_manager = DatabaseManager()
+    db_manager.sync_personality(personality_id)
+    click.echo(f"Synced {personality_id} to database.")
+
+@main.command(name="query")
+@click.argument("sql")
+def query(sql):
+    """Run a SQL query against the database."""
+    db_manager = DatabaseManager()
+    columns, results = db_manager.query(sql)
+    if columns is None:
+        click.echo(results) # Error message
+    else:
+        # Simple table printing
+        if not results:
+            click.echo("No results.")
+            return
+
+        # Calculate widths
+        widths = [len(c) for c in columns]
+        for row in results:
+            for i, val in enumerate(row):
+                widths[i] = max(widths[i], len(str(val)))
+
+        # Print header
+        header = " | ".join(c.ljust(w) for c, w in zip(columns, widths))
+        click.echo(header)
+        click.echo("-" * len(header))
+
+        # Print rows
+        for row in results:
+            click.echo(" | ".join(str(val).ljust(w) for val, w in zip(row, widths)))
 
 if __name__ == "__main__":
     main()

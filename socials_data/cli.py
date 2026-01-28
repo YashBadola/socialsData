@@ -1,6 +1,7 @@
 import click
 from socials_data.core.manager import PersonalityManager
 from socials_data.core.processor import TextDataProcessor
+from socials_data.core.db import DatabaseManager
 import os
 
 @click.group()
@@ -78,6 +79,52 @@ def generate_qa(personality_id):
 
     click.echo(f"Generating Q&A for {personality_id}...")
     processor.generate_qa_only(personality_dir)
+
+@main.command(name="init-db")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database file.")
+def init_db(db_path):
+    """Initialize the SQLite database."""
+    db_manager = DatabaseManager(db_path=db_path)
+    db_manager.init_db()
+    click.echo(f"Database initialized at {db_path}")
+
+@main.command(name="sync-db")
+@click.argument("personality_id")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database file.")
+def sync_db(personality_id, db_path):
+    """Sync a personality's processed data to the database."""
+    manager = PersonalityManager()
+    try:
+        manager.get_metadata(personality_id)
+    except FileNotFoundError:
+        click.echo(f"Error: Personality '{personality_id}' not found.")
+        return
+
+    db_manager = DatabaseManager(db_path=db_path)
+    personality_dir = manager.base_dir / personality_id
+
+    click.echo(f"Syncing {personality_id} to database...")
+    db_manager.sync_personality(personality_id, personality_dir)
+    click.echo("Done.")
+
+@main.command(name="query")
+@click.argument("sql_query")
+@click.option("--db-path", default="socials.db", help="Path to the SQLite database file.")
+def query(sql_query, db_path):
+    """Run a SQL query against the database."""
+    db_manager = DatabaseManager(db_path=db_path)
+    columns, rows = db_manager.query(sql_query)
+
+    if not columns:
+        click.echo("No results or error.")
+        return
+
+    # Basic table print
+    header = " | ".join(columns)
+    click.echo(header)
+    click.echo("-" * len(header))
+    for row in rows:
+        click.echo(" | ".join(map(str, row)))
 
 if __name__ == "__main__":
     main()

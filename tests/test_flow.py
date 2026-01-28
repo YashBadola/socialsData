@@ -4,8 +4,8 @@ import pytest
 def test_workflow():
     # Verify we can load the data we just created
     ds_land = load_dataset("nick_land")
-    # We added new content, so now there should be 5 items (4 original + 1 added)
-    assert len(ds_land) == 5
+    # We added new content, so now there should be 6 items (5 original + 1 added)
+    assert len(ds_land) == 6
     # Note: dataset order might vary depending on file system or processing order.
     # We'll check if content exists in any of the items.
     all_text_land = " ".join([item["text"] for item in ds_land])
@@ -14,8 +14,8 @@ def test_workflow():
     assert "Meltdown: planetary china-syndrome" in all_text_land
 
     ds_zizek = load_dataset("slavoj_zizek")
-    # We added new content, so now there should be 5 items (4 original + 1 added)
-    assert len(ds_zizek) == 5
+    # We added new content, so now there should be 6 items (5 original + 1 added)
+    assert len(ds_zizek) == 6
     all_text_zizek = " ".join([item["text"] for item in ds_zizek])
     assert "Ideology" in all_text_zizek
     assert "start eating that trashcan" in all_text_zizek
